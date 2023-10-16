@@ -1,0 +1,25 @@
+// Project CompStore
+// Database schema
+
+Project compstore {
+  database_type: 'PostgreSQL'
+  Note: 'CompStore database'
+}
+
+Table compstore.products {
+  id UUID [primary key]
+  name varchar(255)
+  category varchar(255)
+  description varchar(255)
+}
+
+Table compstore.customers {
+  id UUID [primary key]
+  email varchar(255)
+  username varchar(255)
+}
+
+Table compstore.shopping_cart {
+  id UUID [primary key]
+  customer_id UUID [ref: - compstore.customers.id]
+}
