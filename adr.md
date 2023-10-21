@@ -17,6 +17,12 @@
 |----------------|-----------------------------|
 | Java 17 chosen | Widely used LTS version     |          
 
+### 21-10-2023
+
+| Decision                          | Reason              |
+|-----------------------------------|---------------------|
+| Node.js version chosen - v18.18.0 | Widely used version |   
+| Typescript version chosen - 5.2.2 | Widely used version |   
 
 ### Example table
 
