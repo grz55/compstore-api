@@ -34,4 +34,3 @@ Frontend: https://github.com/pawelNu/compstore-ui
 - Always use UUID Generator (https://www.uuidgenerator.net/version4) for UUID generation
 - Pay attention to SonarLint suggestions
 - Before merging to `master`: `mvn spotless:apply` in order to maintain code formatting and minimizing merge conflicts
-
