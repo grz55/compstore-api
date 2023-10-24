@@ -37,7 +37,6 @@ Frontend: https://github.com/pawelNu/compstore-ui
 
 ## Commit prefixes:
 
-
 - feat: The new feature you're adding to a particular application
 - fix: A bug fix
 - style: Feature and updates related to styling
