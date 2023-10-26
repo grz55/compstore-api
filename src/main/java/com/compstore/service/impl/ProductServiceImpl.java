@@ -18,4 +18,9 @@ public class ProductServiceImpl implements IProductService {
     public Optional<ProductEntity> getProductById(UUID productId) {
         return productRepository.findById(productId);
     }
+
+    @Override
+    public ProductEntity createProduct(ProductEntity product) {
+        return productRepository.save(product);
+    }
 }
