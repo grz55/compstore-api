@@ -7,16 +7,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@Entity
-@Table(name = "product")
-@NoArgsConstructor
-@AllArgsConstructor
-public class ProductEntity {
+@MappedSuperclass
+public abstract class ProductEntity {
 
     @Id @GeneratedValue private UUID id;
 
-    private String name;
-
     private BigDecimal price;
+
 }
