@@ -16,10 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class PCOperatingSystemEntity {
 
-    @Id
-    @GeneratedValue
-    private UUID id;
+    @Id @GeneratedValue private UUID id;
 
     private String name;
-
 }

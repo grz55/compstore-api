@@ -16,9 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class SmartphoneScreenTypeEntity {
 
-    @Id
-    @GeneratedValue
-    private UUID id;
+    @Id @GeneratedValue private UUID id;
 
     private String name;
 }

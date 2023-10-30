@@ -16,9 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class TVBrandEntity {
 
-    @Id
-    @GeneratedValue
-    private UUID id;
+    @Id @GeneratedValue private UUID id;
 
     private String name;
 }

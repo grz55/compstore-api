@@ -16,9 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class TVScreenTypeEntity {
 
-    @Id
-    @GeneratedValue
-    private UUID id;
+    @Id @GeneratedValue private UUID id;
 
     private String name;
 }

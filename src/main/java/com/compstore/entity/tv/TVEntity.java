@@ -4,7 +4,6 @@ import com.compstore.entity.enums.Color;
 import com.compstore.entity.enums.TVRefreshRate;
 import com.compstore.entity.enums.TVResolutionName;
 import jakarta.persistence.*;
-
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,8 +18,7 @@ public class TVEntity {
 
     @Id @GeneratedValue private UUID id;
 
-    @ManyToOne
-    private TVBrandEntity tvBrand;
+    @ManyToOne private TVBrandEntity tvBrand;
 
     private Color color;
 
@@ -32,8 +30,7 @@ public class TVEntity {
 
     private Integer resolutionWidth;
 
-    @ManyToOne
-    private TVScreenTypeEntity screenType;
+    @ManyToOne private TVScreenTypeEntity screenType;
 
     private boolean hdrFlag;
 
@@ -49,5 +46,4 @@ public class TVEntity {
     private Integer hdmiCount;
 
     private Integer usbCount;
-
 }

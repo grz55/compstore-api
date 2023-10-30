@@ -20,8 +20,7 @@ public class PCEntity extends ProductEntity {
 
     private String processorName;
 
-    @ManyToOne
-    private PCGraphicsCardBrandEntity graphicsCardBrand;
+    @ManyToOne private PCGraphicsCardBrandEntity graphicsCardBrand;
 
     private String graphicsCardName;
 
@@ -33,7 +32,5 @@ public class PCEntity extends ProductEntity {
 
     private PCDriveType driveType;
 
-    @ManyToOne
-    private PCOperatingSystemEntity operatingSystem;
-
+    @ManyToOne private PCOperatingSystemEntity operatingSystem;
 }

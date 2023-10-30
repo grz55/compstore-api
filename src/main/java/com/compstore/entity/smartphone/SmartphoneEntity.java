@@ -2,7 +2,6 @@ package com.compstore.entity.smartphone;
 
 import com.compstore.entity.enums.Color;
 import jakarta.persistence.*;
-import java.math.BigDecimal;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,8 +16,7 @@ public class SmartphoneEntity {
 
     @Id @GeneratedValue private UUID id;
 
-    @ManyToOne
-    private SmartphoneBrandEntity smartphoneBrand;
+    @ManyToOne private SmartphoneBrandEntity smartphoneBrand;
 
     private Color color;
 
@@ -28,8 +26,7 @@ public class SmartphoneEntity {
 
     private Integer resolutionWidth;
 
-    @ManyToOne
-    private SmartphoneScreenTypeEntity screenType;
+    @ManyToOne private SmartphoneScreenTypeEntity screenType;
 
     private Integer batteryCapacity;
 
@@ -43,12 +40,9 @@ public class SmartphoneEntity {
 
     private Integer backCameraMpixResolution;
 
-    @ManyToOne
-    private SmartphoneOperatingSystemEntity operatingSystem;
+    @ManyToOne private SmartphoneOperatingSystemEntity operatingSystem;
 
-    @ManyToOne
-    private SmartphoneProcessorBrandEntity processorBrand;
+    @ManyToOne private SmartphoneProcessorBrandEntity processorBrand;
 
     private String processorName;
-
 }
