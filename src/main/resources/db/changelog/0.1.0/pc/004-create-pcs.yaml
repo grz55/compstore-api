@@ -1,0 +1,59 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004-create-pcs
+      author: grz55
+      changes:
+        - createTable:
+            tableName: pcs
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: processor_brand
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: processor_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: graphics_card_brand
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: graphics_card_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: ram_gb_capacity
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: drive_gb_capacity
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: drive_type
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: operating_system
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: decimal(10, 2)
+                  constraints:
+                    nullable: false

@@ -8,3 +8,6 @@ databaseChangeLog:
   - include:
       file: 003-create-pc-operating-systems.yaml
       relativeToChangelogFile: true
+  - include:
+      file: 004-create-pcs.yaml
+      relativeToChangelogFile: true
