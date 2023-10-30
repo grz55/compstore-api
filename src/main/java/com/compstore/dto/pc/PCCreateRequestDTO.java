@@ -17,7 +17,7 @@ public class PCCreateRequestDTO {
 
     private Integer driveGBCapacity;
 
-    private Integer driveType;
+    private String driveType;
 
     private String operatingSystem;
 
