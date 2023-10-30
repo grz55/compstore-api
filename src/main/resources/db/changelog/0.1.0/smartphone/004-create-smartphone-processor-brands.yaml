@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004-create-smartphone-processor-brands
+      author: grz55
+      changes:
+        - createTable:
+            tableName: smartphone_processor_brands
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: VARCHAR(255)

@@ -5,3 +5,6 @@ databaseChangeLog:
   - include:
       file: 002-create-pc-graphics-card-brands.yaml
       relativeToChangelogFile: true
+  - include:
+      file: 003-create-pc-operating-systems.yaml
+      relativeToChangelogFile: true

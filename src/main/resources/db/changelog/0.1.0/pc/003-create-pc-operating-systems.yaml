@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003-create-pc-operating-systems
+      author: grz55
+      changes:
+        - createTable:
+            tableName: pc_operating_systems
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: VARCHAR(255)

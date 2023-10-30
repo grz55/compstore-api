@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004-insert-data-smartphone-processor-brands
+      author: grz55
+      changes:
+        - loadUpdateData:
+            file: classpath:/db/changelog/0.1.0/test_data/smartphone/smartphone-processor-brands.csv
+            separator: ','
+            tableName: smartphone_processor_brands
+            primaryKey: id

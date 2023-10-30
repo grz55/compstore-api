@@ -4,7 +4,7 @@ databaseChangeLog:
       author: grz55
       changes:
         - loadUpdateData:
-            file: classpath:/db/changelog/0.1.0/test_data/csv/pc-graphics-card-brands.csv
+            file: classpath:/db/changelog/0.1.0/test_data/pc/pc-graphics-card-brands.csv
             separator: ','
             tableName: pc_graphics_card_brands
             primaryKey: id
