@@ -1,7 +1,7 @@
 databaseChangeLog:
   - include:
-      file: 001-insert-data-pc-processor-brands.yaml
+      file: 001-create-pc-processor-brands.yaml
       relativeToChangelogFile: true
   - include:
-      file: 002-insert-data-pc-graphics-card-brands.yaml
+      file: 002-create-pc-graphics-card-brands.yaml
       relativeToChangelogFile: true
