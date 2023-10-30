@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: 001-create-tv-brands.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: 002-create-tv-screen-types.yaml
+      relativeToChangelogFile: true
