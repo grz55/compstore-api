@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "tv_brands")
+@Table(name = "tv_screen_types")
 @NoArgsConstructor
 @AllArgsConstructor
 public class TVScreenTypeEntity {
