@@ -15,7 +15,6 @@ import lombok.NoArgsConstructor;
 public class PCEntity extends ProductEntity {
 
     @ManyToOne
-    @JoinColumn(referencedColumnName = "id")
     private PCProcessorBrandEntity processorBrand;
 
     private String processorName;
