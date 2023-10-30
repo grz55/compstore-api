@@ -2,6 +2,8 @@ package com.compstore.entity.smartphone;
 
 import com.compstore.entity.enums.Color;
 import jakarta.persistence.*;
+
+import java.math.BigDecimal;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -45,4 +47,6 @@ public class SmartphoneEntity {
     @ManyToOne private SmartphoneProcessorBrandEntity processorBrand;
 
     private String processorName;
+
+    private BigDecimal price;
 }

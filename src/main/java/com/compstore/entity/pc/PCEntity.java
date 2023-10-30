@@ -1,8 +1,9 @@
 package com.compstore.entity.pc;
 
-import com.compstore.entity.ProductEntity;
 import com.compstore.entity.enums.PCDriveType;
 import jakarta.persistence.*;
+import java.math.BigDecimal;
+import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,9 @@ import lombok.NoArgsConstructor;
 @Table(name = "pcs")
 @NoArgsConstructor
 @AllArgsConstructor
-public class PCEntity extends ProductEntity {
+public class PCEntity{
+
+    @Id @GeneratedValue private UUID id;
 
     @ManyToOne
     private PCProcessorBrandEntity processorBrand;
@@ -32,4 +35,6 @@ public class PCEntity extends ProductEntity {
     private PCDriveType driveType;
 
     @ManyToOne private PCOperatingSystemEntity operatingSystem;
+
+    private BigDecimal price;
 }
