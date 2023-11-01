@@ -22,6 +22,8 @@ public class TVEntity {
 
     @ManyToOne private TVBrandEntity tvBrand;
 
+    private String name;
+
     private Color color;
 
     private Integer screenSize;

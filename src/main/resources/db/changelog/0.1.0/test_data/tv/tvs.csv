@@ -1,0 +1,4 @@
+id,tv_brand_uuid,name,color,screen_size,resolution_name,resolution_height,resolution_width,screen_type_uuid,hdr_flag,refresh_rate,smart_tv_flag,wifi_flag,bluetooth_flag,hdmi_count,usb_count,price
+a87db198-1325-423f-8f12-35ea8886abea,10695645-5e1a-467e-aee1-15e1e862ad2b,Samsung QE55Q67BAU,BLACK,55,RES_4K,2160,3840,8b4a8f84-4a85-4d94-be67-2f16a9c240f5,true,REFRESH_RATE_60HZ,true,true,true,3,2,689.99
+7922048b-9b39-4905-b000-f535801b6866,33e08198-69d8-4cea-96fb-ec951f46f288,LG 65QNED813QA,BLACK,65,RES_4K,2160,3840,84bca610-73af-4c9a-8255-1c83efe2d6da,true,REFRESH_RATE_100HZ,true,true,true,4,2,1015.99
+256fd651-ea28-4df0-8169-9ad1be3f5f12,3924de72-00e5-456b-a8ce-393983bd6e6c,Sony KD-65X75WL,BLACK,65,RES_4K,2160,3840,84bca610-73af-4c9a-8255-1c83efe2d6da,true,REFRESH_RATE_60HZ,true,true,true,4,2,899.99

@@ -1,0 +1,90 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003-create-tvs
+      author: grz55
+      changes:
+        - createTable:
+            tableName: tvs
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: tv_brand_uuid
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: color
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: screen_size
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: resolution_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: resolution_height
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: resolution_width
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: screen_type_uuid
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: hdr_flag
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: refresh_rate
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: smart_tv_flag
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: wifi_flag
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: bluetooth_flag
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: hdmi_count
+                  type: int
+              - column:
+                  name: usb_count
+                  type: int
+              - column:
+                  name: price
+                  type: decimal(10, 2)
+                  constraints:
+                    nullable: false
