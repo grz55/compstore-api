@@ -11,3 +11,6 @@ databaseChangeLog:
   - include:
       file: 004-create-smartphone-processor-brands.yaml
       relativeToChangelogFile: true
+  - include:
+      file: 005-create-smartphones.yaml
+      relativeToChangelogFile: true

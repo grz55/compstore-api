@@ -20,6 +20,8 @@ public class SmartphoneEntity {
 
     @ManyToOne private SmartphoneBrandEntity smartphoneBrand;
 
+    private String name;
+
     private Color color;
 
     private Double screenSize;

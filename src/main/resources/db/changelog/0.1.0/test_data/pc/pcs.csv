@@ -1,4 +1,4 @@
-id,processor_brand,processor_name,graphics_card_brand,graphics_card_name,ram_gb_capacity,drive_gb_capacity,drive_type,operating_system,price
+id,processor_brand_uuid,processor_name,graphics_card_brand_uuid,graphics_card_name,ram_gb_capacity,drive_gb_capacity,drive_type,operating_system_uuid,price
 d5977f31-5c2e-4f3b-9c7c-5dad32772fbc,6a6f85ed-501b-4cb1-9e95-590c980afac3,"AMD Ryzen 5 3600 3,6 - 4,2 GHz",c86de32d-b628-4cc1-b63c-2f2b7f5863a2,AMD Radeon RX 6600,16,1024,SSD,7cf47f4b-680c-4f84-ad84-2a799009f8ca,999.99
 dd76d2ea-2ea6-47a1-a9b2-190fb90027cb,6a6f85ed-501b-4cb1-9e95-590c980afac3,"AMD Ryzen 5 5600X 3,7 - 4,6 GHz",3c980aa7-cec9-43ce-b9e1-94cd105f8fc6,NVIDIA GeForce RTX 3060,16,512,SSD,7cf47f4b-680c-4f84-ad84-2a799009f8ca,949.99
 ddbb3a00-a494-41f7-9b4f-49e34adbafbc,45e8716b-0720-4d2a-82ca-8c4f155d1e7b,"Intel Core i7 13gen 13700KF 3,4 - 5,4 GHz",3c980aa7-cec9-43ce-b9e1-94cd105f8fc6,NVIDIA GeForce RTX 4070 Ti,32,1024,SSD,7cf47f4b-680c-4f84-ad84-2a799009f8ca,2699.99

@@ -13,7 +13,7 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
               - column:
-                  name: processor_brand
+                  name: processor_brand_uuid
                   type: uuid
                   constraints:
                     nullable: false
@@ -23,7 +23,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: graphics_card_brand
+                  name: graphics_card_brand_uuid
                   type: uuid
                   constraints:
                     nullable: false
@@ -48,7 +48,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: operating_system
+                  name: operating_system_uuid
                   type: uuid
                   constraints:
                     nullable: false
