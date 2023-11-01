@@ -4,7 +4,6 @@ import com.compstore.entity.enums.Color;
 import com.compstore.entity.enums.TVRefreshRate;
 import com.compstore.entity.enums.TVResolutionName;
 import jakarta.persistence.*;
-
 import java.math.BigDecimal;
 import java.util.UUID;
 import lombok.AllArgsConstructor;

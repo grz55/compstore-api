@@ -13,12 +13,11 @@ import lombok.NoArgsConstructor;
 @Table(name = "pcs")
 @NoArgsConstructor
 @AllArgsConstructor
-public class PCEntity{
+public class PCEntity {
 
     @Id @GeneratedValue private UUID id;
 
-    @ManyToOne
-    private PCProcessorBrandEntity processorBrand;
+    @ManyToOne private PCProcessorBrandEntity processorBrand;
 
     private String processorName;
 
