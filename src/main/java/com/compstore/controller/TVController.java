@@ -1,10 +1,10 @@
 package com.compstore.controller;
 
 import com.compstore.dto.tv.TVCreateRequestDTO;
+import com.compstore.dto.tv.TVDTO;
 import com.compstore.entity.tv.TVEntity;
 import com.compstore.service.ITVService;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import java.util.Optional;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -20,9 +20,8 @@ public class TVController {
     private final ITVService tvService;
 
     @GetMapping("/{tvId}")
-    public ResponseEntity<TVEntity> getTVById(@PathVariable UUID tvId) {
-        Optional<TVEntity> tvFound = tvService.getTVById(tvId);
-        return tvFound.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    public ResponseEntity<TVDTO> getTVById(@PathVariable UUID tvId) {
+        return ResponseEntity.status(HttpStatus.OK).body(tvService.getTVById(tvId));
     }
 
     @PostMapping
