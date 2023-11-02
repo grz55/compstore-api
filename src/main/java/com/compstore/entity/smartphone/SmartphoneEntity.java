@@ -17,10 +17,13 @@ public class SmartphoneEntity {
 
     @Id @GeneratedValue private UUID id;
 
-    @ManyToOne private SmartphoneBrandEntity smartphoneBrand;
+    @ManyToOne
+    @JoinColumn(name = "smartphone_brand_uuid")
+    private SmartphoneBrandEntity smartphoneBrand;
 
     private String name;
 
+    @Enumerated(value = EnumType.STRING)
     private Color color;
 
     private Double screenSize;
@@ -29,7 +32,9 @@ public class SmartphoneEntity {
 
     private Integer resolutionWidth;
 
-    @ManyToOne private SmartphoneScreenTypeEntity screenType;
+    @ManyToOne
+    @JoinColumn(name = "smartphone_screen_type_uuid")
+    private SmartphoneScreenTypeEntity smartphoneScreenType;
 
     private Integer batteryCapacity;
 
@@ -43,9 +48,13 @@ public class SmartphoneEntity {
 
     private Integer backCameraMpixResolution;
 
-    @ManyToOne private SmartphoneOperatingSystemEntity operatingSystem;
+    @ManyToOne
+    @JoinColumn(name = "operating_system_uuid")
+    private SmartphoneOperatingSystemEntity operatingSystem;
 
-    @ManyToOne private SmartphoneProcessorBrandEntity processorBrand;
+    @ManyToOne
+    @JoinColumn(name = "processor_brand_uuid")
+    private SmartphoneProcessorBrandEntity processorBrand;
 
     private String processorName;
 
