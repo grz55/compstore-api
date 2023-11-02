@@ -80,9 +80,13 @@ databaseChangeLog:
               - column:
                   name: hdmi_count
                   type: int
+                  constraints:
+                    nullable: false
               - column:
                   name: usb_count
                   type: int
+                  constraints:
+                    nullable: false
               - column:
                   name: price
                   type: decimal(10, 2)
