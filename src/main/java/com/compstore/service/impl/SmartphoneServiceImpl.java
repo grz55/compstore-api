@@ -1,6 +1,5 @@
 package com.compstore.service.impl;
 
-import com.compstore.dto.smartphone.SmartphoneCreateRequestDTO;
 import com.compstore.dto.smartphone.SmartphoneDTO;
 import com.compstore.entity.smartphone.SmartphoneEntity;
 import com.compstore.exception.NotFoundException;
@@ -27,11 +26,5 @@ public class SmartphoneServiceImpl implements ISmartphoneService {
         } else {
             throw new NotFoundException("Smartphone not found with id: " + smartphoneId);
         }
-    }
-
-    @Override
-    public SmartphoneEntity createSmartphone(
-            SmartphoneCreateRequestDTO smartphoneCreateRequestDTO) {
-        return null;
     }
 }

@@ -1,6 +1,5 @@
 package com.compstore.service.impl;
 
-import com.compstore.dto.pc.PCCreateRequestDTO;
 import com.compstore.dto.pc.PCDTO;
 import com.compstore.entity.pc.PCEntity;
 import com.compstore.exception.NotFoundException;
@@ -27,10 +26,5 @@ public class PCServiceImpl implements IPCService {
         } else {
             throw new NotFoundException("PC not found with id: " + pcId);
         }
-    }
-
-    @Override
-    public PCEntity createPC(PCCreateRequestDTO pcCreateRequestDTO) {
-        return null;
     }
 }
