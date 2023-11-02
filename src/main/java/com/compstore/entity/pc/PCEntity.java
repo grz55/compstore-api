@@ -17,11 +17,15 @@ public class PCEntity {
 
     @Id @GeneratedValue private UUID id;
 
-    @ManyToOne private PCProcessorBrandEntity processorBrand;
+    @ManyToOne
+    @JoinColumn(name = "processor_brand_uuid")
+    private PCProcessorBrandEntity processorBrand;
 
     private String processorName;
 
-    @ManyToOne private PCGraphicsCardBrandEntity graphicsCardBrand;
+    @ManyToOne
+    @JoinColumn(name = "graphics_card_brand_uuid")
+    private PCGraphicsCardBrandEntity graphicsCardBrand;
 
     private String graphicsCardName;
 
@@ -31,9 +35,12 @@ public class PCEntity {
     @Column(name = "drive_gb_capacity")
     private Integer driveGBCapacity;
 
+    @Enumerated(value = EnumType.STRING)
     private PCDriveType driveType;
 
-    @ManyToOne private PCOperatingSystemEntity operatingSystem;
+    @ManyToOne
+    @JoinColumn(name = "operating_system_uuid")
+    private PCOperatingSystemEntity operatingSystem;
 
     private BigDecimal price;
 }
