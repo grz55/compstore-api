@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-insert-data-tv-screen-types
+      author: grz55
+      changes:
+        - loadUpdateData:
+            file: classpath:/db/changelog/0.1.0/test_data/tv/tv-screen-types.csv
+            separator: ','
+            tableName: tv_screen_types
+            primaryKey: id
