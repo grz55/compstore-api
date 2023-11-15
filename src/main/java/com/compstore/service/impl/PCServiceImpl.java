@@ -50,7 +50,7 @@ public class PCServiceImpl implements IPCService {
     private void fetchPCRelatedEntities(PCEntity pcEntity, PCCreateRequestDTO pcCreateRequest) {
         fetchPCProcessorBrand(pcEntity, pcCreateRequest.getProcessorBrand());
         fetchPCGraphicsCardBrand(pcEntity, pcCreateRequest.getGraphicsCardBrand());
-        getPCOperatingSystem(pcEntity, pcCreateRequest.getOperatingSystem());
+        fetchPCOperatingSystem(pcEntity, pcCreateRequest.getOperatingSystem());
     }
 
     private void fetchPCProcessorBrand(PCEntity pcEntity, UUID pcProcessorBrandUUID) {
@@ -75,7 +75,7 @@ public class PCServiceImpl implements IPCService {
         }
     }
 
-    private void getPCOperatingSystem(PCEntity pcEntity, UUID operatingSystemUUID) {
+    private void fetchPCOperatingSystem(PCEntity pcEntity, UUID operatingSystemUUID) {
         Optional<PCOperatingSystemEntity> pcOperatingSystemById =
                 pcOperatingSystemRepository.findById(operatingSystemUUID);
         if (pcOperatingSystemById.isPresent()) {
