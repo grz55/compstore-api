@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "d0497f06-b76d-4855-9d51-d7600c2a268d",
+		"_postman_id": "f99724a1-be82-4301-ac95-d8f7d7804587",
 		"name": "CompStore",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "10652945"
@@ -10,7 +10,7 @@
 			"name": "PCs",
 			"item": [
 				{
-					"name": "getByUUID",
+					"name": "getByUUID 200",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -28,7 +28,7 @@
 					"response": []
 				},
 				{
-					"name": "create",
+					"name": "create 201",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -87,7 +87,7 @@
 			"name": "Smartphones",
 			"item": [
 				{
-					"name": "getByUUID",
+					"name": "getByUUID 200",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -110,7 +110,7 @@
 			"name": "TVs",
 			"item": [
 				{
-					"name": "getByUUID",
+					"name": "getByUUID 200",
 					"request": {
 						"method": "GET",
 						"header": [],
