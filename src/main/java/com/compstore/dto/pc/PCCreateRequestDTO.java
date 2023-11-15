@@ -1,15 +1,16 @@
 package com.compstore.dto.pc;
 
+import java.util.UUID;
 import lombok.Data;
 
 @Data
 public class PCCreateRequestDTO {
 
-    private String processorBrand;
+    private UUID processorBrand;
 
     private String processorName;
 
-    private String graphicsCardBrand;
+    private UUID graphicsCardBrand;
 
     private String graphicsCardName;
 
@@ -19,7 +20,7 @@ public class PCCreateRequestDTO {
 
     private String driveType;
 
-    private String operatingSystem;
+    private UUID operatingSystem;
 
     private Double price;
 }

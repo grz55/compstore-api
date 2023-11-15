@@ -1,4 +1,4 @@
-package com.compstore.repository;
+package com.compstore.repository.pc;
 
 import com.compstore.entity.pc.PCEntity;
 import java.util.UUID;
