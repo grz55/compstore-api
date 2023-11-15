@@ -1,5 +1,6 @@
 package com.compstore.controller;
 
+import com.compstore.dto.pc.PCComboDataDTO;
 import com.compstore.dto.pc.PCDTO;
 import com.compstore.service.IPCService;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -20,5 +21,10 @@ public class PCController {
     @GetMapping("/{pcId}")
     public ResponseEntity<PCDTO> getPCById(@PathVariable UUID pcId) {
         return ResponseEntity.status(HttpStatus.OK).body(pcService.getPCById(pcId));
+    }
+
+    @GetMapping("/combo-data")
+    public ResponseEntity<PCComboDataDTO> getPCComboData() {
+        return ResponseEntity.status(HttpStatus.OK).body(pcService.getPCComboData());
     }
 }
