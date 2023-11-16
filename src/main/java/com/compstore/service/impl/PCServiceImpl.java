@@ -1,6 +1,8 @@
 package com.compstore.service.impl;
 
 import com.compstore.dto.pc.PCDTO;
+import com.compstore.dto.pc.PCFilteringRequestDTO;
+import com.compstore.dto.pc.PCFilteringResponseDTO;
 import com.compstore.entity.pc.PCEntity;
 import com.compstore.exception.NotFoundException;
 import com.compstore.mapper.PCMapper;
@@ -26,5 +28,10 @@ public class PCServiceImpl implements IPCService {
         } else {
             throw new NotFoundException("PC not found with id: " + pcId);
         }
+    }
+
+    @Override
+    public PCFilteringResponseDTO searchPC(PCFilteringRequestDTO pcFilteringRequestDTO) {
+        return null;
     }
 }
