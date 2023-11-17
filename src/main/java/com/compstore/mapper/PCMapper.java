@@ -1,6 +1,7 @@
 package com.compstore.mapper;
 
 import com.compstore.dto.pc.PCComboDataDTO;
+import com.compstore.dto.pc.PCCreateRequestDTO;
 import com.compstore.dto.pc.PCDTO;
 import com.compstore.entity.enums.PCDriveType;
 import com.compstore.entity.pc.PCEntity;
@@ -19,13 +20,23 @@ public interface PCMapper {
     @Mapping(target = "operatingSystem", source = "operatingSystem.name")
     PCDTO toDTO(PCEntity pcEntity);
 
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "processorBrand", ignore = true)
+    @Mapping(target = "graphicsCardBrand", ignore = true)
+    @Mapping(target = "operatingSystem", ignore = true)
+    PCEntity toEntity(PCCreateRequestDTO pcCreateRequest);
+
     PCComboDataDTO toPCComboDataDTO(
             List<PCProcessorBrandEntity> processorBrands,
             List<PCGraphicsCardBrandEntity> graphicsCardBrands,
             PCDriveType[] driveTypes,
             List<PCOperatingSystemEntity> operatingSystems);
 
-    default String driveTypeToString(PCDriveType pcDriveType) {
+    default PCDriveType toPCDriveType(String driveType) {
+        return PCDriveType.fromValue(driveType);
+    }
+
+    default String toString(PCDriveType pcDriveType) {
         return pcDriveType.getValue();
     }
 }
