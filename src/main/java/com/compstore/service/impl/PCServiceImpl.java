@@ -6,7 +6,8 @@ import com.compstore.dto.pc.PCFilteringResponseDTO;
 import com.compstore.entity.pc.PCEntity;
 import com.compstore.exception.NotFoundException;
 import com.compstore.mapper.PCMapper;
-import com.compstore.repository.PCRepository;
+import com.compstore.repository.pc.PCRepository;
+import com.compstore.repository.pc.PCSpecification;
 import com.compstore.service.IPCService;
 import java.util.Optional;
 import java.util.UUID;
@@ -32,6 +33,7 @@ public class PCServiceImpl implements IPCService {
 
     @Override
     public PCFilteringResponseDTO searchPC(PCFilteringRequestDTO pcFilteringRequestDTO) {
+        pcRepository.findAll(PCSpecification.filterPC(pcFilteringRequestDTO));
         return null;
     }
 }
