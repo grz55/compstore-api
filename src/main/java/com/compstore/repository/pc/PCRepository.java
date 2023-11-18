@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PCRepository extends JpaRepository<PCEntity, UUID>, JpaSpecificationExecutor<PCEntity> {}
+public interface PCRepository
+        extends JpaRepository<PCEntity, UUID>, JpaSpecificationExecutor<PCEntity> {}

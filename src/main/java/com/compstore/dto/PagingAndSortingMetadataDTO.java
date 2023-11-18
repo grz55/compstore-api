@@ -10,4 +10,6 @@ public class PagingAndSortingMetadataDTO {
     private Integer pageSize;
 
     private Integer pagesCount;
+
+    private Integer elementsCount;
 }

@@ -24,7 +24,7 @@ public class PCController {
         return ResponseEntity.status(HttpStatus.OK).body(pcService.getPCById(pcId));
     }
 
-    @GetMapping("/search")
+    @PostMapping("/search")
     public ResponseEntity<PCFilteringResponseDTO> searchPC(
             @RequestBody PCFilteringRequestDTO pcFilteringRequestDTO) {
         return ResponseEntity.status(HttpStatus.OK).body(pcService.searchPC(pcFilteringRequestDTO));
