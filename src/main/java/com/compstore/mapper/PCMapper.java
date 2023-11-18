@@ -6,7 +6,6 @@ import com.compstore.dto.pc.PCDTO;
 import com.compstore.dto.pc.PCSimpleDTO;
 import com.compstore.entity.enums.PCDriveType;
 import com.compstore.entity.pc.PCEntity;
-import java.util.List;
 import com.compstore.entity.pc.PCGraphicsCardBrandEntity;
 import com.compstore.entity.pc.PCOperatingSystemEntity;
 import com.compstore.entity.pc.PCProcessorBrandEntity;
@@ -34,16 +33,15 @@ public interface PCMapper {
             PCDriveType[] driveTypes,
             List<PCOperatingSystemEntity> operatingSystems);
 
+    PCSimpleDTO toPCSimpleDTO(PCEntity pcEntity);
+
+    List<PCSimpleDTO> toPCSimpleDTOList(List<PCEntity> pcs);
+
     default PCDriveType toPCDriveType(String driveType) {
         return PCDriveType.fromValue(driveType);
     }
 
     default String toString(PCDriveType pcDriveType) {
-    PCSimpleDTO toPCSimpleDTO(PCEntity pcEntity);
-
-    List<PCSimpleDTO> toPCSimpleDTOList(List<PCEntity> pcs);
-
-    default String driveTypeToString(PCDriveType pcDriveType) {
         return pcDriveType.getValue();
     }
 }

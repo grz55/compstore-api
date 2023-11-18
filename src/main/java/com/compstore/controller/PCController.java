@@ -26,6 +26,12 @@ public class PCController {
         return ResponseEntity.status(HttpStatus.OK).body(pcService.getPCById(pcId));
     }
 
+    @PostMapping("/search")
+    public ResponseEntity<PCFilteringResponseDTO> searchPC(
+            @RequestBody PCFilteringRequestDTO pcFilteringRequestDTO) {
+        return ResponseEntity.status(HttpStatus.OK).body(pcService.searchPC(pcFilteringRequestDTO));
+    }
+
     @PostMapping
     public ResponseEntity<PCDTO> createPC(@RequestBody PCCreateRequestDTO pcCreateRequest) {
         return ResponseEntity.status(HttpStatus.CREATED).body(pcService.createPC(pcCreateRequest));
@@ -34,11 +40,5 @@ public class PCController {
     @GetMapping("/combo-data")
     public ResponseEntity<PCComboDataDTO> getPCComboData() {
         return ResponseEntity.status(HttpStatus.OK).body(pcService.getPCComboData());
-    }
-
-    @PostMapping("/search")
-    public ResponseEntity<PCFilteringResponseDTO> searchPC(
-            @RequestBody PCFilteringRequestDTO pcFilteringRequestDTO) {
-        return ResponseEntity.status(HttpStatus.OK).body(pcService.searchPC(pcFilteringRequestDTO));
     }
 }
