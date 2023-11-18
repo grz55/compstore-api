@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "f99724a1-be82-4301-ac95-d8f7d7804587",
+		"name": "CompStore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "10652945"
+	},
+	"item": [
+		{
+			"name": "PCs",
+			"item": [
+				{
+					"name": "getByUUID 200",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/pcs/d5977f31-5c2e-4f3b-9c7c-5dad32772fbc"
+					},
+					"response": []
+				},
+				{
+					"name": "getByUUID 404",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/pcs/00000000-5c2e-4f3b-9c7c-5dad32772fbc"
+					},
+					"response": []
+				},
+				{
+					"name": "create 201",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"New processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"New graphics card name\",\r\n    \"ramGBCapacity\": 32,\r\n    \"driveGBCapacity\": 2048,\r\n    \"driveType\": \"HDD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 1999.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/pcs"
+					},
+					"response": []
+				},
+				{
+					"name": "create 400",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"New processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"New graphics card name\",\r\n    \"ramGBCapacity\": 32,\r\n    \"driveGBCapacity\": 2048,\r\n    \"driveType\": \"XXX\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 1999.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/pcs"
+					},
+					"response": []
+				},
+				{
+					"name": "create 404",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"processorBrand\": \"6a6f85ed-501b-4cb1-9e95-590c980a0000\",\r\n    \"processorName\": \"New processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"New graphics card name\",\r\n    \"ramGBCapacity\": 32,\r\n    \"driveGBCapacity\": 2048,\r\n    \"driveType\": \"HDD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 1999.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/pcs"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Smartphones",
+			"item": [
+				{
+					"name": "getByUUID 200",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/smartphones/e4b9acf7-2a81-4acd-8da9-63a110479e34"
+					},
+					"response": []
+				},
+				{
+					"name": "getByUUID 404",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/smartphones/00000000-2a81-4acd-8da9-63a110479e34"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TVs",
+			"item": [
+				{
+					"name": "getByUUID 200",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/tvs/a87db198-1325-423f-8f12-35ea8886abea"
+					},
+					"response": []
+				},
+				{
+					"name": "getByUUID 404",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/tvs/00000000-1325-423f-8f12-35ea8886abea"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
