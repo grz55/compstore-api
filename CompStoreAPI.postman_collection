@@ -10,6 +10,191 @@
 			"name": "PCs",
 			"item": [
 				{
+					"name": "Search",
+					"item": [
+						{
+							"name": "search processorBrands 200",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"processorBrands\": [\r\n        \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/pcs/search"
+							},
+							"response": []
+						},
+						{
+							"name": "search graphicsCardBrands 200",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"graphicsCardBrands\": [\r\n        \"3c980aa7-cec9-43ce-b9e1-94cd105f8fc6\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/pcs/search"
+							},
+							"response": []
+						},
+						{
+							"name": "search ramGBCapacity 200",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ramGBCapacityFrom\": 16,\r\n    \"ramGBCapacityTo\": 32\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/pcs/search"
+							},
+							"response": []
+						},
+						{
+							"name": "search driveGBCapacity 200",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"driveGBCapacityFrom\": 1024,\r\n    \"driveGBCapacityTo\": 2048\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/pcs/search"
+							},
+							"response": []
+						},
+						{
+							"name": "search driveTypes 200",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"driveTypes\": [\r\n        \"SSD\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/pcs/search"
+							},
+							"response": []
+						},
+						{
+							"name": "search operatingSystems 200",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"operatingSystems\": [\r\n        \"7cf47f4b-680c-4f84-ad84-2a799009f8ca\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/pcs/search"
+							},
+							"response": []
+						},
+						{
+							"name": "search price 200",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"priceFrom\": 500,\r\n    \"priceTo\": 2000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/pcs/search"
+							},
+							"response": []
+						},
+						{
+							"name": "search 200",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"processorBrands\": [\r\n        \"6a6f85ed-501b-4cb1-9e95-590c980afac3\"\r\n    ],\r\n    \"priceFrom\": 975,\r\n    \"priceTo\": 3000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/pcs/search"
+							},
+							"response": []
+						},
+						{
+							"name": "search 200 price asc",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/pcs/search"
+							},
+							"response": []
+						},
+						{
+							"name": "search 200 price desc",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pagingAndSortingRequest\": {\r\n        \"ascendingFlag\": false\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/pcs/search"
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "getByUUID 200",
 					"request": {
 						"method": "GET",
@@ -78,6 +263,15 @@
 							}
 						},
 						"url": "http://localhost:8080/pcs"
+					},
+					"response": []
+				},
+				{
+					"name": "comboData 200",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/pcs/combo-data"
 					},
 					"response": []
 				}
