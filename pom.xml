@@ -19,12 +19,19 @@
 		<spotless.version>2.40.0</spotless.version>
 		<swagger.version>2.2.0</swagger.version>
 		<mapstruct.version>1.5.5.Final</mapstruct.version>
+		<hibernate-jpamodelgen.version>6.3.1.Final</hibernate-jpamodelgen.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.orm</groupId>
+			<artifactId>hibernate-jpamodelgen</artifactId>
+			<version>${hibernate-jpamodelgen.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -134,6 +141,26 @@
 						</googleJavaFormat>
 					</java>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.bsc.maven</groupId>
+				<artifactId>maven-processor-plugin</artifactId>
+				<version>3.3.3</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>process</goal>
+						</goals>
+						<phase>generate-sources</phase>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.hibernate.orm</groupId>
+						<artifactId>hibernate-jpamodelgen</artifactId>
+						<version>${hibernate-jpamodelgen.version}</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>

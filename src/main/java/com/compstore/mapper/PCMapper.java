@@ -3,6 +3,7 @@ package com.compstore.mapper;
 import com.compstore.dto.pc.PCComboDataDTO;
 import com.compstore.dto.pc.PCCreateRequestDTO;
 import com.compstore.dto.pc.PCDTO;
+import com.compstore.dto.pc.PCSimpleDTO;
 import com.compstore.entity.enums.PCDriveType;
 import com.compstore.entity.pc.PCEntity;
 import com.compstore.entity.pc.PCGraphicsCardBrandEntity;
@@ -31,6 +32,10 @@ public interface PCMapper {
             List<PCGraphicsCardBrandEntity> graphicsCardBrands,
             PCDriveType[] driveTypes,
             List<PCOperatingSystemEntity> operatingSystems);
+
+    PCSimpleDTO toPCSimpleDTO(PCEntity pcEntity);
+
+    List<PCSimpleDTO> toPCSimpleDTOList(List<PCEntity> pcs);
 
     default PCDriveType toPCDriveType(String driveType) {
         return PCDriveType.fromValue(driveType);

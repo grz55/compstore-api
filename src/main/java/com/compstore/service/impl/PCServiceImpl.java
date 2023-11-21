@@ -3,22 +3,20 @@ package com.compstore.service.impl;
 import com.compstore.dto.pc.PCComboDataDTO;
 import com.compstore.dto.pc.PCCreateRequestDTO;
 import com.compstore.dto.pc.PCDTO;
+import com.compstore.dto.pc.PCFilteringRequestDTO;
+import com.compstore.dto.pc.PCFilteringResponseDTO;
 import com.compstore.entity.enums.PCDriveType;
-import com.compstore.entity.pc.PCEntity;
-import com.compstore.entity.pc.PCGraphicsCardBrandEntity;
-import com.compstore.entity.pc.PCOperatingSystemEntity;
-import com.compstore.entity.pc.PCProcessorBrandEntity;
+import com.compstore.entity.pc.*;
 import com.compstore.exception.NotFoundException;
 import com.compstore.mapper.PCMapper;
-import com.compstore.repository.pc.PCGraphicsCardBrandRepository;
-import com.compstore.repository.pc.PCOperatingSystemRepository;
-import com.compstore.repository.pc.PCProcessorBrandRepository;
-import com.compstore.repository.pc.PCRepository;
+import com.compstore.mapper.PagingAndSortingMapper;
+import com.compstore.repository.pc.*;
 import com.compstore.service.IPCService;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -26,8 +24,9 @@ import org.springframework.stereotype.Service;
 public class PCServiceImpl implements IPCService {
 
     private final PCMapper pcMapper;
-    private final PCRepository pcRepository;
+    private final PagingAndSortingMapper pagingAndSortingMapper;
 
+    private final PCRepository pcRepository;
     private final PCProcessorBrandRepository pcProcessorBrandRepository;
     private final PCGraphicsCardBrandRepository pcGraphicsCardBrandRepository;
     private final PCOperatingSystemRepository pcOperatingSystemRepository;
@@ -40,6 +39,21 @@ public class PCServiceImpl implements IPCService {
         } else {
             throw new NotFoundException("PC not found with id: " + pcId);
         }
+    }
+
+    @Override
+    public PCFilteringResponseDTO searchPC(PCFilteringRequestDTO pcFilteringRequestDTO) {
+        Page<PCEntity> pcsFound =
+                pcRepository.findAll(
+                        PCSpecification.filterPC(pcFilteringRequestDTO),
+                        pagingAndSortingMapper.toPageable(
+                                pcFilteringRequestDTO.getPagingAndSortingRequest()));
+
+        return PCFilteringResponseDTO.builder()
+                .pcs(pcMapper.toPCSimpleDTOList(pcsFound.getContent()))
+                .pagingAndSortingMetadata(
+                        pagingAndSortingMapper.toPagingAndSortingMetadataDTO(pcsFound))
+                .build();
     }
 
     @Override
