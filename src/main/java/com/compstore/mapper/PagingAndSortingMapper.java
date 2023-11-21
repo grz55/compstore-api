@@ -27,11 +27,11 @@ public interface PagingAndSortingMapper {
     }
 
     default PagingAndSortingMetadataDTO toPagingAndSortingMetadataDTO(Page<?> page) {
-        PagingAndSortingMetadataDTO pagingAndSortingMetadataDTO = new PagingAndSortingMetadataDTO();
-        pagingAndSortingMetadataDTO.setPageNumber(page.getNumber());
-        pagingAndSortingMetadataDTO.setPageSize(page.getSize());
-        pagingAndSortingMetadataDTO.setPagesCount(page.getTotalPages());
-        pagingAndSortingMetadataDTO.setElementsCount(page.getTotalElements());
-        return pagingAndSortingMetadataDTO;
+        return PagingAndSortingMetadataDTO.builder()
+                .pageNumber(page.getNumber())
+                .pageSize(page.getSize())
+                .pagesCount(page.getTotalPages())
+                .elementsCount(page.getTotalElements())
+                .build();
     }
 }
