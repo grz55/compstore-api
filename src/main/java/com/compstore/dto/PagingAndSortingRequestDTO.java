@@ -9,7 +9,5 @@ public class PagingAndSortingRequestDTO {
 
     private Integer pageSize = 10;
 
-    private String sortingType;
-
-    private String sortingOrder;
+    private Boolean ascendingFlag = true;
 }

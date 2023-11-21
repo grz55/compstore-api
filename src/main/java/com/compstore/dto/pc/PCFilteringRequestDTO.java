@@ -28,5 +28,5 @@ public class PCFilteringRequestDTO {
 
     private Double priceTo;
 
-    private PagingAndSortingRequestDTO pagingAndSortingRequest;
+    private PagingAndSortingRequestDTO pagingAndSortingRequest = new PagingAndSortingRequestDTO();
 }

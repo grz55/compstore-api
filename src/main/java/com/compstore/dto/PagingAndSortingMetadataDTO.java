@@ -11,5 +11,5 @@ public class PagingAndSortingMetadataDTO {
 
     private Integer pagesCount;
 
-    private Integer elementsCount;
+    private Long elementsCount;
 }
