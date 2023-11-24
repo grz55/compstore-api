@@ -37,6 +37,13 @@ public class PCController {
         return ResponseEntity.status(HttpStatus.CREATED).body(pcService.createPC(pcCreateRequest));
     }
 
+    @PutMapping("/{pcId}")
+    public ResponseEntity<PCDTO> updatePC(
+            @PathVariable UUID pcId, @RequestBody PCCreateRequestDTO pcUpdateRequest) {
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(pcService.updatePC(pcId, pcUpdateRequest));
+    }
+
     @GetMapping("/combo-data")
     public ResponseEntity<PCComboDataDTO> getPCComboData() {
         return ResponseEntity.status(HttpStatus.OK).body(pcService.getPCComboData());

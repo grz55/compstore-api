@@ -13,6 +13,8 @@ public interface IPCService {
 
     PCDTO createPC(PCCreateRequestDTO pcCreateRequest);
 
+    PCDTO updatePC(UUID pcId, PCCreateRequestDTO pcUpdateRequest);
+
     PCComboDataDTO getPCComboData();
 
     PCFilteringResponseDTO searchPC(PCFilteringRequestDTO pcFilteringRequestDTO);

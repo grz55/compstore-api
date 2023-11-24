@@ -64,6 +64,20 @@ public class PCServiceImpl implements IPCService {
         return pcMapper.toDTO(savedPc);
     }
 
+    @Override
+    public PCDTO updatePC(UUID pcId, PCCreateRequestDTO pcUpdateRequest) {
+        Optional<PCEntity> pcById = pcRepository.findById(pcId);
+        if (pcById.isPresent()) {
+            PCEntity existingPC = pcById.get();
+            pcMapper.toEntity(pcUpdateRequest, existingPC);
+            fetchPCRelatedEntities(existingPC, pcUpdateRequest);
+            PCEntity updatedPc = pcRepository.save(existingPC);
+            return pcMapper.toDTO(updatedPc);
+        } else {
+            throw new NotFoundException("PC not found with id: " + pcId);
+        }
+    }
+
     private void fetchPCRelatedEntities(PCEntity pcEntity, PCCreateRequestDTO pcCreateRequest) {
         fetchPCProcessorBrand(pcEntity, pcCreateRequest.getProcessorBrand());
         fetchPCGraphicsCardBrand(pcEntity, pcCreateRequest.getGraphicsCardBrand());
