@@ -15,6 +15,8 @@ public interface IPCService {
 
     PCDTO updatePC(UUID pcId, PCCreateRequestDTO pcUpdateRequest);
 
+    void deletePCById(UUID pcId);
+
     PCComboDataDTO getPCComboData();
 
     PCFilteringResponseDTO searchPC(PCFilteringRequestDTO pcFilteringRequestDTO);

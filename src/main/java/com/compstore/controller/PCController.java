@@ -40,8 +40,13 @@ public class PCController {
     @PutMapping("/{pcId}")
     public ResponseEntity<PCDTO> updatePC(
             @PathVariable UUID pcId, @RequestBody PCCreateRequestDTO pcUpdateRequest) {
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(pcService.updatePC(pcId, pcUpdateRequest));
+        return ResponseEntity.status(HttpStatus.OK).body(pcService.updatePC(pcId, pcUpdateRequest));
+    }
+
+    @DeleteMapping("/{pcId}")
+    public ResponseEntity<Void> deletePCById(@PathVariable UUID pcId) {
+        pcService.deletePCById(pcId);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
     @GetMapping("/combo-data")
