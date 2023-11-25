@@ -274,6 +274,78 @@
 						"url": "http://localhost:8080/pcs/combo-data"
 					},
 					"response": []
+				},
+				{
+					"name": "update 200",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"Updated processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"Updated graphics card name\",\r\n    \"ramGBCapacity\": 64,\r\n    \"driveGBCapacity\": 4096,\r\n    \"driveType\": \"HDD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 4999.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/pcs/d5977f31-5c2e-4f3b-9c7c-5dad32772fbc"
+					},
+					"response": []
+				},
+				{
+					"name": "update 400",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"Updated processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"Updated graphics card name\",\r\n    \"ramGBCapacity\": \"A\",\r\n    \"driveGBCapacity\": 4096,\r\n    \"driveType\": \"SSD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 4999.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/pcs/d5977f31-5c2e-4f3b-9c7c-5dad32772fbc"
+					},
+					"response": []
+				},
+				{
+					"name": "update 404",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"Updated processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"Updated graphics card name\",\r\n    \"ramGBCapacity\": 64,\r\n    \"driveGBCapacity\": 4096,\r\n    \"driveType\": \"SSD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 4999.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/pcs/d5977f31-5c2e-4f3b-9c7c-5dad32772fbb"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteByUUID 204",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/pcs/d5977f31-5c2e-4f3b-9c7c-5dad32772fbc"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteByUUID 404",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/pcs/57ecdd4f-18ef-4763-80fa-0ea00f9b7dfa"
+					},
+					"response": []
 				}
 			]
 		},

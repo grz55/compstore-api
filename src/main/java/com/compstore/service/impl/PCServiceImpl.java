@@ -23,6 +23,14 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class PCServiceImpl implements IPCService {
 
+    private static final String PC_NOT_FOUND_MSG = "PC not found with id: ";
+    private static final String PC_PROCESSOR_BRAND_NOT_FOUND_MSG =
+            "PC processor brand not found with id: ";
+    private static final String PC_GRAPHICS_CARD_BRAND_NOT_FOUND_MSG =
+            "PC graphics card brand not found with id: ";
+    private static final String PC_OPERATING_SYSTEM_NOT_FOUND_MSG =
+            "PC operating system not found with id: ";
+
     private final PCMapper pcMapper;
     private final PagingAndSortingMapper pagingAndSortingMapper;
 
@@ -37,7 +45,7 @@ public class PCServiceImpl implements IPCService {
         if (pcById.isPresent()) {
             return pcMapper.toDTO(pcById.get());
         } else {
-            throw new NotFoundException("PC not found with id: " + pcId);
+            throw new NotFoundException(PC_NOT_FOUND_MSG + pcId);
         }
     }
 
@@ -64,6 +72,30 @@ public class PCServiceImpl implements IPCService {
         return pcMapper.toDTO(savedPc);
     }
 
+    @Override
+    public PCDTO updatePC(UUID pcId, PCCreateRequestDTO pcUpdateRequest) {
+        Optional<PCEntity> pcById = pcRepository.findById(pcId);
+        if (pcById.isPresent()) {
+            PCEntity existingPC = pcById.get();
+            pcMapper.toEntity(pcUpdateRequest, existingPC);
+            fetchPCRelatedEntities(existingPC, pcUpdateRequest);
+            PCEntity updatedPc = pcRepository.save(existingPC);
+            return pcMapper.toDTO(updatedPc);
+        } else {
+            throw new NotFoundException(PC_NOT_FOUND_MSG + pcId);
+        }
+    }
+
+    @Override
+    public void deletePCById(UUID pcId) {
+        Optional<PCEntity> pcById = pcRepository.findById(pcId);
+        if (pcById.isPresent()) {
+            pcRepository.delete(pcById.get());
+        } else {
+            throw new NotFoundException(PC_NOT_FOUND_MSG + pcId);
+        }
+    }
+
     private void fetchPCRelatedEntities(PCEntity pcEntity, PCCreateRequestDTO pcCreateRequest) {
         fetchPCProcessorBrand(pcEntity, pcCreateRequest.getProcessorBrand());
         fetchPCGraphicsCardBrand(pcEntity, pcCreateRequest.getGraphicsCardBrand());
@@ -76,8 +108,7 @@ public class PCServiceImpl implements IPCService {
         if (pcProcessorBrandById.isPresent()) {
             pcEntity.setProcessorBrand(pcProcessorBrandById.get());
         } else {
-            throw new NotFoundException(
-                    "PC processor brand not found with id: " + pcProcessorBrandUUID);
+            throw new NotFoundException(PC_PROCESSOR_BRAND_NOT_FOUND_MSG + pcProcessorBrandUUID);
         }
     }
 
@@ -88,7 +119,7 @@ public class PCServiceImpl implements IPCService {
             pcEntity.setGraphicsCardBrand(pcGraphicsCardBrandById.get());
         } else {
             throw new NotFoundException(
-                    "PC graphics card brand not found with id: " + graphicsCardBrandUUID);
+                    PC_GRAPHICS_CARD_BRAND_NOT_FOUND_MSG + graphicsCardBrandUUID);
         }
     }
 
@@ -98,8 +129,7 @@ public class PCServiceImpl implements IPCService {
         if (pcOperatingSystemById.isPresent()) {
             pcEntity.setOperatingSystem(pcOperatingSystemById.get());
         } else {
-            throw new NotFoundException(
-                    "PC operating system not found with id: " + operatingSystemUUID);
+            throw new NotFoundException(PC_OPERATING_SYSTEM_NOT_FOUND_MSG + operatingSystemUUID);
         }
     }
 
