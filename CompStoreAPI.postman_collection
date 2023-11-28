@@ -181,7 +181,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"pagingAndSortingRequest\": {\r\n        \"ascendingFlag\": false\r\n    }\r\n}",
+									"raw": "{\r\n    \"pagingAndSortingRequest\": {\r\n        \"ascendingFlag\": false,\r\n        \"pageNumber\" : 0,\r\n        \"pageSize\" : 100\r\n    }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
