@@ -21,8 +21,14 @@ CompStore web store backend
 - Lombok
 - Spotless
 
+#### Containers
+- Docker
+
 ## Runs on port:
 8080
+
+## Database run:
+Script available: `scripts/postgres/create_run_container.bat`
 
 ## Other repos:
 
