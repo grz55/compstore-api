@@ -12,6 +12,7 @@ import com.compstore.entity.pc.PCProcessorBrandEntity;
 import java.util.List;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 
 @Mapper(componentModel = "spring")
 public interface PCMapper {
@@ -26,6 +27,12 @@ public interface PCMapper {
     @Mapping(target = "graphicsCardBrand", ignore = true)
     @Mapping(target = "operatingSystem", ignore = true)
     PCEntity toEntity(PCCreateRequestDTO pcCreateRequest);
+
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "processorBrand", ignore = true)
+    @Mapping(target = "graphicsCardBrand", ignore = true)
+    @Mapping(target = "operatingSystem", ignore = true)
+    void toEntity(PCCreateRequestDTO pcUpdateRequest, @MappingTarget PCEntity existingPC);
 
     PCComboDataDTO toPCComboDataDTO(
             List<PCProcessorBrandEntity> processorBrands,
