@@ -27,8 +27,8 @@ CompStore web store backend
 ## Runs on port:
 8080
 
-## Database run:
-Script available: `scripts/postgres/create_run_container.bat`
+## Scripts:
+Create postgres db in Docker container: `scripts/postgres/create_run_container.bat`
 
 ## Other repos:
 
