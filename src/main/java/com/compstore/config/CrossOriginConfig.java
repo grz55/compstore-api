@@ -7,10 +7,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class CrossOriginConfig implements WebMvcConfigurer {
 
-    //    more info
-    //    https://spring.io/guides/gs/rest-service-cors/
-    //    Global CORS configuration
-
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
