@@ -41,12 +41,10 @@ public class PCServiceImpl implements IPCService {
 
     @Override
     public PCDTO getPCById(UUID pcId) {
-        Optional<PCEntity> pcById = pcRepository.findById(pcId);
-        if (pcById.isPresent()) {
-            return pcMapper.toDTO(pcById.get());
-        } else {
-            throw new NotFoundException(PC_NOT_FOUND_MSG + pcId);
-        }
+        return pcRepository
+                .findById(pcId)
+                .map(pcMapper::toDTO)
+                .orElseThrow(() -> new NotFoundException(PC_NOT_FOUND_MSG + pcId));
     }
 
     @Override
