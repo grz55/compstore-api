@@ -4,7 +4,9 @@ import com.compstore.dto.pc.PCComboDataDTO;
 import com.compstore.dto.pc.PCCreateRequestDTO;
 import com.compstore.dto.pc.PCDTO;
 import com.compstore.dto.pc.PCSimpleDTO;
+import com.compstore.entity.enums.DriveGBCapacity;
 import com.compstore.entity.enums.PCDriveType;
+import com.compstore.entity.enums.RAMGBCapacity;
 import com.compstore.entity.pc.PCEntity;
 import com.compstore.entity.pc.PCGraphicsCardBrandEntity;
 import com.compstore.entity.pc.PCOperatingSystemEntity;
@@ -13,8 +15,9 @@ import java.util.List;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
+import org.mapstruct.ReportingPolicy;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.ERROR)
 public interface PCMapper {
 
     @Mapping(target = "processorBrand", source = "processorBrand.name")
@@ -37,6 +40,8 @@ public interface PCMapper {
     PCComboDataDTO toPCComboDataDTO(
             List<PCProcessorBrandEntity> processorBrands,
             List<PCGraphicsCardBrandEntity> graphicsCardBrands,
+            RAMGBCapacity[] ramGBCapacities,
+            DriveGBCapacity[] driveGBCapacities,
             PCDriveType[] driveTypes,
             List<PCOperatingSystemEntity> operatingSystems);
 
@@ -48,7 +53,23 @@ public interface PCMapper {
         return PCDriveType.fromValue(driveType);
     }
 
+    default RAMGBCapacity toRAMGBCapacity(String ramGBCapacity) {
+        return RAMGBCapacity.fromValue(ramGBCapacity);
+    }
+
+    default DriveGBCapacity toDriveGBCapacity(String driveGBCapacity) {
+        return DriveGBCapacity.fromValue(driveGBCapacity);
+    }
+
     default String toString(PCDriveType pcDriveType) {
         return pcDriveType.getValue();
+    }
+
+    default String toString(RAMGBCapacity ramGBCapacity) {
+        return ramGBCapacity.getValue();
+    }
+
+    default String toString(DriveGBCapacity driveGBCapacity) {
+        return driveGBCapacity.getValue();
     }
 }

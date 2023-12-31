@@ -3,12 +3,13 @@ package com.compstore.mapper;
 import com.compstore.dto.PagingAndSortingMetadataDTO;
 import com.compstore.dto.PagingAndSortingRequestDTO;
 import org.mapstruct.Mapper;
+import org.mapstruct.ReportingPolicy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.ERROR)
 public interface PagingAndSortingMapper {
 
     String DEFAULT_SORTING_PROPERTY = "price";

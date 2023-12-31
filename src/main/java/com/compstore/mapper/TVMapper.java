@@ -7,8 +7,9 @@ import com.compstore.entity.enums.TVResolutionName;
 import com.compstore.entity.tv.TVEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.ReportingPolicy;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.ERROR)
 public interface TVMapper {
 
     @Mapping(target = "tvBrand", source = "tvBrand.name")

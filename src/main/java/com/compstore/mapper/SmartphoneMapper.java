@@ -5,8 +5,9 @@ import com.compstore.entity.enums.Color;
 import com.compstore.entity.smartphone.SmartphoneEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.ReportingPolicy;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.ERROR)
 public interface SmartphoneMapper {
 
     @Mapping(target = "brand", source = "smartphoneBrand.name")

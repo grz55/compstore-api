@@ -12,13 +12,9 @@ public class PCFilteringRequestDTO {
 
     private List<UUID> graphicsCardBrands;
 
-    private Integer ramGBCapacityFrom;
+    private List<String> ramGBCapacities;
 
-    private Integer ramGBCapacityTo;
-
-    private Integer driveGBCapacityFrom;
-
-    private Integer driveGBCapacityTo;
+    private List<String> driveGBCapacities;
 
     private List<String> driveTypes;
 

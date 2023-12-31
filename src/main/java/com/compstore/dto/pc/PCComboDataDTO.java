@@ -10,6 +10,10 @@ public class PCComboDataDTO {
 
     private List<PCGraphicsCardBrandDTO> graphicsCardBrands;
 
+    private List<String> ramGBCapacities;
+
+    private List<String> driveGBCapacities;
+
     private List<String> driveTypes;
 
     private List<PCOperatingSystemDTO> operatingSystems;
