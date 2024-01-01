@@ -51,11 +51,11 @@ databaseChangeLog:
                   name: battery_capacity
                   type: int
               - column:
-                  name: ram_gb_capacity
-                  type: int
+                  name: ram_capacity
+                  type: varchar(255)
               - column:
-                  name: storage_gb_capacity
-                  type: int
+                  name: storage_capacity
+                  type: varchar(255)
                   constraints:
                     nullable: false
               - column:

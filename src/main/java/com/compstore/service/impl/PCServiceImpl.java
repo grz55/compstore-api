@@ -5,10 +5,10 @@ import com.compstore.dto.pc.PCCreateRequestDTO;
 import com.compstore.dto.pc.PCDTO;
 import com.compstore.dto.pc.PCFilteringRequestDTO;
 import com.compstore.dto.pc.PCFilteringResponseDTO;
-import com.compstore.entity.enums.DriveGBCapacity;
-import com.compstore.entity.enums.PCDriveType;
-import com.compstore.entity.enums.RAMGBCapacity;
 import com.compstore.entity.pc.*;
+import com.compstore.entity.pc.enums.DriveCapacity;
+import com.compstore.entity.pc.enums.DriveType;
+import com.compstore.entity.pc.enums.RAMCapacity;
 import com.compstore.exception.NotFoundException;
 import com.compstore.mapper.PCMapper;
 import com.compstore.mapper.PagingAndSortingMapper;
@@ -141,9 +141,9 @@ public class PCServiceImpl implements IPCService {
         return pcMapper.toPCComboDataDTO(
                 allPCProcessorBrands,
                 allPCGraphicsCardBrands,
-                RAMGBCapacity.values(),
-                DriveGBCapacity.values(),
-                PCDriveType.values(),
+                RAMCapacity.values(),
+                DriveCapacity.values(),
+                DriveType.values(),
                 allPCOperatingSystems);
     }
 

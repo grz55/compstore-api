@@ -2,9 +2,9 @@ package com.compstore.mapper;
 
 import com.compstore.dto.tv.TVDTO;
 import com.compstore.entity.enums.Color;
-import com.compstore.entity.enums.TVRefreshRate;
-import com.compstore.entity.enums.TVResolutionName;
 import com.compstore.entity.tv.TVEntity;
+import com.compstore.entity.tv.enums.RefreshRate;
+import com.compstore.entity.tv.enums.ResolutionName;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
@@ -20,11 +20,11 @@ public interface TVMapper {
         return color.getValue();
     }
 
-    default String tvResolutionNameToString(TVResolutionName tvResolutionName) {
-        return tvResolutionName.getValue();
+    default String tvResolutionNameToString(ResolutionName resolutionName) {
+        return resolutionName.getValue();
     }
 
-    default Integer refreshRateToString(TVRefreshRate tvRefreshRate) {
-        return tvRefreshRate.getValue();
+    default Integer refreshRateToString(RefreshRate refreshRate) {
+        return refreshRate.getValue();
     }
 }

@@ -1,6 +1,8 @@
 package com.compstore.entity.smartphone;
 
 import com.compstore.entity.enums.Color;
+import com.compstore.entity.smartphone.enums.RAMCapacity;
+import com.compstore.entity.smartphone.enums.StorageCapacity;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.util.UUID;
@@ -38,11 +40,13 @@ public class SmartphoneEntity {
 
     private Integer batteryCapacity;
 
-    @Column(name = "ram_gb_capacity")
-    private Integer ramGBCapacity;
+    @Column(name = "ram_capacity")
+    @Enumerated(value = EnumType.STRING)
+    private RAMCapacity ramCapacity;
 
-    @Column(name = "storage_gb_capacity")
-    private Integer storageGBCapacity;
+    @Column(name = "storage_capacity")
+    @Enumerated(value = EnumType.STRING)
+    private StorageCapacity storageCapacity;
 
     private Integer frontCameraMpixResolution;
 

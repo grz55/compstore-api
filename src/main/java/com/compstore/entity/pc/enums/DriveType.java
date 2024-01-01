@@ -1,4 +1,4 @@
-package com.compstore.entity.enums;
+package com.compstore.entity.pc.enums;
 
 import com.compstore.exception.BadRequestException;
 import lombok.AllArgsConstructor;
@@ -6,18 +6,18 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum PCDriveType {
+public enum DriveType {
     HDD("HDD"),
     SSD("SSD");
 
     private final String value;
 
-    public static PCDriveType fromValue(String value) {
-        for (PCDriveType driveType : values()) {
+    public static DriveType fromValue(String value) {
+        for (DriveType driveType : values()) {
             if (driveType.value.equalsIgnoreCase(value)) {
                 return driveType;
             }
         }
-        throw new BadRequestException("Unsupported PC drive type value: " + value);
+        throw new BadRequestException("Unsupported drive type value: " + value);
     }
 }

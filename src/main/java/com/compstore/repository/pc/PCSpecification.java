@@ -1,10 +1,10 @@
 package com.compstore.repository.pc;
 
 import com.compstore.dto.pc.PCFilteringRequestDTO;
-import com.compstore.entity.enums.DriveGBCapacity;
-import com.compstore.entity.enums.PCDriveType;
-import com.compstore.entity.enums.RAMGBCapacity;
 import com.compstore.entity.pc.*;
+import com.compstore.entity.pc.enums.DriveCapacity;
+import com.compstore.entity.pc.enums.DriveType;
+import com.compstore.entity.pc.enums.RAMCapacity;
 import jakarta.persistence.criteria.Join;
 import jakarta.persistence.criteria.JoinType;
 import jakarta.persistence.criteria.Predicate;
@@ -22,8 +22,8 @@ public class PCSpecification {
         return Specification.where(
                         findByProcessorBrands(pcFilteringRequestDTO.getProcessorBrands()))
                 .and(findByGraphicsCardBrands(pcFilteringRequestDTO.getGraphicsCardBrands()))
-                .and(findByRamGBCapacities(pcFilteringRequestDTO.getRamGBCapacities()))
-                .and(findByDriveGBCapacities(pcFilteringRequestDTO.getDriveGBCapacities()))
+                .and(findByRamCapacities(pcFilteringRequestDTO.getRamCapacities()))
+                .and(findByDriveCapacities(pcFilteringRequestDTO.getDriveCapacities()))
                 .and(findByDriveTypes(pcFilteringRequestDTO.getDriveTypes()))
                 .and(findByOperatingSystems(pcFilteringRequestDTO.getOperatingSystems()))
                 .and(findByPriceFrom(pcFilteringRequestDTO.getPriceFrom()))
@@ -54,36 +54,36 @@ public class PCSpecification {
         };
     }
 
-    private static Specification<PCEntity> findByRamGBCapacities(List<String> ramGBCapacities) {
-        if (ramGBCapacities == null || ramGBCapacities.isEmpty()) {
+    private static Specification<PCEntity> findByRamCapacities(List<String> ramCapacities) {
+        if (ramCapacities == null || ramCapacities.isEmpty()) {
             return null;
         }
         return (root, query, criteriaBuilder) -> {
             Predicate[] predicates =
-                    ramGBCapacities.stream()
+                    ramCapacities.stream()
                             .map(
-                                    ramGBCapacity ->
+                                    ramCapacity ->
                                             criteriaBuilder.equal(
-                                                    root.get(PCEntity_.RAM_GB_CAPACITY),
-                                                    RAMGBCapacity.fromValue(ramGBCapacity)))
+                                                    root.get(PCEntity_.RAM_CAPACITY),
+                                                    RAMCapacity.fromValue(ramCapacity)))
                             .toArray(Predicate[]::new);
 
             return criteriaBuilder.or(predicates);
         };
     }
 
-    private static Specification<PCEntity> findByDriveGBCapacities(List<String> driveGBCapacities) {
-        if (driveGBCapacities == null || driveGBCapacities.isEmpty()) {
+    private static Specification<PCEntity> findByDriveCapacities(List<String> driveCapacities) {
+        if (driveCapacities == null || driveCapacities.isEmpty()) {
             return null;
         }
         return (root, query, criteriaBuilder) -> {
             Predicate[] predicates =
-                    driveGBCapacities.stream()
+                    driveCapacities.stream()
                             .map(
-                                    driveGBCapacity ->
+                                    driveCapacity ->
                                             criteriaBuilder.equal(
-                                                    root.get(PCEntity_.DRIVE_GB_CAPACITY),
-                                                    DriveGBCapacity.fromValue(driveGBCapacity)))
+                                                    root.get(PCEntity_.DRIVE_CAPACITY),
+                                                    DriveCapacity.fromValue(driveCapacity)))
                             .toArray(Predicate[]::new);
 
             return criteriaBuilder.or(predicates);
@@ -101,7 +101,7 @@ public class PCSpecification {
                                     driveType ->
                                             criteriaBuilder.equal(
                                                     root.get(PCEntity_.DRIVE_TYPE),
-                                                    PCDriveType.fromValue(driveType)))
+                                                    DriveType.fromValue(driveType)))
                             .toArray(Predicate[]::new);
 
             return criteriaBuilder.or(predicates);

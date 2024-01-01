@@ -24,9 +24,9 @@ public class SmartphoneDTO {
 
     private Integer batteryCapacity;
 
-    private Integer ramGBCapacity;
+    private String ramCapacity;
 
-    private Integer storageGBCapacity;
+    private String storageCapacity;
 
     private Integer frontCameraMpixResolution;
 
