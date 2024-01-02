@@ -1,8 +1,8 @@
 package com.compstore.entity.tv;
 
 import com.compstore.entity.enums.Color;
-import com.compstore.entity.enums.TVRefreshRate;
-import com.compstore.entity.enums.TVResolutionName;
+import com.compstore.entity.tv.enums.RefreshRate;
+import com.compstore.entity.tv.enums.ResolutionName;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.util.UUID;
@@ -31,7 +31,7 @@ public class TVEntity {
     private Integer screenSize;
 
     @Enumerated(value = EnumType.STRING)
-    private TVResolutionName resolutionName;
+    private ResolutionName resolutionName;
 
     private Integer resolutionHeight;
 
@@ -44,7 +44,7 @@ public class TVEntity {
     private boolean hdrFlag;
 
     @Enumerated(value = EnumType.STRING)
-    private TVRefreshRate refreshRate;
+    private RefreshRate refreshRate;
 
     @Column(name = "smart_tv_flag")
     private boolean smartTVFlag;

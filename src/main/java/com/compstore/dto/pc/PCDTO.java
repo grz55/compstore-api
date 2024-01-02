@@ -16,9 +16,9 @@ public class PCDTO {
 
     private String graphicsCardName;
 
-    private Integer ramGBCapacity;
+    private String ramCapacity;
 
-    private Integer driveGBCapacity;
+    private String driveCapacity;
 
     private String driveType;
 

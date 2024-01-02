@@ -1,6 +1,8 @@
 package com.compstore.entity.pc;
 
-import com.compstore.entity.enums.PCDriveType;
+import com.compstore.entity.pc.enums.DriveCapacity;
+import com.compstore.entity.pc.enums.DriveType;
+import com.compstore.entity.pc.enums.RAMCapacity;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.util.UUID;
@@ -29,14 +31,16 @@ public class PCEntity {
 
     private String graphicsCardName;
 
-    @Column(name = "ram_gb_capacity")
-    private Integer ramGBCapacity;
+    @Column(name = "ram_capacity")
+    @Enumerated(value = EnumType.STRING)
+    private RAMCapacity ramCapacity;
 
-    @Column(name = "drive_gb_capacity")
-    private Integer driveGBCapacity;
+    @Column(name = "drive_capacity")
+    @Enumerated(value = EnumType.STRING)
+    private DriveCapacity driveCapacity;
 
     @Enumerated(value = EnumType.STRING)
-    private PCDriveType driveType;
+    private DriveType driveType;
 
     @ManyToOne
     @JoinColumn(name = "operating_system_uuid")

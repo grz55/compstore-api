@@ -33,13 +33,13 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: ram_gb_capacity
-                  type: int
+                  name: ram_capacity
+                  type: varchar(255)
                   constraints:
                     nullable: false
               - column:
-                  name: drive_gb_capacity
-                  type: int
+                  name: drive_capacity
+                  type: varchar(255)
                   constraints:
                     nullable: false
               - column:

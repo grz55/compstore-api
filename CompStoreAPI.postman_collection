@@ -49,13 +49,13 @@
 							"response": []
 						},
 						{
-							"name": "search ramGBCapacity 200",
+							"name": "search ramCapacities 200",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"ramGBCapacityFrom\": 16,\r\n    \"ramGBCapacityTo\": 32\r\n}",
+									"raw": "{\r\n    \"ramCapacities\": [\r\n        \"16 GB\"\r\n    ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -67,13 +67,13 @@
 							"response": []
 						},
 						{
-							"name": "search driveGBCapacity 200",
+							"name": "search driveCapacities 200",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"driveGBCapacityFrom\": 1024,\r\n    \"driveGBCapacityTo\": 2048\r\n}",
+									"raw": "{\r\n    \"driveCapacities\": [\r\n        \"1 TB\"\r\n    ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -219,7 +219,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"New processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"New graphics card name\",\r\n    \"ramGBCapacity\": 32,\r\n    \"driveGBCapacity\": 2048,\r\n    \"driveType\": \"HDD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 1999.99\r\n}",
+							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"New processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"New graphics card name\",\r\n    \"ramCapacity\": \"32 GB\",\r\n    \"driveCapacity\": \"1 TB\",\r\n    \"driveType\": \"HDD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 1999.99\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -237,7 +237,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"New processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"New graphics card name\",\r\n    \"ramGBCapacity\": 32,\r\n    \"driveGBCapacity\": 2048,\r\n    \"driveType\": \"XXX\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 1999.99\r\n}",
+							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"New processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"New graphics card name\",\r\n    \"ramCapacity\": \"32 GB\",\r\n    \"driveCapacity\": \"2 TB\",\r\n    \"driveType\": \"XXX\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 1999.99\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -255,7 +255,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"processorBrand\": \"6a6f85ed-501b-4cb1-9e95-590c980a0000\",\r\n    \"processorName\": \"New processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"New graphics card name\",\r\n    \"ramGBCapacity\": 32,\r\n    \"driveGBCapacity\": 2048,\r\n    \"driveType\": \"HDD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 1999.99\r\n}",
+							"raw": "{\r\n    \"processorBrand\": \"6a6f85ed-501b-4cb1-9e95-590c980a0000\",\r\n    \"processorName\": \"New processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"New graphics card name\",\r\n    \"ramCapacity\": \"32 GB\",\r\n    \"driveCapacity\": \"2 TB\",\r\n    \"driveType\": \"HDD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 1999.99\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -282,7 +282,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"Updated processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"Updated graphics card name\",\r\n    \"ramGBCapacity\": 64,\r\n    \"driveGBCapacity\": 4096,\r\n    \"driveType\": \"HDD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 4999.99\r\n}",
+							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"Updated processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"Updated graphics card name\",\r\n    \"ramCapacity\": \"64 GB\",\r\n    \"driveCapacity\": \"4 TB\",\r\n    \"driveType\": \"HDD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 4999.99\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -300,7 +300,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"Updated processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"Updated graphics card name\",\r\n    \"ramGBCapacity\": \"A\",\r\n    \"driveGBCapacity\": 4096,\r\n    \"driveType\": \"SSD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 4999.99\r\n}",
+							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"Updated processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"Updated graphics card name\",\r\n    \"ramCapacity\": \"A\",\r\n    \"driveCapacity\": \"4 TB\",\r\n    \"driveType\": \"SSD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 4999.99\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -318,7 +318,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"Updated processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"Updated graphics card name\",\r\n    \"ramGBCapacity\": 64,\r\n    \"driveGBCapacity\": 4096,\r\n    \"driveType\": \"SSD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 4999.99\r\n}",
+							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"Updated processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"Updated graphics card name\",\r\n    \"ramCapacity\": \"64 GB\",\r\n    \"driveCapacity\": \"4 TB\",\r\n    \"driveType\": \"SSD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 4999.99\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

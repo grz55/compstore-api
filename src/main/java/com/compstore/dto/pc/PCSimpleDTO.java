@@ -12,7 +12,7 @@ public class PCSimpleDTO {
 
     private String graphicsCardName;
 
-    private Integer ramGBCapacity;
+    private String ramCapacity;
 
     private Double price;
 }
