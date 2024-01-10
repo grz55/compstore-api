@@ -7,7 +7,6 @@ import com.compstore.dto.pc.PCSimpleDTO;
 import com.compstore.entity.pc.PCEntity;
 import com.compstore.entity.pc.PCGraphicsCardBrandEntity;
 import com.compstore.entity.pc.PCOperatingSystemEntity;
-import com.compstore.entity.pc.PCProcessorBrandEntity;
 import com.compstore.entity.pc.enums.DriveCapacity;
 import com.compstore.entity.pc.enums.DriveType;
 import com.compstore.entity.pc.enums.RAMCapacity;

@@ -1,5 +1,6 @@
 package com.compstore.entity.pc;
 
+import com.compstore.entity.ProcessorBrandEntity;
 import com.compstore.entity.pc.enums.DriveCapacity;
 import com.compstore.entity.pc.enums.DriveType;
 import com.compstore.entity.pc.enums.RAMCapacity;
@@ -21,7 +22,7 @@ public class PCEntity {
 
     @ManyToOne
     @JoinColumn(name = "processor_brand_uuid")
-    private PCProcessorBrandEntity processorBrand;
+    private ProcessorBrandEntity processorBrand;
 
     private String processorName;
 
