@@ -5,6 +5,8 @@ import com.compstore.dto.pc.PCCreateRequestDTO;
 import com.compstore.dto.pc.PCDTO;
 import com.compstore.dto.pc.PCFilteringRequestDTO;
 import com.compstore.dto.pc.PCFilteringResponseDTO;
+import com.compstore.entity.ProcessorBrandDeviceType;
+import com.compstore.entity.ProcessorBrandEntity;
 import com.compstore.entity.pc.*;
 import com.compstore.entity.pc.enums.DriveCapacity;
 import com.compstore.entity.pc.enums.DriveType;
@@ -37,7 +39,7 @@ public class PCServiceImpl implements IPCService {
     private final PagingAndSortingMapper pagingAndSortingMapper;
 
     private final PCRepository pcRepository;
-    private final PCProcessorBrandRepository pcProcessorBrandRepository;
+    private final ProcessorBrandRepository processorBrandRepository;
     private final PCGraphicsCardBrandRepository pcGraphicsCardBrandRepository;
     private final PCOperatingSystemRepository pcOperatingSystemRepository;
 
@@ -102,13 +104,14 @@ public class PCServiceImpl implements IPCService {
         fetchPCOperatingSystem(pcEntity, pcCreateRequest.getOperatingSystem());
     }
 
-    private void fetchPCProcessorBrand(PCEntity pcEntity, UUID pcProcessorBrandUUID) {
-        Optional<PCProcessorBrandEntity> pcProcessorBrandById =
-                pcProcessorBrandRepository.findById(pcProcessorBrandUUID);
-        if (pcProcessorBrandById.isPresent()) {
-            pcEntity.setProcessorBrand(pcProcessorBrandById.get());
+    private void fetchPCProcessorBrand(PCEntity pcEntity, UUID processorBrandUUID) {
+        Optional<ProcessorBrandEntity> processorBrandById =
+                processorBrandRepository.findByIdAndProcessorBrandDeviceType(
+                        processorBrandUUID, ProcessorBrandDeviceType.PC);
+        if (processorBrandById.isPresent()) {
+            pcEntity.setProcessorBrand(processorBrandById.get());
         } else {
-            throw new NotFoundException(PC_PROCESSOR_BRAND_NOT_FOUND_MSG + pcProcessorBrandUUID);
+            throw new NotFoundException(PC_PROCESSOR_BRAND_NOT_FOUND_MSG + processorBrandUUID);
         }
     }
 
@@ -135,7 +138,7 @@ public class PCServiceImpl implements IPCService {
 
     @Override
     public PCComboDataDTO getPCComboData() {
-        List<PCProcessorBrandEntity> allPCProcessorBrands = fetchAllPCProcessorBrands();
+        List<ProcessorBrandEntity> allPCProcessorBrands = fetchAllPCProcessorBrands();
         List<PCGraphicsCardBrandEntity> allPCGraphicsCardBrands = fetchAllPCGraphicsCardBrands();
         List<PCOperatingSystemEntity> allPCOperatingSystems = fetchAllPCOperatingSystems();
         return pcMapper.toPCComboDataDTO(
@@ -147,8 +150,8 @@ public class PCServiceImpl implements IPCService {
                 allPCOperatingSystems);
     }
 
-    private List<PCProcessorBrandEntity> fetchAllPCProcessorBrands() {
-        return pcProcessorBrandRepository.findAll();
+    private List<ProcessorBrandEntity> fetchAllPCProcessorBrands() {
+        return processorBrandRepository.findByProcessorBrandDeviceType(ProcessorBrandDeviceType.PC);
     }
 
     private List<PCGraphicsCardBrandEntity> fetchAllPCGraphicsCardBrands() {

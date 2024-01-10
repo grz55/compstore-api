@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: 004-create-smartphone-processor-brands
+      id: 001-create-processor-brands
       author: grz55
       changes:
         - createTable:
-            tableName: smartphone_processor_brands
+            tableName: processor_brands
             columns:
               - column:
                   name: id
@@ -14,6 +14,11 @@ databaseChangeLog:
                     primaryKey: true
               - column:
                   name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: processor_brand_device_type
                   type: varchar(255)
                   constraints:
                     nullable: false

@@ -9,11 +9,8 @@ databaseChangeLog:
       file: 003-create-smartphone-operating-systems.yaml
       relativeToChangelogFile: true
   - include:
-      file: 004-create-smartphone-processor-brands.yaml
+      file: 004-create-smartphones.yaml
       relativeToChangelogFile: true
   - include:
-      file: 005-create-smartphones.yaml
-      relativeToChangelogFile: true
-  - include:
-      file: 006-create-smartphone-relationships.yaml
+      file: 005-create-smartphone-relationships.yaml
       relativeToChangelogFile: true

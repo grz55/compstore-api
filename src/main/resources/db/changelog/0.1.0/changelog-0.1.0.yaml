@@ -1,5 +1,8 @@
 databaseChangeLog:
   - include:
+      file: dictionary/changelog-0.1.0-dictionary.yaml
+      relativeToChangelogFile: true
+  - include:
       file: pc/changelog-0.1.0-pc.yaml
       relativeToChangelogFile: true
   - include:

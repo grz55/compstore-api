@@ -1,16 +1,13 @@
 databaseChangeLog:
   - include:
-      file: 001-create-pc-processor-brands.yaml
+      file: 001-create-pc-graphics-card-brands.yaml
       relativeToChangelogFile: true
   - include:
-      file: 002-create-pc-graphics-card-brands.yaml
+      file: 002-create-pc-operating-systems.yaml
       relativeToChangelogFile: true
   - include:
-      file: 003-create-pc-operating-systems.yaml
+      file: 003-create-pcs.yaml
       relativeToChangelogFile: true
   - include:
-      file: 004-create-pcs.yaml
-      relativeToChangelogFile: true
-  - include:
-      file: 005-create-pc-relationships.yaml
+      file: 004-create-pc-relationships.yaml
       relativeToChangelogFile: true

@@ -1,6 +1,9 @@
 package com.compstore.repository.pc;
 
 import com.compstore.dto.pc.PCFilteringRequestDTO;
+import com.compstore.entity.ProcessorBrandDeviceType;
+import com.compstore.entity.ProcessorBrandEntity;
+import com.compstore.entity.ProcessorBrandEntity_;
 import com.compstore.entity.pc.*;
 import com.compstore.entity.pc.enums.DriveCapacity;
 import com.compstore.entity.pc.enums.DriveType;
@@ -35,9 +38,16 @@ public class PCSpecification {
             return null;
         }
         return (root, query, criteriaBuilder) -> {
-            Join<PCEntity, PCProcessorBrandEntity> pcProcessorBrandEntityJoin =
+            Join<PCEntity, ProcessorBrandEntity> processorBrandEntityJoin =
                     root.join(PCEntity_.PROCESSOR_BRAND, JoinType.INNER);
-            return pcProcessorBrandEntityJoin.get(PCProcessorBrandEntity_.ID).in(processorBrands);
+            Predicate idsPredicate =
+                    processorBrandEntityJoin.get(ProcessorBrandEntity_.ID).in(processorBrands);
+            Predicate deviceTypePredicate =
+                    criteriaBuilder.equal(
+                            processorBrandEntityJoin.get(
+                                    ProcessorBrandEntity_.PROCESSOR_BRAND_DEVICE_TYPE),
+                            ProcessorBrandDeviceType.PC);
+            return criteriaBuilder.and(idsPredicate, deviceTypePredicate);
         };
     }
 

@@ -4,6 +4,7 @@ import com.compstore.dto.pc.PCComboDataDTO;
 import com.compstore.dto.pc.PCCreateRequestDTO;
 import com.compstore.dto.pc.PCDTO;
 import com.compstore.dto.pc.PCSimpleDTO;
+import com.compstore.entity.ProcessorBrandEntity;
 import com.compstore.entity.pc.PCEntity;
 import com.compstore.entity.pc.PCGraphicsCardBrandEntity;
 import com.compstore.entity.pc.PCOperatingSystemEntity;
@@ -37,7 +38,7 @@ public interface PCMapper {
     void toEntity(PCCreateRequestDTO pcUpdateRequest, @MappingTarget PCEntity existingPC);
 
     PCComboDataDTO toPCComboDataDTO(
-            List<PCProcessorBrandEntity> processorBrands,
+            List<ProcessorBrandEntity> processorBrands,
             List<PCGraphicsCardBrandEntity> graphicsCardBrands,
             RAMCapacity[] ramCapacities,
             DriveCapacity[] driveCapacities,
