@@ -1,5 +1,6 @@
 package com.compstore.entity.pc;
 
+import com.compstore.entity.GraphicsCardBrandEntity;
 import com.compstore.entity.ProcessorBrandEntity;
 import com.compstore.entity.pc.enums.DriveCapacity;
 import com.compstore.entity.pc.enums.DriveType;
@@ -28,7 +29,7 @@ public class PCEntity {
 
     @ManyToOne
     @JoinColumn(name = "graphics_card_brand_uuid")
-    private PCGraphicsCardBrandEntity graphicsCardBrand;
+    private GraphicsCardBrandEntity graphicsCardBrand;
 
     private String graphicsCardName;
 

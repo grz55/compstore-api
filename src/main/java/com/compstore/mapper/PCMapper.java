@@ -4,9 +4,9 @@ import com.compstore.dto.pc.PCComboDataDTO;
 import com.compstore.dto.pc.PCCreateRequestDTO;
 import com.compstore.dto.pc.PCDTO;
 import com.compstore.dto.pc.PCSimpleDTO;
+import com.compstore.entity.GraphicsCardBrandEntity;
 import com.compstore.entity.ProcessorBrandEntity;
 import com.compstore.entity.pc.PCEntity;
-import com.compstore.entity.pc.PCGraphicsCardBrandEntity;
 import com.compstore.entity.pc.PCOperatingSystemEntity;
 import com.compstore.entity.pc.enums.DriveCapacity;
 import com.compstore.entity.pc.enums.DriveType;
@@ -39,7 +39,7 @@ public interface PCMapper {
 
     PCComboDataDTO toPCComboDataDTO(
             List<ProcessorBrandEntity> processorBrands,
-            List<PCGraphicsCardBrandEntity> graphicsCardBrands,
+            List<GraphicsCardBrandEntity> graphicsCardBrands,
             RAMCapacity[] ramCapacities,
             DriveCapacity[] driveCapacities,
             DriveType[] driveTypes,

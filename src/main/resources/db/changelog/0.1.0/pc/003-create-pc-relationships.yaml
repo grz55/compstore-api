@@ -12,9 +12,9 @@ databaseChangeLog:
         - addForeignKeyConstraint:
             baseTableName: pcs
             baseColumnNames: graphics_card_brand_uuid
-            referencedTableName: pc_graphics_card_brands
+            referencedTableName: graphics_card_brands
             referencedColumnNames: id
-            constraintName: fk_pcs_pc_graphics_card_brands
+            constraintName: fk_pcs_graphics_card_brands
         - addForeignKeyConstraint:
             baseTableName: pcs
             baseColumnNames: operating_system_uuid
