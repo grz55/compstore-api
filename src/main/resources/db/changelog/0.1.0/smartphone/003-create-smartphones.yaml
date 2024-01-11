@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 005-create-smartphones
+      id: 003-create-smartphones
       author: grz55
       changes:
         - createTable:
@@ -13,7 +13,7 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
               - column:
-                  name: smartphone_brand_uuid
+                  name: brand_uuid
                   type: uuid
                   constraints:
                     nullable: false

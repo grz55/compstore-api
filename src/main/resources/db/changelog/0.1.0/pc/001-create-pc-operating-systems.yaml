@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 003-create-pc-operating-systems
+      id: 001-create-pc-operating-systems
       author: grz55
       changes:
         - createTable:

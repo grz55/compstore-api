@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: 002-create-smartphone-screen-types
+      id: 003-create-brands
       author: grz55
       changes:
         - createTable:
-            tableName: smartphone_screen_types
+            tableName: brands
             columns:
               - column:
                   name: id
@@ -14,6 +14,11 @@ databaseChangeLog:
                     primaryKey: true
               - column:
                   name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: brands_device_type
                   type: varchar(255)
                   constraints:
                     nullable: false

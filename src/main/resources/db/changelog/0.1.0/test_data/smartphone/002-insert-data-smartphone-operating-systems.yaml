@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 003-insert-data-smartphone-operating-systems
+      id: 002-insert-data-smartphone-operating-systems
       author: grz55
       changes:
         - loadUpdateData:

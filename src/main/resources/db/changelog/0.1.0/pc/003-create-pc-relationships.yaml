@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 005-create-pc-relationships
+      id: 003-create-pc-relationships
       author: grz55
       changes:
         - addForeignKeyConstraint:

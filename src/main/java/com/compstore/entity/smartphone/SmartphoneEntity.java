@@ -1,5 +1,6 @@
 package com.compstore.entity.smartphone;
 
+import com.compstore.entity.BrandEntity;
 import com.compstore.entity.ProcessorBrandEntity;
 import com.compstore.entity.enums.Color;
 import com.compstore.entity.smartphone.enums.RAMCapacity;
@@ -21,8 +22,8 @@ public class SmartphoneEntity {
     @Id @GeneratedValue private UUID id;
 
     @ManyToOne
-    @JoinColumn(name = "smartphone_brand_uuid")
-    private SmartphoneBrandEntity smartphoneBrand;
+    @JoinColumn(name = "brand_uuid")
+    private BrandEntity brand;
 
     private String name;
 

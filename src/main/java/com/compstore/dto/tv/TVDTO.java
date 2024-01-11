@@ -8,7 +8,7 @@ public class TVDTO {
 
     private UUID id;
 
-    private String tvBrand;
+    private String brand;
 
     private String name;
 

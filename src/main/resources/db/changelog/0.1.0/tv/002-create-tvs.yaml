@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 003-create-tvs
+      id: 002-create-tvs
       author: grz55
       changes:
         - createTable:
@@ -13,7 +13,7 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
               - column:
-                  name: tv_brand_uuid
+                  name: brand_uuid
                   type: uuid
                   constraints:
                     nullable: false

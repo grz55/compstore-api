@@ -1,14 +1,14 @@
 databaseChangeLog:
   - changeSet:
-      id: 006-create-smartphone-relationships
+      id: 004-create-smartphone-relationships
       author: grz55
       changes:
         - addForeignKeyConstraint:
             baseTableName: smartphones
-            baseColumnNames: smartphone_brand_uuid
-            referencedTableName: smartphone_brands
+            baseColumnNames: brand_uuid
+            referencedTableName: brands
             referencedColumnNames: id
-            constraintName: fk_smartphones_smartphone_brands
+            constraintName: fk_smartphones_brands
         - addForeignKeyConstraint:
             baseTableName: smartphones
             baseColumnNames: smartphone_screen_type_uuid

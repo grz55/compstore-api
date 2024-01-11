@@ -12,7 +12,7 @@ import org.mapstruct.ReportingPolicy;
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.ERROR)
 public interface SmartphoneMapper {
 
-    @Mapping(target = "brand", source = "smartphoneBrand.name")
+    @Mapping(target = "brand", source = "brand.name")
     @Mapping(target = "smartphoneScreenType", source = "smartphoneScreenType.name")
     @Mapping(target = "operatingSystem", source = "operatingSystem.name")
     @Mapping(target = "processorBrand", source = "processorBrand.name")

@@ -1,16 +1,13 @@
 databaseChangeLog:
   - include:
-      file: 001-create-smartphone-brands.yaml
+      file: 001-create-smartphone-screen-types.yaml
       relativeToChangelogFile: true
   - include:
-      file: 002-create-smartphone-screen-types.yaml
+      file: 002-create-smartphone-operating-systems.yaml
       relativeToChangelogFile: true
   - include:
-      file: 003-create-smartphone-operating-systems.yaml
+      file: 003-create-smartphones.yaml
       relativeToChangelogFile: true
   - include:
-      file: 004-create-smartphones.yaml
-      relativeToChangelogFile: true
-  - include:
-      file: 005-create-smartphone-relationships.yaml
+      file: 004-create-smartphone-relationships.yaml
       relativeToChangelogFile: true

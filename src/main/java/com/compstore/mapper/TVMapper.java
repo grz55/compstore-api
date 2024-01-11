@@ -12,7 +12,7 @@ import org.mapstruct.ReportingPolicy;
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.ERROR)
 public interface TVMapper {
 
-    @Mapping(target = "tvBrand", source = "tvBrand.name")
+    @Mapping(target = "brand", source = "brand.name")
     @Mapping(target = "screenType", source = "screenType.name")
     TVDTO toDTO(TVEntity tvEntity);
 

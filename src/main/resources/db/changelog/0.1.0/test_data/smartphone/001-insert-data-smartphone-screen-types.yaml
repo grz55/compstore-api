@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 002-insert-data-smartphone-screen-types
+      id: 001-insert-data-smartphone-screen-types
       author: grz55
       changes:
         - loadUpdateData:

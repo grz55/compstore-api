@@ -1,14 +1,14 @@
 databaseChangeLog:
   - changeSet:
-      id: 004-create-tv-relationships
+      id: 003-create-tv-relationships
       author: grz55
       changes:
         - addForeignKeyConstraint:
             baseTableName: tvs
-            baseColumnNames: tv_brand_uuid
-            referencedTableName: tv_brands
+            baseColumnNames: brand_uuid
+            referencedTableName: brands
             referencedColumnNames: id
-            constraintName: fk_tvs_tv_brands
+            constraintName: fk_tvs_brands
         - addForeignKeyConstraint:
             baseTableName: tvs
             baseColumnNames: screen_type_uuid

@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 003-insert-data-pc-operating-systems
+      id: 001-insert-data-pc-operating-systems
       author: grz55
       changes:
         - loadUpdateData:
