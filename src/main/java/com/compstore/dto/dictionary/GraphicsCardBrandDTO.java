@@ -1,4 +1,4 @@
-package com.compstore.dto;
+package com.compstore.dto.dictionary;
 
 import java.util.UUID;
 import lombok.Data;

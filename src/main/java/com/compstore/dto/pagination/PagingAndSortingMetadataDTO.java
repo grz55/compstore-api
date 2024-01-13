@@ -1,4 +1,4 @@
-package com.compstore.dto;
+package com.compstore.dto.pagination;
 
 import lombok.Builder;
 import lombok.Data;

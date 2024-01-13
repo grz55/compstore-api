@@ -1,7 +1,7 @@
 package com.compstore.dto.pc;
 
-import com.compstore.dto.GraphicsCardBrandDTO;
-import com.compstore.dto.ProcessorBrandDTO;
+import com.compstore.dto.dictionary.GraphicsCardBrandDTO;
+import com.compstore.dto.dictionary.ProcessorBrandDTO;
 import java.util.List;
 import lombok.Data;
 

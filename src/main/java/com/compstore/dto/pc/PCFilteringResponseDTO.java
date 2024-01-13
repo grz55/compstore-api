@@ -1,6 +1,6 @@
 package com.compstore.dto.pc;
 
-import com.compstore.dto.PagingAndSortingMetadataDTO;
+import com.compstore.dto.pagination.PagingAndSortingMetadataDTO;
 import java.util.List;
 import lombok.Builder;
 import lombok.Data;

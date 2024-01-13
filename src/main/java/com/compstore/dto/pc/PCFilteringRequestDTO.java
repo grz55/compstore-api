@@ -1,6 +1,6 @@
 package com.compstore.dto.pc;
 
-import com.compstore.dto.PagingAndSortingRequestDTO;
+import com.compstore.dto.pagination.PagingAndSortingRequestDTO;
 import java.util.List;
 import java.util.UUID;
 import lombok.Data;
