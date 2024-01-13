@@ -1,4 +1,4 @@
-package com.compstore.repository.pc;
+package com.compstore.repository;
 
 import com.compstore.entity.ProcessorBrandDeviceType;
 import com.compstore.entity.ProcessorBrandEntity;

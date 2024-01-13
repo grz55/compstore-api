@@ -16,6 +16,8 @@ import com.compstore.entity.pc.enums.RAMCapacity;
 import com.compstore.exception.NotFoundException;
 import com.compstore.mapper.PCMapper;
 import com.compstore.mapper.PagingAndSortingMapper;
+import com.compstore.repository.GraphicsCardBrandRepository;
+import com.compstore.repository.ProcessorBrandRepository;
 import com.compstore.repository.pc.*;
 import com.compstore.service.IPCService;
 import java.util.List;

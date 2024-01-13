@@ -1,10 +1,10 @@
-package com.compstore.dto.pc;
+package com.compstore.dto;
 
 import java.util.UUID;
 import lombok.Data;
 
 @Data
-public class PCGraphicsCardBrandDTO {
+public class GraphicsCardBrandDTO {
 
     private UUID id;
 

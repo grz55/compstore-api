@@ -20,7 +20,7 @@ public class SmartphoneDTO {
 
     private Integer resolutionWidth;
 
-    private String smartphoneScreenType;
+    private String screenType;
 
     private Integer batteryCapacity;
 

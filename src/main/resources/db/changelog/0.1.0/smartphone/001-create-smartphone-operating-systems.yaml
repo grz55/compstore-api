@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: 001-create-tv-screen-types
+      id: 001-create-smartphone-operating-systems
       author: grz55
       changes:
         - createTable:
-            tableName: tv_screen_types
+            tableName: smartphone_operating_systems
             columns:
               - column:
                   name: id

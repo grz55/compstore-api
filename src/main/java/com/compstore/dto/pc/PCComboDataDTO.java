@@ -1,5 +1,6 @@
 package com.compstore.dto.pc;
 
+import com.compstore.dto.GraphicsCardBrandDTO;
 import com.compstore.dto.ProcessorBrandDTO;
 import java.util.List;
 import lombok.Data;
@@ -9,7 +10,7 @@ public class PCComboDataDTO {
 
     private List<ProcessorBrandDTO> processorBrands;
 
-    private List<PCGraphicsCardBrandDTO> graphicsCardBrands;
+    private List<GraphicsCardBrandDTO> graphicsCardBrands;
 
     private List<String> ramCapacities;
 

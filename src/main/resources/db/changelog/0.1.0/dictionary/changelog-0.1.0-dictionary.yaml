@@ -8,3 +8,6 @@ databaseChangeLog:
   - include:
       file: 003-create-brands.yaml
       relativeToChangelogFile: true
+  - include:
+      file: 004-create-screen-types.yaml
+      relativeToChangelogFile: true

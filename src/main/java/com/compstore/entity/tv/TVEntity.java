@@ -1,6 +1,7 @@
 package com.compstore.entity.tv;
 
 import com.compstore.entity.BrandEntity;
+import com.compstore.entity.ScreenTypeEntity;
 import com.compstore.entity.enums.Color;
 import com.compstore.entity.tv.enums.RefreshRate;
 import com.compstore.entity.tv.enums.ResolutionName;
@@ -40,7 +41,7 @@ public class TVEntity {
 
     @ManyToOne
     @JoinColumn(name = "screen_type_uuid")
-    private TVScreenTypeEntity screenType;
+    private ScreenTypeEntity screenType;
 
     private boolean hdrFlag;
 

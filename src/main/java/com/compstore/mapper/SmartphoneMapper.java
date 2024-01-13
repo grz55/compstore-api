@@ -13,7 +13,7 @@ import org.mapstruct.ReportingPolicy;
 public interface SmartphoneMapper {
 
     @Mapping(target = "brand", source = "brand.name")
-    @Mapping(target = "smartphoneScreenType", source = "smartphoneScreenType.name")
+    @Mapping(target = "screenType", source = "screenType.name")
     @Mapping(target = "operatingSystem", source = "operatingSystem.name")
     @Mapping(target = "processorBrand", source = "processorBrand.name")
     SmartphoneDTO toDTO(SmartphoneEntity smartphoneEntity);

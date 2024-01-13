@@ -2,6 +2,7 @@ package com.compstore.entity.smartphone;
 
 import com.compstore.entity.BrandEntity;
 import com.compstore.entity.ProcessorBrandEntity;
+import com.compstore.entity.ScreenTypeEntity;
 import com.compstore.entity.enums.Color;
 import com.compstore.entity.smartphone.enums.RAMCapacity;
 import com.compstore.entity.smartphone.enums.StorageCapacity;
@@ -37,8 +38,8 @@ public class SmartphoneEntity {
     private Integer resolutionWidth;
 
     @ManyToOne
-    @JoinColumn(name = "smartphone_screen_type_uuid")
-    private SmartphoneScreenTypeEntity smartphoneScreenType;
+    @JoinColumn(name = "screen_type_uuid")
+    private ScreenTypeEntity screenType;
 
     private Integer batteryCapacity;
 

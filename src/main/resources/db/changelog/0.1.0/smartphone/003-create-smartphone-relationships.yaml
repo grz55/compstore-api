@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 004-create-smartphone-relationships
+      id: 003-create-smartphone-relationships
       author: grz55
       changes:
         - addForeignKeyConstraint:
@@ -11,10 +11,10 @@ databaseChangeLog:
             constraintName: fk_smartphones_brands
         - addForeignKeyConstraint:
             baseTableName: smartphones
-            baseColumnNames: smartphone_screen_type_uuid
-            referencedTableName: smartphone_screen_types
+            baseColumnNames: screen_type_uuid
+            referencedTableName: screen_types
             referencedColumnNames: id
-            constraintName: fk_smartphones_smartphone_screen_types
+            constraintName: fk_smartphones_screen_types
         - addForeignKeyConstraint:
             baseTableName: smartphones
             baseColumnNames: operating_system_uuid

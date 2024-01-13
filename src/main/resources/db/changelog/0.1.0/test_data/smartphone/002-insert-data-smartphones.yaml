@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 003-insert-data-smartphones
+      id: 002-insert-data-smartphones
       author: grz55
       changes:
         - loadUpdateData:
