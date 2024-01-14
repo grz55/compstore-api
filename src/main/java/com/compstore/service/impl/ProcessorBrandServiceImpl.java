@@ -9,6 +9,7 @@ import com.compstore.exception.NotFoundException;
 import com.compstore.mapper.ProcessorBrandMapper;
 import com.compstore.repository.ProcessorBrandRepository;
 import com.compstore.service.IProcessorBrandService;
+import com.compstore.validator.ProcessorBrandValidator;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -25,6 +26,8 @@ public class ProcessorBrandServiceImpl implements IProcessorBrandService {
     private final ProcessorBrandMapper processorBrandMapper;
 
     private final ProcessorBrandRepository processorBrandRepository;
+
+    private final ProcessorBrandValidator processorBrandValidator;
 
     @Override
     public List<ProcessorBrandDTO> getAllProcessorBrands() {
@@ -60,6 +63,7 @@ public class ProcessorBrandServiceImpl implements IProcessorBrandService {
         Optional<ProcessorBrandEntity> processorBrandById =
                 processorBrandRepository.findById(processorBrandId);
         if (processorBrandById.isPresent()) {
+            processorBrandValidator.validateDelete(processorBrandById.get());
             processorBrandRepository.delete(processorBrandById.get());
         } else {
             throw new NotFoundException(PROCESSOR_BRAND_NOT_FOUND_MSG + processorBrandId);

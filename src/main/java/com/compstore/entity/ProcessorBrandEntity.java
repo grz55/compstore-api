@@ -1,7 +1,9 @@
 package com.compstore.entity;
 
+import com.compstore.entity.pc.PCEntity;
+import com.compstore.entity.smartphone.SmartphoneEntity;
 import jakarta.persistence.*;
-import java.util.UUID;
+import java.util.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,4 +22,18 @@ public class ProcessorBrandEntity {
     @Column(name = "processor_brand_device_type")
     @Enumerated(value = EnumType.STRING)
     private ProcessorBrandDeviceType processorBrandDeviceType;
+
+    @OneToMany(mappedBy = "processorBrand")
+    private List<PCEntity> pcs = new ArrayList<>();
+
+    @OneToMany(mappedBy = "processorBrand")
+    private List<SmartphoneEntity> smartphones = new ArrayList<>();
+
+    public boolean isUsed() {
+        return !pcs.isEmpty() || !smartphones.isEmpty();
+    }
+
+    public String getEntityName() {
+        return "Processor brand";
+    }
 }
