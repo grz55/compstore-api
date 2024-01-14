@@ -1,5 +1,7 @@
 package com.compstore.dto.tv;
 
+import com.compstore.dto.dictionary.BrandDTO;
+import com.compstore.dto.dictionary.ScreenTypeDTO;
 import java.util.UUID;
 import lombok.Data;
 
@@ -8,7 +10,7 @@ public class TVDTO {
 
     private UUID id;
 
-    private String brand;
+    private BrandDTO brand;
 
     private String name;
 
@@ -22,7 +24,7 @@ public class TVDTO {
 
     private Integer resolutionWidth;
 
-    private String screenType;
+    private ScreenTypeDTO screenType;
 
     private boolean hdrFlag;
 

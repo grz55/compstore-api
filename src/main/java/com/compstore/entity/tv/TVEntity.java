@@ -1,7 +1,7 @@
 package com.compstore.entity.tv;
 
-import com.compstore.entity.BrandEntity;
-import com.compstore.entity.ScreenTypeEntity;
+import com.compstore.entity.dictionary.BrandEntity;
+import com.compstore.entity.dictionary.ScreenTypeEntity;
 import com.compstore.entity.enums.Color;
 import com.compstore.entity.tv.enums.RefreshRate;
 import com.compstore.entity.tv.enums.ResolutionName;

@@ -1,5 +1,6 @@
-package com.compstore.entity;
+package com.compstore.entity.dictionary;
 
+import com.compstore.entity.dictionary.enums.ProcessorBrandDeviceType;
 import com.compstore.entity.pc.PCEntity;
 import com.compstore.entity.smartphone.SmartphoneEntity;
 import jakarta.persistence.*;

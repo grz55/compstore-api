@@ -1,6 +1,6 @@
 package com.compstore.validator;
 
-import com.compstore.entity.ProcessorBrandEntity;
+import com.compstore.entity.dictionary.ProcessorBrandEntity;
 import com.compstore.exception.EntityUsedException;
 import org.springframework.stereotype.Service;
 

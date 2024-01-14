@@ -1,7 +1,12 @@
 package com.compstore.repository.pc;
 
 import com.compstore.dto.pc.PCFilteringRequestDTO;
-import com.compstore.entity.*;
+import com.compstore.entity.dictionary.GraphicsCardBrandEntity;
+import com.compstore.entity.dictionary.GraphicsCardBrandEntity_;
+import com.compstore.entity.dictionary.ProcessorBrandEntity;
+import com.compstore.entity.dictionary.ProcessorBrandEntity_;
+import com.compstore.entity.dictionary.enums.GraphicsCardBrandDeviceType;
+import com.compstore.entity.dictionary.enums.ProcessorBrandDeviceType;
 import com.compstore.entity.pc.*;
 import com.compstore.entity.pc.enums.DriveCapacity;
 import com.compstore.entity.pc.enums.DriveType;

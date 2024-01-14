@@ -4,8 +4,8 @@ import com.compstore.dto.pc.PCComboDataDTO;
 import com.compstore.dto.pc.PCCreateRequestDTO;
 import com.compstore.dto.pc.PCDTO;
 import com.compstore.dto.pc.PCSimpleDTO;
-import com.compstore.entity.GraphicsCardBrandEntity;
-import com.compstore.entity.ProcessorBrandEntity;
+import com.compstore.entity.dictionary.GraphicsCardBrandEntity;
+import com.compstore.entity.dictionary.ProcessorBrandEntity;
 import com.compstore.entity.pc.PCEntity;
 import com.compstore.entity.pc.PCOperatingSystemEntity;
 import com.compstore.entity.pc.enums.DriveCapacity;
@@ -20,8 +20,6 @@ import org.mapstruct.ReportingPolicy;
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.ERROR)
 public interface PCMapper {
 
-    @Mapping(target = "processorBrand", source = "processorBrand.name")
-    @Mapping(target = "graphicsCardBrand", source = "graphicsCardBrand.name")
     @Mapping(target = "operatingSystem", source = "operatingSystem.name")
     PCDTO toDTO(PCEntity pcEntity);
 

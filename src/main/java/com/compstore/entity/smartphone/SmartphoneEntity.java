@@ -1,8 +1,8 @@
 package com.compstore.entity.smartphone;
 
-import com.compstore.entity.BrandEntity;
-import com.compstore.entity.ProcessorBrandEntity;
-import com.compstore.entity.ScreenTypeEntity;
+import com.compstore.entity.dictionary.BrandEntity;
+import com.compstore.entity.dictionary.ProcessorBrandEntity;
+import com.compstore.entity.dictionary.ScreenTypeEntity;
 import com.compstore.entity.enums.Color;
 import com.compstore.entity.smartphone.enums.RAMCapacity;
 import com.compstore.entity.smartphone.enums.StorageCapacity;

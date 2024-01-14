@@ -1,5 +1,6 @@
-package com.compstore.entity;
+package com.compstore.entity.dictionary;
 
+import com.compstore.entity.dictionary.enums.ScreenTypeDeviceType;
 import jakarta.persistence.*;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
@@ -8,16 +9,16 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "graphics_card_brands")
+@Table(name = "screen_types")
 @NoArgsConstructor
 @AllArgsConstructor
-public class GraphicsCardBrandEntity {
+public class ScreenTypeEntity {
 
     @Id @GeneratedValue private UUID id;
 
     private String name;
 
-    @Column(name = "graphics_card_brand_device_type")
+    @Column(name = "screen_type_device_type")
     @Enumerated(value = EnumType.STRING)
-    private GraphicsCardBrandDeviceType graphicsCardBrandDeviceType;
+    private ScreenTypeDeviceType screenTypeDeviceType;
 }

@@ -1,5 +1,8 @@
 package com.compstore.dto.smartphone;
 
+import com.compstore.dto.dictionary.BrandDTO;
+import com.compstore.dto.dictionary.ProcessorBrandSimpleDTO;
+import com.compstore.dto.dictionary.ScreenTypeDTO;
 import java.util.UUID;
 import lombok.Data;
 
@@ -8,7 +11,7 @@ public class SmartphoneDTO {
 
     private UUID id;
 
-    private String brand;
+    private BrandDTO brand;
 
     private String name;
 
@@ -20,7 +23,7 @@ public class SmartphoneDTO {
 
     private Integer resolutionWidth;
 
-    private String screenType;
+    private ScreenTypeDTO screenType;
 
     private Integer batteryCapacity;
 
@@ -34,7 +37,7 @@ public class SmartphoneDTO {
 
     private String operatingSystem;
 
-    private String processorBrand;
+    private ProcessorBrandSimpleDTO processorBrand;
 
     private String processorName;
 

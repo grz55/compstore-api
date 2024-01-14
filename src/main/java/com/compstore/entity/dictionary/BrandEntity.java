@@ -1,5 +1,6 @@
-package com.compstore.entity;
+package com.compstore.entity.dictionary;
 
+import com.compstore.entity.dictionary.enums.BrandDeviceType;
 import jakarta.persistence.*;
 import java.util.UUID;
 import lombok.AllArgsConstructor;

@@ -1,7 +1,7 @@
 package com.compstore.repository;
 
-import com.compstore.entity.ProcessorBrandDeviceType;
-import com.compstore.entity.ProcessorBrandEntity;
+import com.compstore.entity.dictionary.ProcessorBrandEntity;
+import com.compstore.entity.dictionary.enums.ProcessorBrandDeviceType;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;

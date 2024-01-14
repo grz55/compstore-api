@@ -1,7 +1,7 @@
 package com.compstore.repository;
 
-import com.compstore.entity.GraphicsCardBrandDeviceType;
-import com.compstore.entity.GraphicsCardBrandEntity;
+import com.compstore.entity.dictionary.GraphicsCardBrandEntity;
+import com.compstore.entity.dictionary.enums.GraphicsCardBrandDeviceType;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;

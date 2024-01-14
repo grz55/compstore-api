@@ -12,10 +12,7 @@ import org.mapstruct.ReportingPolicy;
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.ERROR)
 public interface SmartphoneMapper {
 
-    @Mapping(target = "brand", source = "brand.name")
-    @Mapping(target = "screenType", source = "screenType.name")
     @Mapping(target = "operatingSystem", source = "operatingSystem.name")
-    @Mapping(target = "processorBrand", source = "processorBrand.name")
     SmartphoneDTO toDTO(SmartphoneEntity smartphoneEntity);
 
     default String colorToString(Color color) {

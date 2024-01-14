@@ -1,7 +1,7 @@
 package com.compstore.entity.pc;
 
-import com.compstore.entity.GraphicsCardBrandEntity;
-import com.compstore.entity.ProcessorBrandEntity;
+import com.compstore.entity.dictionary.GraphicsCardBrandEntity;
+import com.compstore.entity.dictionary.ProcessorBrandEntity;
 import com.compstore.entity.pc.enums.DriveCapacity;
 import com.compstore.entity.pc.enums.DriveType;
 import com.compstore.entity.pc.enums.RAMCapacity;

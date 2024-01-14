@@ -1,4 +1,4 @@
-package com.compstore.entity;
+package com.compstore.entity.dictionary.enums;
 
 import com.compstore.exception.BadRequestException;
 import lombok.AllArgsConstructor;
