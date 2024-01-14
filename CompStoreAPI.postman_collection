@@ -666,6 +666,184 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Processor Brands",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/processor-brands",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 201",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Speed Demon Processor\",\r\n    \"processorBrandDeviceType\": \"PC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/processor-brands",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 400",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Speed Demon Processor\",\r\n    \"processorBrandDeviceType\": \"XXX\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/processor-brands",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update 200",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Speed Demon Processor\",\r\n    \"processorBrandDeviceType\": \"PC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/processor-brands/6a6f85ed-501b-4cb1-9e95-590c980afac3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands",
+								"6a6f85ed-501b-4cb1-9e95-590c980afac3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update 400",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Speed Demon Processor\",\r\n    \"processorBrandDeviceType\": \"XXX\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/processor-brands/6a6f85ed-501b-4cb1-9e95-590c980afac3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands",
+								"6a6f85ed-501b-4cb1-9e95-590c980afac3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteByUUID 204",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/processor-brands/6a6f85ed-501b-4cb1-9e95-590c980afac3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands",
+								"6a6f85ed-501b-4cb1-9e95-590c980afac3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "comboData 200",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/processor-brands/combo-data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands",
+								"combo-data"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
