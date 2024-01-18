@@ -804,7 +804,7 @@
 					"response": []
 				},
 				{
-					"name": "deleteByUUID 204",
+					"name": "deleteByUUID 409",
 					"request": {
 						"method": "DELETE",
 						"header": [],
