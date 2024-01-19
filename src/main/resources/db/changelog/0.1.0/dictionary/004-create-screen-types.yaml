@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004-create-screen-types
+      author: grz55
+      changes:
+        - createTable:
+            tableName: screen_types
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: screen_type_device_type
+                  type: varchar(255)
+                  constraints:
+                    nullable: false

@@ -1,6 +1,12 @@
 package com.compstore.repository.pc;
 
 import com.compstore.dto.pc.PCFilteringRequestDTO;
+import com.compstore.entity.dictionary.GraphicsCardBrandEntity;
+import com.compstore.entity.dictionary.GraphicsCardBrandEntity_;
+import com.compstore.entity.dictionary.ProcessorBrandEntity;
+import com.compstore.entity.dictionary.ProcessorBrandEntity_;
+import com.compstore.entity.dictionary.enums.GraphicsCardBrandDeviceType;
+import com.compstore.entity.dictionary.enums.ProcessorBrandDeviceType;
 import com.compstore.entity.pc.*;
 import com.compstore.entity.pc.enums.DriveCapacity;
 import com.compstore.entity.pc.enums.DriveType;
@@ -35,9 +41,16 @@ public class PCSpecification {
             return null;
         }
         return (root, query, criteriaBuilder) -> {
-            Join<PCEntity, PCProcessorBrandEntity> pcProcessorBrandEntityJoin =
+            Join<PCEntity, ProcessorBrandEntity> processorBrandEntityJoin =
                     root.join(PCEntity_.PROCESSOR_BRAND, JoinType.INNER);
-            return pcProcessorBrandEntityJoin.get(PCProcessorBrandEntity_.ID).in(processorBrands);
+            Predicate idsPredicate =
+                    processorBrandEntityJoin.get(ProcessorBrandEntity_.ID).in(processorBrands);
+            Predicate deviceTypePredicate =
+                    criteriaBuilder.equal(
+                            processorBrandEntityJoin.get(
+                                    ProcessorBrandEntity_.PROCESSOR_BRAND_DEVICE_TYPE),
+                            ProcessorBrandDeviceType.PC);
+            return criteriaBuilder.and(idsPredicate, deviceTypePredicate);
         };
     }
 
@@ -46,11 +59,18 @@ public class PCSpecification {
             return null;
         }
         return (root, query, criteriaBuilder) -> {
-            Join<PCEntity, PCGraphicsCardBrandEntity> pcGraphicsCardBrandEntityJoin =
+            Join<PCEntity, GraphicsCardBrandEntity> graphicsCardBrandEntityJoin =
                     root.join(PCEntity_.GRAPHICS_CARD_BRAND, JoinType.INNER);
-            return pcGraphicsCardBrandEntityJoin
-                    .get(PCGraphicsCardBrandEntity_.ID)
-                    .in(graphicsCardBrands);
+            Predicate idsPredicate =
+                    graphicsCardBrandEntityJoin
+                            .get(GraphicsCardBrandEntity_.ID)
+                            .in(graphicsCardBrands);
+            Predicate deviceTypePredicate =
+                    criteriaBuilder.equal(
+                            graphicsCardBrandEntityJoin.get(
+                                    GraphicsCardBrandEntity_.GRAPHICS_CARD_BRAND_DEVICE_TYPE),
+                            GraphicsCardBrandDeviceType.PC);
+            return criteriaBuilder.and(idsPredicate, deviceTypePredicate);
         };
     }
 

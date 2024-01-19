@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-processor-brands
+      author: grz55
+      changes:
+        - createTable:
+            tableName: processor_brands
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: processor_brand_device_type
+                  type: varchar(255)
+                  constraints:
+                    nullable: false

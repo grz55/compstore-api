@@ -1,10 +1,4 @@
 databaseChangeLog:
   - include:
-      file: 001-insert-data-tv-brands.yaml
-      relativeToChangelogFile: true
-  - include:
-      file: 002-insert-data-tv-screen-types.yaml
-      relativeToChangelogFile: true
-  - include:
-      file: 003-insert-data-tvs.yaml
+      file: 001-insert-data-tvs.yaml
       relativeToChangelogFile: true

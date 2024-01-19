@@ -6,14 +6,11 @@ import com.compstore.entity.tv.TVEntity;
 import com.compstore.entity.tv.enums.RefreshRate;
 import com.compstore.entity.tv.enums.ResolutionName;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
 
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.ERROR)
 public interface TVMapper {
 
-    @Mapping(target = "tvBrand", source = "tvBrand.name")
-    @Mapping(target = "screenType", source = "screenType.name")
     TVDTO toDTO(TVEntity tvEntity);
 
     default String colorToString(Color color) {

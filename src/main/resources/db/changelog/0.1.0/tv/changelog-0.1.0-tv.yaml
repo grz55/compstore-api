@@ -1,13 +1,7 @@
 databaseChangeLog:
   - include:
-      file: 001-create-tv-brands.yaml
+      file: 001-create-tvs.yaml
       relativeToChangelogFile: true
   - include:
-      file: 002-create-tv-screen-types.yaml
-      relativeToChangelogFile: true
-  - include:
-      file: 003-create-tvs.yaml
-      relativeToChangelogFile: true
-  - include:
-      file: 004-create-tv-relationships.yaml
+      file: 002-create-tv-relationships.yaml
       relativeToChangelogFile: true

@@ -1,7 +1,7 @@
 package com.compstore.mapper;
 
-import com.compstore.dto.PagingAndSortingMetadataDTO;
-import com.compstore.dto.PagingAndSortingRequestDTO;
+import com.compstore.dto.pagination.PagingAndSortingMetadataDTO;
+import com.compstore.dto.pagination.PagingAndSortingRequestDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 import org.springframework.data.domain.Page;

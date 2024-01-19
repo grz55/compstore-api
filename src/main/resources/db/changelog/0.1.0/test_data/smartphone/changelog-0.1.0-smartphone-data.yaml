@@ -1,16 +1,7 @@
 databaseChangeLog:
   - include:
-      file: 001-insert-data-smartphone-brands.yaml
+      file: 001-insert-data-smartphone-operating-systems.yaml
       relativeToChangelogFile: true
   - include:
-      file: 002-insert-data-smartphone-screen-types.yaml
-      relativeToChangelogFile: true
-  - include:
-      file: 003-insert-data-smartphone-operating-systems.yaml
-      relativeToChangelogFile: true
-  - include:
-      file: 004-insert-data-smartphone-processor-brands.yaml
-      relativeToChangelogFile: true
-  - include:
-      file: 005-insert-data-smartphones.yaml
+      file: 002-insert-data-smartphones.yaml
       relativeToChangelogFile: true

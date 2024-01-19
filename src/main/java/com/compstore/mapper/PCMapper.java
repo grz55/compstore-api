@@ -4,10 +4,10 @@ import com.compstore.dto.pc.PCComboDataDTO;
 import com.compstore.dto.pc.PCCreateRequestDTO;
 import com.compstore.dto.pc.PCDTO;
 import com.compstore.dto.pc.PCSimpleDTO;
+import com.compstore.entity.dictionary.GraphicsCardBrandEntity;
+import com.compstore.entity.dictionary.ProcessorBrandEntity;
 import com.compstore.entity.pc.PCEntity;
-import com.compstore.entity.pc.PCGraphicsCardBrandEntity;
 import com.compstore.entity.pc.PCOperatingSystemEntity;
-import com.compstore.entity.pc.PCProcessorBrandEntity;
 import com.compstore.entity.pc.enums.DriveCapacity;
 import com.compstore.entity.pc.enums.DriveType;
 import com.compstore.entity.pc.enums.RAMCapacity;
@@ -20,8 +20,6 @@ import org.mapstruct.ReportingPolicy;
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.ERROR)
 public interface PCMapper {
 
-    @Mapping(target = "processorBrand", source = "processorBrand.name")
-    @Mapping(target = "graphicsCardBrand", source = "graphicsCardBrand.name")
     @Mapping(target = "operatingSystem", source = "operatingSystem.name")
     PCDTO toDTO(PCEntity pcEntity);
 
@@ -38,8 +36,8 @@ public interface PCMapper {
     void toEntity(PCCreateRequestDTO pcUpdateRequest, @MappingTarget PCEntity existingPC);
 
     PCComboDataDTO toPCComboDataDTO(
-            List<PCProcessorBrandEntity> processorBrands,
-            List<PCGraphicsCardBrandEntity> graphicsCardBrands,
+            List<ProcessorBrandEntity> processorBrands,
+            List<GraphicsCardBrandEntity> graphicsCardBrands,
             RAMCapacity[] ramCapacities,
             DriveCapacity[] driveCapacities,
             DriveType[] driveTypes,

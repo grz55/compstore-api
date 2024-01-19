@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003-create-brands
+      author: grz55
+      changes:
+        - createTable:
+            tableName: brands
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: brands_device_type
+                  type: varchar(255)
+                  constraints:
+                    nullable: false

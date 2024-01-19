@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "f99724a1-be82-4301-ac95-d8f7d7804587",
 		"name": "CompStore",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "10652945"
 	},
 	"item": [
@@ -26,7 +26,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/pcs/search"
+								"url": {
+									"raw": "http://localhost:8080/pcs/search",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pcs",
+										"search"
+									]
+								}
 							},
 							"response": []
 						},
@@ -44,7 +55,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/pcs/search"
+								"url": {
+									"raw": "http://localhost:8080/pcs/search",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pcs",
+										"search"
+									]
+								}
 							},
 							"response": []
 						},
@@ -62,7 +84,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/pcs/search"
+								"url": {
+									"raw": "http://localhost:8080/pcs/search",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pcs",
+										"search"
+									]
+								}
 							},
 							"response": []
 						},
@@ -80,7 +113,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/pcs/search"
+								"url": {
+									"raw": "http://localhost:8080/pcs/search",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pcs",
+										"search"
+									]
+								}
 							},
 							"response": []
 						},
@@ -98,7 +142,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/pcs/search"
+								"url": {
+									"raw": "http://localhost:8080/pcs/search",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pcs",
+										"search"
+									]
+								}
 							},
 							"response": []
 						},
@@ -116,7 +171,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/pcs/search"
+								"url": {
+									"raw": "http://localhost:8080/pcs/search",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pcs",
+										"search"
+									]
+								}
 							},
 							"response": []
 						},
@@ -134,7 +200,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/pcs/search"
+								"url": {
+									"raw": "http://localhost:8080/pcs/search",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pcs",
+										"search"
+									]
+								}
 							},
 							"response": []
 						},
@@ -152,7 +229,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/pcs/search"
+								"url": {
+									"raw": "http://localhost:8080/pcs/search",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pcs",
+										"search"
+									]
+								}
 							},
 							"response": []
 						},
@@ -170,7 +258,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/pcs/search"
+								"url": {
+									"raw": "http://localhost:8080/pcs/search",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pcs",
+										"search"
+									]
+								}
 							},
 							"response": []
 						},
@@ -188,7 +287,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/pcs/search"
+								"url": {
+									"raw": "http://localhost:8080/pcs/search",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pcs",
+										"search"
+									]
+								}
 							},
 							"response": []
 						}
@@ -199,7 +309,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/pcs/d5977f31-5c2e-4f3b-9c7c-5dad32772fbc"
+						"url": {
+							"raw": "http://localhost:8080/pcs/d5977f31-5c2e-4f3b-9c7c-5dad32772fbc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs",
+								"d5977f31-5c2e-4f3b-9c7c-5dad32772fbc"
+							]
+						}
 					},
 					"response": []
 				},
@@ -208,7 +329,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/pcs/00000000-5c2e-4f3b-9c7c-5dad32772fbc"
+						"url": {
+							"raw": "http://localhost:8080/pcs/00000000-5c2e-4f3b-9c7c-5dad32772fbc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs",
+								"00000000-5c2e-4f3b-9c7c-5dad32772fbc"
+							]
+						}
 					},
 					"response": []
 				},
@@ -226,7 +358,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/pcs"
+						"url": {
+							"raw": "http://localhost:8080/pcs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs"
+							]
+						}
 					},
 					"response": []
 				},
@@ -244,7 +386,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/pcs"
+						"url": {
+							"raw": "http://localhost:8080/pcs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs"
+							]
+						}
 					},
 					"response": []
 				},
@@ -255,14 +407,24 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"processorBrand\": \"6a6f85ed-501b-4cb1-9e95-590c980a0000\",\r\n    \"processorName\": \"New processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"New graphics card name\",\r\n    \"ramCapacity\": \"32 GB\",\r\n    \"driveCapacity\": \"2 TB\",\r\n    \"driveType\": \"HDD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 1999.99\r\n}",
+							"raw": "{\r\n    \"processorBrand\": \"4c94f5c1-2648-411d-95bd-62bac7d139ea\",\r\n    \"processorName\": \"New processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"New graphics card name\",\r\n    \"ramCapacity\": \"32 GB\",\r\n    \"driveCapacity\": \"2 TB\",\r\n    \"driveType\": \"HDD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 1999.99\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://localhost:8080/pcs"
+						"url": {
+							"raw": "http://localhost:8080/pcs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs"
+							]
+						}
 					},
 					"response": []
 				},
@@ -271,7 +433,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/pcs/combo-data"
+						"url": {
+							"raw": "http://localhost:8080/pcs/combo-data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs",
+								"combo-data"
+							]
+						}
 					},
 					"response": []
 				},
@@ -289,7 +462,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/pcs/d5977f31-5c2e-4f3b-9c7c-5dad32772fbc"
+						"url": {
+							"raw": "http://localhost:8080/pcs/d5977f31-5c2e-4f3b-9c7c-5dad32772fbc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs",
+								"d5977f31-5c2e-4f3b-9c7c-5dad32772fbc"
+							]
+						}
 					},
 					"response": []
 				},
@@ -307,7 +491,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/pcs/d5977f31-5c2e-4f3b-9c7c-5dad32772fbc"
+						"url": {
+							"raw": "http://localhost:8080/pcs/d5977f31-5c2e-4f3b-9c7c-5dad32772fbc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs",
+								"d5977f31-5c2e-4f3b-9c7c-5dad32772fbc"
+							]
+						}
 					},
 					"response": []
 				},
@@ -325,7 +520,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/pcs/d5977f31-5c2e-4f3b-9c7c-5dad32772fbb"
+						"url": {
+							"raw": "http://localhost:8080/pcs/d5977f31-5c2e-4f3b-9c7c-5dad32772fbb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs",
+								"d5977f31-5c2e-4f3b-9c7c-5dad32772fbb"
+							]
+						}
 					},
 					"response": []
 				},
@@ -334,7 +540,18 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://localhost:8080/pcs/d5977f31-5c2e-4f3b-9c7c-5dad32772fbc"
+						"url": {
+							"raw": "http://localhost:8080/pcs/d5977f31-5c2e-4f3b-9c7c-5dad32772fbc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs",
+								"d5977f31-5c2e-4f3b-9c7c-5dad32772fbc"
+							]
+						}
 					},
 					"response": []
 				},
@@ -343,7 +560,18 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://localhost:8080/pcs/57ecdd4f-18ef-4763-80fa-0ea00f9b7dfa"
+						"url": {
+							"raw": "http://localhost:8080/pcs/57ecdd4f-18ef-4763-80fa-0ea00f9b7dfa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs",
+								"57ecdd4f-18ef-4763-80fa-0ea00f9b7dfa"
+							]
+						}
 					},
 					"response": []
 				}
@@ -357,7 +585,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/smartphones/e4b9acf7-2a81-4acd-8da9-63a110479e34"
+						"url": {
+							"raw": "http://localhost:8080/smartphones/e4b9acf7-2a81-4acd-8da9-63a110479e34",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"smartphones",
+								"e4b9acf7-2a81-4acd-8da9-63a110479e34"
+							]
+						}
 					},
 					"response": []
 				},
@@ -366,7 +605,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/smartphones/00000000-2a81-4acd-8da9-63a110479e34"
+						"url": {
+							"raw": "http://localhost:8080/smartphones/00000000-2a81-4acd-8da9-63a110479e34",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"smartphones",
+								"00000000-2a81-4acd-8da9-63a110479e34"
+							]
+						}
 					},
 					"response": []
 				}
@@ -380,7 +630,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/tvs/a87db198-1325-423f-8f12-35ea8886abea"
+						"url": {
+							"raw": "http://localhost:8080/tvs/a87db198-1325-423f-8f12-35ea8886abea",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tvs",
+								"a87db198-1325-423f-8f12-35ea8886abea"
+							]
+						}
 					},
 					"response": []
 				},
@@ -389,7 +650,196 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/tvs/00000000-1325-423f-8f12-35ea8886abea"
+						"url": {
+							"raw": "http://localhost:8080/tvs/00000000-1325-423f-8f12-35ea8886abea",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tvs",
+								"00000000-1325-423f-8f12-35ea8886abea"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Processor Brands",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/processor-brands",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 201",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Speed Demon Processor\",\r\n    \"processorBrandDeviceType\": \"PC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/processor-brands",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 400",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Speed Demon Processor\",\r\n    \"processorBrandDeviceType\": \"XXX\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/processor-brands",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update 200",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Speed Demon Processor\",\r\n    \"processorBrandDeviceType\": \"PC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/processor-brands/6a6f85ed-501b-4cb1-9e95-590c980afac3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands",
+								"6a6f85ed-501b-4cb1-9e95-590c980afac3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update 400",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Speed Demon Processor\",\r\n    \"processorBrandDeviceType\": \"XXX\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/processor-brands/6a6f85ed-501b-4cb1-9e95-590c980afac3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands",
+								"6a6f85ed-501b-4cb1-9e95-590c980afac3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteByUUID 409",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/processor-brands/6a6f85ed-501b-4cb1-9e95-590c980afac3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands",
+								"6a6f85ed-501b-4cb1-9e95-590c980afac3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "comboData 200",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/processor-brands/combo-data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands",
+								"combo-data"
+							]
+						}
 					},
 					"response": []
 				}

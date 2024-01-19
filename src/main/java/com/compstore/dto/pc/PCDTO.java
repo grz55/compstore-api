@@ -1,5 +1,7 @@
 package com.compstore.dto.pc;
 
+import com.compstore.dto.dictionary.GraphicsCardBrandDTO;
+import com.compstore.dto.dictionary.ProcessorBrandSimpleDTO;
 import java.util.UUID;
 import lombok.Data;
 
@@ -8,11 +10,11 @@ public class PCDTO {
 
     private UUID id;
 
-    private String processorBrand;
+    private ProcessorBrandSimpleDTO processorBrand;
 
     private String processorName;
 
-    private String graphicsCardBrand;
+    private GraphicsCardBrandDTO graphicsCardBrand;
 
     private String graphicsCardName;
 

@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003-create-smartphone-relationships
+      author: grz55
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: smartphones
+            baseColumnNames: brand_uuid
+            referencedTableName: brands
+            referencedColumnNames: id
+            constraintName: fk_smartphones_brands
+        - addForeignKeyConstraint:
+            baseTableName: smartphones
+            baseColumnNames: screen_type_uuid
+            referencedTableName: screen_types
+            referencedColumnNames: id
+            constraintName: fk_smartphones_screen_types
+        - addForeignKeyConstraint:
+            baseTableName: smartphones
+            baseColumnNames: operating_system_uuid
+            referencedTableName: smartphone_operating_systems
+            referencedColumnNames: id
+            constraintName: fk_smartphones_smartphone_operating_systems
+        - addForeignKeyConstraint:
+            baseTableName: smartphones
+            baseColumnNames: processor_brand_uuid
+            referencedTableName: processor_brands
+            referencedColumnNames: id
+            constraintName: fk_smartphones_processor_brands

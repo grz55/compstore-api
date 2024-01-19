@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class TVCreateRequestDTO {
 
-    private String tvBrand;
+    private String brand;
 
     private String color;
 
