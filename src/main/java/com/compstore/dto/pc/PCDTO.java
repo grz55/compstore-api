@@ -1,6 +1,7 @@
 package com.compstore.dto.pc;
 
 import com.compstore.dto.dictionary.GraphicsCardBrandDTO;
+import com.compstore.dto.dictionary.OperatingSystemDTO;
 import com.compstore.dto.dictionary.ProcessorBrandSimpleDTO;
 import java.util.UUID;
 import lombok.Data;
@@ -24,7 +25,7 @@ public class PCDTO {
 
     private String driveType;
 
-    private String operatingSystem;
+    private OperatingSystemDTO operatingSystem;
 
     private Double price;
 }

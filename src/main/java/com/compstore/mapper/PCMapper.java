@@ -20,7 +20,6 @@ import org.mapstruct.ReportingPolicy;
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.ERROR)
 public interface PCMapper {
 
-    @Mapping(target = "operatingSystem", source = "operatingSystem.name")
     PCDTO toDTO(PCEntity pcEntity);
 
     @Mapping(target = "id", ignore = true)
