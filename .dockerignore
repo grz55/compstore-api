@@ -1,0 +1,9 @@
+.git/
+.gitignore
+.idea/
+*.iml
+*.iws
+*.ipr
+*.log
+.DS_Store
+Thumbs.db
