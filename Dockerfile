@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM eclipse-temurin:17-jre-alpine
-COPY --from=build /target/compstore-0.0.1-SNAPSHOT.jar compstore.jar
+COPY --from=build /target/*.jar compstore.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","compstore.jar"]
