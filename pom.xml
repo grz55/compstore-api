@@ -94,6 +94,9 @@
 		<profile>
 			<id>dev-postgres</id>
 		</profile>
+		<profile>
+			<id>prod</id>
+		</profile>
 	</profiles>
 
 	<build>

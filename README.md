@@ -50,3 +50,8 @@ Frontend: https://github.com/pawelNu/compstore-ui
 - test(task_no): Everything related to testing
 - docs(task_no): Everything related to documentation
 - chore(task_no): Regular code maintenance. [ You can also use emojis to represent commit types]
+
+## Useful commands
+
+- Building docker image locally: `docker build -t compstore-api .`
+- Running docker image locally: `docker run --name compstore-api -p 8080:8080 compstore-api`
