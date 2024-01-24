@@ -1,6 +1,7 @@
 package com.compstore.dto.pc;
 
 import com.compstore.dto.dictionary.GraphicsCardBrandDTO;
+import com.compstore.dto.dictionary.OperatingSystemDTO;
 import com.compstore.dto.dictionary.ProcessorBrandSimpleDTO;
 import java.util.List;
 import lombok.Data;
@@ -18,5 +19,5 @@ public class PCComboDataDTO {
 
     private List<String> driveTypes;
 
-    private List<PCOperatingSystemDTO> operatingSystems;
+    private List<OperatingSystemDTO> operatingSystems;
 }

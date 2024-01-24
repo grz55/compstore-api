@@ -6,13 +6,11 @@ import com.compstore.entity.smartphone.SmartphoneEntity;
 import com.compstore.entity.smartphone.enums.RAMCapacity;
 import com.compstore.entity.smartphone.enums.StorageCapacity;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
 
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.ERROR)
 public interface SmartphoneMapper {
 
-    @Mapping(target = "operatingSystem", source = "operatingSystem.name")
     SmartphoneDTO toDTO(SmartphoneEntity smartphoneEntity);
 
     default String colorToString(Color color) {

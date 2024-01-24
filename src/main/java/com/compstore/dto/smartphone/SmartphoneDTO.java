@@ -1,6 +1,7 @@
 package com.compstore.dto.smartphone;
 
 import com.compstore.dto.dictionary.BrandDTO;
+import com.compstore.dto.dictionary.OperatingSystemDTO;
 import com.compstore.dto.dictionary.ProcessorBrandSimpleDTO;
 import com.compstore.dto.dictionary.ScreenTypeDTO;
 import java.util.UUID;
@@ -35,7 +36,7 @@ public class SmartphoneDTO {
 
     private Integer backCameraMpixResolution;
 
-    private String operatingSystem;
+    private OperatingSystemDTO operatingSystem;
 
     private ProcessorBrandSimpleDTO processorBrand;
 
