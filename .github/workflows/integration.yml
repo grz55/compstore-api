@@ -1,0 +1,33 @@
+name: Compstore API Continuous Integration
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  test_pull_request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Workaround No such reference 'origin/main'
+      # https://github.com/diffplug/spotless/issues/710
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Code Formatting Spotless Check
+        run: mvn spotless:check
+
+      - name: Code compilation
+        run: mvn compile
+
+      - name: Unit testing
+        run: mvn test
