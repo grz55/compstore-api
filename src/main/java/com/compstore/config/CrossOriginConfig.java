@@ -1,5 +1,6 @@
 package com.compstore.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -8,13 +9,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class CrossOriginConfig implements WebMvcConfigurer {
 
+    @Value("${cors.allowed-origins}")
+    private static String allowedFrontend;
+
     @Profile("prod")
     @Configuration
     public static class ProdCorsConfig implements WebMvcConfigurer {
         @Override
         public void addCorsMappings(CorsRegistry registry) {
             registry.addMapping("/**")
-                    .allowedOrigins("https://pawelnu.github.io/compstore-ui/")
+                    .allowedOrigins(allowedFrontend)
                     .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
         }
     }
