@@ -53,5 +53,11 @@ Frontend: https://github.com/pawelNu/compstore-ui
 
 ## Useful commands
 
-- Building docker image locally: `docker build -t compstore-api .`
-- Running docker image locally: `docker run --name compstore-api -p 8080:8080 compstore-api`
+### Docker commands
+
+- Build docker image locally (`dev-h2` profile): `docker build -f Dockerfile.dev-h2 -t compstore-api .`
+- Run docker image locally (`dev-h2` profile): `docker run --name compstore-api -p 8080:8080 compstore-api`
+
+
+- Build docker image locally (`prod` profile): `docker build -f Dockerfile.prod -t compstore-api .`
+- Run docker image locally (`prod` profile): `docker run --name compstore-api -p 8080:8080 -e SPRING_PROFILES_ACTIVE=prod compstore-api`
