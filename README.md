@@ -60,4 +60,4 @@ Frontend: https://github.com/pawelNu/compstore-ui
 
 
 - Build docker image locally (`prod` profile): `docker build -f Dockerfile.prod -t compstore-api .`
-- Run docker image locally (`prod` profile): `docker run --name compstore-api -p 8080:8080 -e SPRING_PROFILES_ACTIVE=prod compstore-api`
+- Run docker image locally (`prod` profile) - DB and CORS variables must be added additionally: `docker run --name compstore-api -p 8080:8080 -e SPRING_PROFILES_ACTIVE=prod compstore-api`
