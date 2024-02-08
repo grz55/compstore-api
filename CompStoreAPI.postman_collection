@@ -245,6 +245,36 @@
 							"response": []
 						},
 						{
+							"name": "search 200 Render",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"processorBrands\": [\r\n        \"6a6f85ed-501b-4cb1-9e95-590c980afac3\"\r\n    ],\r\n    \"priceFrom\": 975,\r\n    \"priceTo\": 3000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://compstore-api.onrender.com/pcs/search",
+									"protocol": "https",
+									"host": [
+										"compstore-api",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"pcs",
+										"search"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "search 200 price asc",
 							"request": {
 								"method": "POST",
@@ -684,6 +714,46 @@
 							"port": "8080",
 							"path": [
 								"processor-brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByUUID 200",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/processor-brands/6a6f85ed-501b-4cb1-9e95-590c980afac3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands",
+								"6a6f85ed-501b-4cb1-9e95-590c980afac3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByUUID 404",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/processor-brands/6a6f85ed-501b-4cb1-9e95-590c980afaaa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands",
+								"6a6f85ed-501b-4cb1-9e95-590c980afaaa"
 							]
 						}
 					},
