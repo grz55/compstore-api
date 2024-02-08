@@ -12,6 +12,8 @@ public interface IProcessorBrandService {
 
     List<ProcessorBrandDTO> getAllProcessorBrands();
 
+    ProcessorBrandDTO getProcessorBrandById(UUID processorBrandId);
+
     void updateProcessorBrand(
             UUID processorBrandId, ProcessorBrandCreateRequestDTO processorBrandUpdateRequest);
 

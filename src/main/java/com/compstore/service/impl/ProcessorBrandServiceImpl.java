@@ -37,6 +37,17 @@ public class ProcessorBrandServiceImpl implements IProcessorBrandService {
     }
 
     @Override
+    public ProcessorBrandDTO getProcessorBrandById(UUID processorBrandId) {
+        return processorBrandRepository
+                .findById(processorBrandId)
+                .map(processorBrandMapper::toDTO)
+                .orElseThrow(
+                        () ->
+                                new NotFoundException(
+                                        PROCESSOR_BRAND_NOT_FOUND_MSG + processorBrandId));
+    }
+
+    @Override
     public void createProcessorBrand(
             ProcessorBrandCreateRequestDTO processorBrandCreateRequestDTO) {
         ProcessorBrandEntity processorBrandEntity =
