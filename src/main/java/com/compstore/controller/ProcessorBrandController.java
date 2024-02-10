@@ -26,6 +26,13 @@ public class ProcessorBrandController {
                 .body(processorBrandService.getAllProcessorBrands());
     }
 
+    @GetMapping("/{processorBrandId}")
+    public ResponseEntity<ProcessorBrandDTO> getProcessorBrandById(
+            @PathVariable UUID processorBrandId) {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(processorBrandService.getProcessorBrandById(processorBrandId));
+    }
+
     @PostMapping
     public ResponseEntity<Void> createProcessorBrand(
             @RequestBody ProcessorBrandCreateRequestDTO processorBrandCreateRequestDTO) {
