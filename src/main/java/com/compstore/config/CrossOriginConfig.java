@@ -10,13 +10,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class CrossOriginConfig {
 
-    @Value("${cors.allowed-origins}")
-    private String allowedFrontend;
-
     @Profile("prod")
     @Bean
     public WebMvcConfigurer prodCorsConfigurer() {
         return new WebMvcConfigurer() {
+            @Value("${cors.allowed-origins}")
+            private String allowedFrontend;
+
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
