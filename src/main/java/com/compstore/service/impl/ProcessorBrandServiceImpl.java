@@ -14,9 +14,11 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 @AllArgsConstructor
 public class ProcessorBrandServiceImpl implements IProcessorBrandService {
 
@@ -31,6 +33,7 @@ public class ProcessorBrandServiceImpl implements IProcessorBrandService {
 
     @Override
     public List<ProcessorBrandDTO> getAllProcessorBrands() {
+        log.info("Requested getting all processor brands");
         return processorBrandRepository.findAll().stream()
                 .map(processorBrandMapper::toDTO)
                 .toList();
@@ -38,6 +41,7 @@ public class ProcessorBrandServiceImpl implements IProcessorBrandService {
 
     @Override
     public ProcessorBrandDTO getProcessorBrandById(UUID processorBrandId) {
+        log.info("Requested getting a processor brand with id: {}", processorBrandId);
         return processorBrandRepository
                 .findById(processorBrandId)
                 .map(processorBrandMapper::toDTO)
@@ -50,6 +54,9 @@ public class ProcessorBrandServiceImpl implements IProcessorBrandService {
     @Override
     public void createProcessorBrand(
             ProcessorBrandCreateRequestDTO processorBrandCreateRequestDTO) {
+        log.info(
+                "Requested creating a processor brand with name: {}",
+                processorBrandCreateRequestDTO.getName());
         ProcessorBrandEntity processorBrandEntity =
                 processorBrandMapper.toEntity(processorBrandCreateRequestDTO);
         processorBrandRepository.save(processorBrandEntity);
@@ -58,6 +65,7 @@ public class ProcessorBrandServiceImpl implements IProcessorBrandService {
     @Override
     public void updateProcessorBrand(
             UUID processorBrandId, ProcessorBrandCreateRequestDTO processorBrandUpdateRequest) {
+        log.info("Requested updating a processor brand with id: {}", processorBrandId);
         Optional<ProcessorBrandEntity> processorBrandById =
                 processorBrandRepository.findById(processorBrandId);
         if (processorBrandById.isPresent()) {
@@ -71,6 +79,7 @@ public class ProcessorBrandServiceImpl implements IProcessorBrandService {
 
     @Override
     public void deleteProcessorBrandById(UUID processorBrandId) {
+        log.info("Requested deleting a processor brand with id: {}", processorBrandId);
         Optional<ProcessorBrandEntity> processorBrandById =
                 processorBrandRepository.findById(processorBrandId);
         if (processorBrandById.isPresent()) {
@@ -83,6 +92,7 @@ public class ProcessorBrandServiceImpl implements IProcessorBrandService {
 
     @Override
     public ProcessorBrandComboDataDTO getProcessorBrandComboData() {
+        log.info("Requested getting processor brand's combo data");
         return processorBrandMapper.toProcessorBrandComboDataDTO(ProcessorBrandDeviceType.values());
     }
 }
