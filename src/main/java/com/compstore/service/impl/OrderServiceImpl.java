@@ -29,7 +29,7 @@ public class OrderServiceImpl implements IOrderService {
     @Override
     public OrderCreateResponseDTO createOrder(OrderCreateRequestDTO orderCreateRequest) {
         Set<UUID> productsUuids = orderCreateRequest.getProductsQuantity().keySet();
-        List<ProductEntity> productsFound = productRepository.findByUUIDs(productsUuids);
+        List<ProductEntity> productsFound = productRepository.findByIdIn(productsUuids);
         List<OrderProductEntity> orderProducts = new ArrayList<>();
         OrderEntity newOrder = new OrderEntity();
         for (ProductEntity product : productsFound) {
