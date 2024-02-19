@@ -24,4 +24,10 @@ public class OrderProductEntity {
     private ProductEntity product;
 
     private Integer quantity;
+
+    public OrderProductEntity(OrderEntity order, ProductEntity product, Integer quantity) {
+        this.order = order;
+        this.product = product;
+        this.quantity = quantity;
+    }
 }

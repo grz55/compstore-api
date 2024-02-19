@@ -10,6 +10,7 @@ import com.compstore.mapper.OrderMapper;
 import com.compstore.repository.OrderRepository;
 import com.compstore.repository.ProductRepository;
 import com.compstore.service.IOrderService;
+import com.compstore.validator.OrderValidator;
 import java.math.BigDecimal;
 import java.util.*;
 import lombok.AllArgsConstructor;
@@ -26,23 +27,17 @@ public class OrderServiceImpl implements IOrderService {
     private final OrderRepository orderRepository;
     private final ProductRepository<ProductEntity> productRepository;
 
+    private final OrderValidator orderValidator;
+
     @Override
     public OrderCreateResponseDTO createOrder(OrderCreateRequestDTO orderCreateRequest) {
-        Set<UUID> productsUuids = orderCreateRequest.getProductsQuantity().keySet();
-        List<ProductEntity> productsFound = productRepository.findByIdIn(productsUuids);
-        List<OrderProductEntity> orderProducts = new ArrayList<>();
-        OrderEntity newOrder = new OrderEntity();
-        for (ProductEntity product : productsFound) {
-            orderProducts.add(
-                    new OrderProductEntity(
-                            null,
-                            newOrder,
-                            product,
-                            orderCreateRequest.getProductsQuantity().get(product.getId())));
-        }
-        BigDecimal finalOrderPrice = calculateFinalOrderPrice(orderCreateRequest, productsFound);
-        newOrder.setOrderProducts(orderProducts);
-        newOrder.setPrice(finalOrderPrice);
+        Set<UUID> productsInOrderUuids = orderCreateRequest.getProductsQuantity().keySet();
+        orderValidator.validateEmptyOrder(productsInOrderUuids);
+
+        List<ProductEntity> productsFound = productRepository.findByIdIn(productsInOrderUuids);
+        orderValidator.validateProductsExist(productsInOrderUuids, productsFound);
+
+        OrderEntity newOrder = prepareOrderFromProducts(orderCreateRequest, productsFound);
 
         OrderEntity savedOrder = orderRepository.save(newOrder);
         return orderMapper.toOrderCreateResponseDTO(savedOrder);
@@ -58,18 +53,40 @@ public class OrderServiceImpl implements IOrderService {
         }
     }
 
+    private OrderEntity prepareOrderFromProducts(
+            OrderCreateRequestDTO orderCreateRequest, List<ProductEntity> productsFound) {
+        OrderEntity newOrder = new OrderEntity();
+
+        List<OrderProductEntity> orderProducts =
+                productsFound.stream()
+                        .map(
+                                product ->
+                                        new OrderProductEntity(
+                                                newOrder,
+                                                product,
+                                                orderCreateRequest
+                                                        .getProductsQuantity()
+                                                        .get(product.getId())))
+                        .toList();
+
+        BigDecimal finalOrderPrice = calculateFinalOrderPrice(orderCreateRequest, productsFound);
+
+        newOrder.setOrderProducts(orderProducts);
+        newOrder.setPrice(finalOrderPrice);
+        return newOrder;
+    }
+
     private BigDecimal calculateFinalOrderPrice(
             OrderCreateRequestDTO orderCreateRequest, List<ProductEntity> productsFound) {
-        BigDecimal finalOrderPrice = new BigDecimal(0);
-        for (ProductEntity product : productsFound) {
-            BigDecimal productPrice = product.getPrice();
-            Integer singleProductQuantityInOrder =
-                    orderCreateRequest.getProductsQuantity().get(product.getId());
-            finalOrderPrice =
-                    finalOrderPrice.add(
-                            productPrice.multiply(
-                                    BigDecimal.valueOf(singleProductQuantityInOrder)));
-        }
-        return finalOrderPrice;
+        return productsFound.stream()
+                .map(
+                        product -> {
+                            BigDecimal productPrice = product.getPrice();
+                            Integer productQuantityInOrder =
+                                    orderCreateRequest.getProductsQuantity().get(product.getId());
+                            return productPrice.multiply(
+                                    BigDecimal.valueOf(productQuantityInOrder));
+                        })
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 }
