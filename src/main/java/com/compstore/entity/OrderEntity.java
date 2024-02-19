@@ -22,9 +22,4 @@ public class OrderEntity {
     private List<OrderProductEntity> orderProducts = new ArrayList<>();
 
     private BigDecimal price;
-
-    public OrderEntity(List<OrderProductEntity> orderProducts, BigDecimal price) {
-        this.orderProducts = orderProducts;
-        this.price = price;
-    }
 }
