@@ -1,25 +1,22 @@
 package com.compstore.entity.pc;
 
+import com.compstore.entity.ProductEntity;
 import com.compstore.entity.dictionary.GraphicsCardBrandEntity;
 import com.compstore.entity.dictionary.ProcessorBrandEntity;
 import com.compstore.entity.pc.enums.DriveCapacity;
 import com.compstore.entity.pc.enums.DriveType;
 import com.compstore.entity.pc.enums.RAMCapacity;
 import jakarta.persistence.*;
-import java.math.BigDecimal;
-import java.util.UUID;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
 @Table(name = "pcs")
 @NoArgsConstructor
 @AllArgsConstructor
-public class PCEntity {
-
-    @Id @GeneratedValue private UUID id;
+@PrimaryKeyJoinColumn(name = "pc_uuid")
+public class PCEntity extends ProductEntity {
 
     @ManyToOne
     @JoinColumn(name = "processor_brand_uuid")
@@ -47,6 +44,4 @@ public class PCEntity {
     @ManyToOne
     @JoinColumn(name = "operating_system_uuid")
     private PCOperatingSystemEntity operatingSystem;
-
-    private BigDecimal price;
 }

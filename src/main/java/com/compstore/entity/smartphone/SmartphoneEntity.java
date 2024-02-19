@@ -1,5 +1,6 @@
 package com.compstore.entity.smartphone;
 
+import com.compstore.entity.ProductEntity;
 import com.compstore.entity.dictionary.BrandEntity;
 import com.compstore.entity.dictionary.ProcessorBrandEntity;
 import com.compstore.entity.dictionary.ScreenTypeEntity;
@@ -7,20 +8,19 @@ import com.compstore.entity.enums.Color;
 import com.compstore.entity.smartphone.enums.RAMCapacity;
 import com.compstore.entity.smartphone.enums.StorageCapacity;
 import jakarta.persistence.*;
-import java.math.BigDecimal;
-import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
 @Table(name = "smartphones")
 @NoArgsConstructor
 @AllArgsConstructor
-public class SmartphoneEntity {
-
-    @Id @GeneratedValue private UUID id;
+@PrimaryKeyJoinColumn(name = "smartphone_uuid")
+public class SmartphoneEntity extends ProductEntity {
 
     @ManyToOne
     @JoinColumn(name = "brand_uuid")
@@ -64,6 +64,4 @@ public class SmartphoneEntity {
     private ProcessorBrandEntity processorBrand;
 
     private String processorName;
-
-    private BigDecimal price;
 }

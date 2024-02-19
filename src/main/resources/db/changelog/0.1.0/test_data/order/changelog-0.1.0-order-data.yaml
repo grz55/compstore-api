@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: 001-insert-data-orders.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: 002-insert-data-order-products.yaml
+      relativeToChangelogFile: true
