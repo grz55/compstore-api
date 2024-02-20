@@ -14,9 +14,11 @@ import com.compstore.validator.OrderValidator;
 import java.math.BigDecimal;
 import java.util.*;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 @AllArgsConstructor
 public class OrderServiceImpl implements IOrderService {
 
@@ -32,6 +34,7 @@ public class OrderServiceImpl implements IOrderService {
     @Override
     public OrderCreateResponseDTO createOrder(OrderCreateRequestDTO orderCreateRequest) {
         Set<UUID> productsInOrderUuids = orderCreateRequest.getProductsQuantity().keySet();
+        log.info("Requested creating an order with ids: {}", productsInOrderUuids);
         orderValidator.validateEmptyOrder(productsInOrderUuids);
 
         List<ProductEntity> productsFound = productRepository.findByIdIn(productsInOrderUuids);
@@ -45,6 +48,7 @@ public class OrderServiceImpl implements IOrderService {
 
     @Override
     public void deleteOrderById(UUID orderId) {
+        log.info("Requested deleting an order with id: {}", orderId);
         Optional<OrderEntity> orderById = orderRepository.findById(orderId);
         if (orderById.isPresent()) {
             orderRepository.delete(orderById.get());
