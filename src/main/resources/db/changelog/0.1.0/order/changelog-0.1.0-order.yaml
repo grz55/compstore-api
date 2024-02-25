@@ -3,7 +3,7 @@ databaseChangeLog:
       file: 001-create-orders.yaml
       relativeToChangelogFile: true
   - include:
-      file: 002-create-order-products.yaml
+      file: 002-create-order-items.yaml
       relativeToChangelogFile: true
   - include:
       file: 003-create-order-relationships.yaml

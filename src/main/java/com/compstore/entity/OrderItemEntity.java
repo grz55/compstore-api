@@ -8,10 +8,10 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "order_products")
+@Table(name = "order_items")
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderProductEntity {
+public class OrderItemEntity {
 
     @Id @GeneratedValue private UUID id;
 
@@ -25,7 +25,7 @@ public class OrderProductEntity {
 
     private Integer quantity;
 
-    public OrderProductEntity(OrderEntity order, ProductEntity product, Integer quantity) {
+    public OrderItemEntity(OrderEntity order, ProductEntity product, Integer quantity) {
         this.order = order;
         this.product = product;
         this.quantity = quantity;

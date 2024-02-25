@@ -4,14 +4,14 @@ databaseChangeLog:
       author: grz55
       changes:
         - addForeignKeyConstraint:
-            baseTableName: order_products
+            baseTableName: order_items
             baseColumnNames: order_uuid
             referencedTableName: orders
             referencedColumnNames: id
-            constraintName: fk_order_products_orders
+            constraintName: fk_order_items_orders
         - addForeignKeyConstraint:
-            baseTableName: order_products
+            baseTableName: order_items
             baseColumnNames: product_uuid
             referencedTableName: products
             referencedColumnNames: id
-            constraintName: fk_order_products_products
+            constraintName: fk_order_items_products

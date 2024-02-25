@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: 002-create-order-products
+      id: 002-create-order-items
       author: grz55
       changes:
         - createTable:
-            tableName: order_products
+            tableName: order_items
             columns:
               - column:
                   name: id

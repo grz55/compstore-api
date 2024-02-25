@@ -19,7 +19,7 @@ public class OrderEntity {
     @Id @GeneratedValue private UUID id;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<OrderProductEntity> orderProducts = new ArrayList<>();
+    private List<OrderItemEntity> orderItems = new ArrayList<>();
 
     private BigDecimal price;
 }

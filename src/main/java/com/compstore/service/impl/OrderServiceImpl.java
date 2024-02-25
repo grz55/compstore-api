@@ -4,7 +4,7 @@ import com.compstore.dto.order.OrderCreateRequestDTO;
 import com.compstore.dto.order.OrderCreateResponseDTO;
 import com.compstore.dto.order.OrderItemDTO;
 import com.compstore.entity.OrderEntity;
-import com.compstore.entity.OrderProductEntity;
+import com.compstore.entity.OrderItemEntity;
 import com.compstore.entity.ProductEntity;
 import com.compstore.exception.NotFoundException;
 import com.compstore.mapper.OrderMapper;
@@ -76,11 +76,11 @@ public class OrderServiceImpl implements IOrderService {
             Map<UUID, Integer> itemQuantities, List<ProductEntity> productsFound) {
         OrderEntity newOrder = new OrderEntity();
 
-        List<OrderProductEntity> orderProducts =
+        List<OrderItemEntity> orderProducts =
                 productsFound.stream()
                         .map(
                                 product ->
-                                        new OrderProductEntity(
+                                        new OrderItemEntity(
                                                 newOrder,
                                                 product,
                                                 itemQuantities.get(product.getId())))
@@ -88,7 +88,7 @@ public class OrderServiceImpl implements IOrderService {
 
         BigDecimal finalOrderPrice = calculateFinalOrderPrice(itemQuantities, productsFound);
 
-        newOrder.setOrderProducts(orderProducts);
+        newOrder.setOrderItems(orderProducts);
         newOrder.setPrice(finalOrderPrice);
         return newOrder;
     }

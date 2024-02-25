@@ -5,16 +5,13 @@ import com.compstore.entity.ProductEntity;
 import com.compstore.mapper.ProductMapper;
 import com.compstore.repository.ProductRepository;
 import com.compstore.service.IProductService;
+import com.compstore.validator.ProductValidator;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
-
-import com.compstore.validator.ProductValidator;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
-import static com.compstore.validator.ProductValidator.PRODUCT_NOT_FOUND_IN_GIVEN_LIST;
 
 @Service
 @Slf4j
