@@ -26,12 +26,14 @@ public interface PCMapper {
     @Mapping(target = "processorBrand", ignore = true)
     @Mapping(target = "graphicsCardBrand", ignore = true)
     @Mapping(target = "operatingSystem", ignore = true)
+    @Mapping(target = "description", ignore = true)
     PCEntity toEntity(PCCreateRequestDTO pcCreateRequest);
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "processorBrand", ignore = true)
     @Mapping(target = "graphicsCardBrand", ignore = true)
     @Mapping(target = "operatingSystem", ignore = true)
+    @Mapping(target = "description", ignore = true)
     void toEntity(PCCreateRequestDTO pcUpdateRequest, @MappingTarget PCEntity existingPC);
 
     PCComboDataDTO toPCComboDataDTO(
