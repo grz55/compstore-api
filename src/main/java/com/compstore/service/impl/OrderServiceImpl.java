@@ -76,7 +76,7 @@ public class OrderServiceImpl implements IOrderService {
             Map<UUID, Integer> itemQuantities, List<ProductEntity> productsFound) {
         OrderEntity newOrder = new OrderEntity();
 
-        List<OrderItemEntity> orderProducts =
+        List<OrderItemEntity> orderItems =
                 productsFound.stream()
                         .map(
                                 product ->
@@ -88,7 +88,7 @@ public class OrderServiceImpl implements IOrderService {
 
         BigDecimal finalOrderPrice = calculateFinalOrderPrice(itemQuantities, productsFound);
 
-        newOrder.setOrderItems(orderProducts);
+        newOrder.setOrderItems(orderItems);
         newOrder.setPrice(finalOrderPrice);
         return newOrder;
     }
