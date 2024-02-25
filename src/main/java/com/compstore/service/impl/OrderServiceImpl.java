@@ -2,6 +2,7 @@ package com.compstore.service.impl;
 
 import com.compstore.dto.order.OrderCreateRequestDTO;
 import com.compstore.dto.order.OrderCreateResponseDTO;
+import com.compstore.dto.order.OrderItemDTO;
 import com.compstore.entity.OrderEntity;
 import com.compstore.entity.OrderProductEntity;
 import com.compstore.entity.ProductEntity;
@@ -11,6 +12,7 @@ import com.compstore.repository.OrderRepository;
 import com.compstore.repository.ProductRepository;
 import com.compstore.service.IOrderService;
 import com.compstore.validator.OrderValidator;
+import com.compstore.validator.ProductValidator;
 import java.math.BigDecimal;
 import java.util.*;
 import lombok.AllArgsConstructor;
@@ -30,17 +32,20 @@ public class OrderServiceImpl implements IOrderService {
     private final ProductRepository<ProductEntity> productRepository;
 
     private final OrderValidator orderValidator;
+    private final ProductValidator productValidator;
 
     @Override
     public OrderCreateResponseDTO createOrder(OrderCreateRequestDTO orderCreateRequest) {
-        Set<UUID> productsInOrderUuids = orderCreateRequest.getProductsQuantity().keySet();
-        log.info("Requested creating an order with ids: {}", productsInOrderUuids);
-        orderValidator.validateEmptyOrder(productsInOrderUuids);
 
-        List<ProductEntity> productsFound = productRepository.findByIdIn(productsInOrderUuids);
-        orderValidator.validateProductsExist(productsInOrderUuids, productsFound);
+        orderValidator.validateEmptyOrder(orderCreateRequest.getOrderItems());
+        Map<UUID, Integer> itemQuantities = mergeOrderItemQuantities(orderCreateRequest);
 
-        OrderEntity newOrder = prepareOrderFromProducts(orderCreateRequest, productsFound);
+        log.info("Requested creating an order with ids: {}", itemQuantities.keySet());
+
+        List<ProductEntity> productsFound = productRepository.findByIdIn(itemQuantities.keySet());
+        productValidator.validateProductsExist(itemQuantities.keySet(), productsFound);
+
+        OrderEntity newOrder = prepareOrderFromProducts(itemQuantities, productsFound);
 
         OrderEntity savedOrder = orderRepository.save(newOrder);
         return orderMapper.toOrderCreateResponseDTO(savedOrder);
@@ -57,8 +62,18 @@ public class OrderServiceImpl implements IOrderService {
         }
     }
 
+    private Map<UUID, Integer> mergeOrderItemQuantities(OrderCreateRequestDTO orderCreateRequest) {
+        Map<UUID, Integer> itemQuantities = new HashMap<>();
+        for (OrderItemDTO orderItemDTO : orderCreateRequest.getOrderItems()) {
+            UUID orderItemUUID = orderItemDTO.getProduct();
+            Integer quantity = itemQuantities.getOrDefault(orderItemUUID, 0);
+            itemQuantities.put(orderItemUUID, quantity + orderItemDTO.getQuantity());
+        }
+        return itemQuantities;
+    }
+
     private OrderEntity prepareOrderFromProducts(
-            OrderCreateRequestDTO orderCreateRequest, List<ProductEntity> productsFound) {
+            Map<UUID, Integer> itemQuantities, List<ProductEntity> productsFound) {
         OrderEntity newOrder = new OrderEntity();
 
         List<OrderProductEntity> orderProducts =
@@ -68,12 +83,10 @@ public class OrderServiceImpl implements IOrderService {
                                         new OrderProductEntity(
                                                 newOrder,
                                                 product,
-                                                orderCreateRequest
-                                                        .getProductsQuantity()
-                                                        .get(product.getId())))
+                                                itemQuantities.get(product.getId())))
                         .toList();
 
-        BigDecimal finalOrderPrice = calculateFinalOrderPrice(orderCreateRequest, productsFound);
+        BigDecimal finalOrderPrice = calculateFinalOrderPrice(itemQuantities, productsFound);
 
         newOrder.setOrderProducts(orderProducts);
         newOrder.setPrice(finalOrderPrice);
@@ -81,13 +94,12 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     private BigDecimal calculateFinalOrderPrice(
-            OrderCreateRequestDTO orderCreateRequest, List<ProductEntity> productsFound) {
+            Map<UUID, Integer> itemQuantities, List<ProductEntity> productsFound) {
         return productsFound.stream()
                 .map(
                         product -> {
                             BigDecimal productPrice = product.getPrice();
-                            Integer productQuantityInOrder =
-                                    orderCreateRequest.getProductsQuantity().get(product.getId());
+                            Integer productQuantityInOrder = itemQuantities.get(product.getId());
                             return productPrice.multiply(
                                     BigDecimal.valueOf(productQuantityInOrder));
                         })
