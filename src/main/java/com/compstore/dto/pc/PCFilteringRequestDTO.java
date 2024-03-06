@@ -1,6 +1,8 @@
 package com.compstore.dto.pc;
 
 import com.compstore.dto.pagination.PagingAndSortingRequestDTO;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import java.util.List;
 import java.util.UUID;
 import lombok.Data;
@@ -24,5 +26,6 @@ public class PCFilteringRequestDTO {
 
     private Double priceTo;
 
+    @Valid @NotNull
     private PagingAndSortingRequestDTO pagingAndSortingRequest = new PagingAndSortingRequestDTO();
 }
