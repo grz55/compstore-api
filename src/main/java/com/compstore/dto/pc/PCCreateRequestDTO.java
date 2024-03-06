@@ -1,6 +1,6 @@
 package com.compstore.dto.pc;
 
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 import java.util.UUID;
@@ -11,17 +11,17 @@ public class PCCreateRequestDTO {
 
     @NotNull private UUID processorBrand;
 
-    @NotEmpty private String processorName;
+    @NotBlank private String processorName;
 
     @NotNull private UUID graphicsCardBrand;
 
-    @NotEmpty private String graphicsCardName;
+    @NotBlank private String graphicsCardName;
 
-    @NotEmpty private String ramCapacity;
+    @NotBlank private String ramCapacity;
 
-    @NotEmpty private String driveCapacity;
+    @NotBlank private String driveCapacity;
 
-    @NotEmpty private String driveType;
+    @NotBlank private String driveType;
 
     private UUID operatingSystem;
 
