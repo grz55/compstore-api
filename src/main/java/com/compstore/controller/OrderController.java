@@ -4,6 +4,7 @@ import com.compstore.dto.order.OrderCreateRequestDTO;
 import com.compstore.dto.order.OrderCreateResponseDTO;
 import com.compstore.service.IOrderService;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -20,7 +21,7 @@ public class OrderController {
 
     @PostMapping
     public ResponseEntity<OrderCreateResponseDTO> createOrder(
-            @RequestBody OrderCreateRequestDTO orderCreateRequest) {
+            @Valid @RequestBody OrderCreateRequestDTO orderCreateRequest) {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(orderService.createOrder(orderCreateRequest));
     }
