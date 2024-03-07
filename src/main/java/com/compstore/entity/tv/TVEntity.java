@@ -1,25 +1,25 @@
 package com.compstore.entity.tv;
 
+import com.compstore.entity.ProductEntity;
 import com.compstore.entity.dictionary.BrandEntity;
 import com.compstore.entity.dictionary.ScreenTypeEntity;
 import com.compstore.entity.enums.Color;
 import com.compstore.entity.tv.enums.RefreshRate;
 import com.compstore.entity.tv.enums.ResolutionName;
 import jakarta.persistence.*;
-import java.math.BigDecimal;
-import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
 @Table(name = "tvs")
 @NoArgsConstructor
 @AllArgsConstructor
-public class TVEntity {
-
-    @Id @GeneratedValue private UUID id;
+@PrimaryKeyJoinColumn(name = "tv_uuid")
+public class TVEntity extends ProductEntity {
 
     @ManyToOne
     @JoinColumn(name = "brand_uuid")
@@ -58,6 +58,4 @@ public class TVEntity {
     private Integer hdmiCount;
 
     private Integer usbCount;
-
-    private BigDecimal price;
 }

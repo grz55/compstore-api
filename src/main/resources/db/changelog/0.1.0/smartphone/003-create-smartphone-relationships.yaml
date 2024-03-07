@@ -5,6 +5,12 @@ databaseChangeLog:
       changes:
         - addForeignKeyConstraint:
             baseTableName: smartphones
+            baseColumnNames: smartphone_uuid
+            referencedTableName: products
+            referencedColumnNames: id
+            constraintName: fk_smartphones_products
+        - addForeignKeyConstraint:
+            baseTableName: smartphones
             baseColumnNames: brand_uuid
             referencedTableName: brands
             referencedColumnNames: id

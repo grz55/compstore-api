@@ -340,7 +340,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/pcs/d5977f31-5c2e-4f3b-9c7c-5dad32772fbc",
+							"raw": "http://localhost:8080/pcs/dd76d2ea-2ea6-47a1-a9b2-190fb90027cb",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -348,7 +348,7 @@
 							"port": "8080",
 							"path": [
 								"pcs",
-								"d5977f31-5c2e-4f3b-9c7c-5dad32772fbc"
+								"dd76d2ea-2ea6-47a1-a9b2-190fb90027cb"
 							]
 						}
 					},
@@ -908,6 +908,196 @@
 							"path": [
 								"processor-brands",
 								"combo-data"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "create 201",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderItems\": [\r\n        {\r\n            \"product\": \"83305d70-4a77-4811-a365-eeda3aa5f5fd\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"product\": \"e4b9acf7-2a81-4acd-8da9-63a110479e34\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"product\": \"7922048b-9b39-4905-b000-f535801b6866\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 404",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderItems\": [\r\n        {\r\n            \"product\": \"83305d70-4a77-4811-a365-eeda3aa00000\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"product\": \"e4b9acf7-2a81-4acd-8da9-63a110479e34\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"product\": \"7922048b-9b39-4905-b000-f535801b6866\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 422",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderItems\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteByUUID 204",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/orders/1020b1c2-ccb5-453b-b026-d0f11589fd50",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"1020b1c2-ccb5-453b-b026-d0f11589fd50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteByUUID 404",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/orders/1020b1c2-ccb5-453b-b026-d0f11589fd99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"1020b1c2-ccb5-453b-b026-d0f11589fd99"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "getByUUIDs 200",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    \"d5977f31-5c2e-4f3b-9c7c-5dad32772fbc\",\r\n    \"ddbb3a00-a494-41f7-9b4f-49e34adbafbc\",\r\n    \"82265dd3-df8e-4f26-a4e6-9920a732f916\"\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByUUIDs 404",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    \"d5977f31-5c2e-4f3b-9c7c-5dad32770000\",\r\n    \"ddbb3a00-a494-41f7-9b4f-49e34adbafbc\",\r\n    \"82265dd3-df8e-4f26-a4e6-9920a732f916\"\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
 							]
 						}
 					},

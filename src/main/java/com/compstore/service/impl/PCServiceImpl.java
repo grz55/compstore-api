@@ -79,6 +79,7 @@ public class PCServiceImpl implements IPCService {
         log.info("Requested creating a PC");
         PCEntity pcEntity = pcMapper.toEntity(pcCreateRequest);
         fetchPCRelatedEntities(pcEntity, pcCreateRequest);
+        preparePCDescription(pcEntity);
         PCEntity savedPc = pcRepository.save(pcEntity);
         return pcMapper.toDTO(savedPc);
     }
@@ -91,6 +92,7 @@ public class PCServiceImpl implements IPCService {
             PCEntity existingPC = pcById.get();
             pcMapper.toEntity(pcUpdateRequest, existingPC);
             fetchPCRelatedEntities(existingPC, pcUpdateRequest);
+            preparePCDescription(existingPC);
             PCEntity updatedPc = pcRepository.save(existingPC);
             return pcMapper.toDTO(updatedPc);
         } else {
@@ -146,6 +148,30 @@ public class PCServiceImpl implements IPCService {
         } else {
             throw new NotFoundException(PC_OPERATING_SYSTEM_NOT_FOUND_MSG + operatingSystemUUID);
         }
+    }
+
+    private void preparePCDescription(PCEntity pcEntity) {
+        String processorName = pcEntity.getProcessorName();
+        String ramCapacity = pcEntity.getRamCapacity().getValue();
+        String graphicsCardName = pcEntity.getGraphicsCardName();
+        String driveCapacity = pcEntity.getDriveCapacity().getValue();
+        String driveType = pcEntity.getDriveType().getValue();
+        String operatingSystem = pcEntity.getOperatingSystem().getName();
+
+        String description =
+                processorName
+                        + " - "
+                        + ramCapacity
+                        + " RAM - "
+                        + graphicsCardName
+                        + " - "
+                        + driveCapacity
+                        + " "
+                        + driveType
+                        + " - "
+                        + operatingSystem;
+
+        pcEntity.setDescription(description);
     }
 
     @Override

@@ -3,6 +3,9 @@ databaseChangeLog:
       file: dictionary/changelog-0.1.0-dictionary-data.yaml
       relativeToChangelogFile: true
   - include:
+      file: product/changelog-0.1.0-product-data.yaml
+      relativeToChangelogFile: true
+  - include:
       file: pc/changelog-0.1.0-pc-data.yaml
       relativeToChangelogFile: true
   - include:
@@ -10,4 +13,7 @@ databaseChangeLog:
       relativeToChangelogFile: true
   - include:
       file: tv/changelog-0.1.0-tv-data.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: order/changelog-0.1.0-order-data.yaml
       relativeToChangelogFile: true
