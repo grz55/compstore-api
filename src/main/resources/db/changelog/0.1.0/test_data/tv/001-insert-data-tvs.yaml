@@ -7,4 +7,4 @@ databaseChangeLog:
             file: classpath:/db/changelog/0.1.0/test_data/tv/tvs.csv
             separator: ','
             tableName: tvs
-            primaryKey: id
+            primaryKey: tv_uuid

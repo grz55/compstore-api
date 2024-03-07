@@ -7,7 +7,7 @@ databaseChangeLog:
             tableName: pcs
             columns:
               - column:
-                  name: id
+                  name: pc_uuid
                   type: uuid
                   constraints:
                     nullable: false
@@ -50,10 +50,5 @@ databaseChangeLog:
               - column:
                   name: operating_system_uuid
                   type: uuid
-                  constraints:
-                    nullable: false
-              - column:
-                  name: price
-                  type: decimal(10, 2)
                   constraints:
                     nullable: false

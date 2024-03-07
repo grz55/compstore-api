@@ -7,7 +7,7 @@ databaseChangeLog:
             tableName: smartphones
             columns:
               - column:
-                  name: id
+                  name: smartphone_uuid
                   type: uuid
                   constraints:
                     nullable: false
@@ -81,10 +81,5 @@ databaseChangeLog:
               - column:
                   name: processor_name
                   type: varchar(255)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: price
-                  type: decimal(10, 2)
                   constraints:
                     nullable: false
