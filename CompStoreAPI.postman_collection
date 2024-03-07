@@ -331,6 +331,64 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "search 400 pagingAndSortingRequest null",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pagingAndSortingRequest\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/pcs/search",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pcs",
+										"search"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search 400 pageNumber negative",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pagingAndSortingRequest\": {\r\n        \"ascendingFlag\": false,\r\n        \"pageNumber\" : -50,\r\n        \"pageSize\" : 100\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/pcs/search",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pcs",
+										"search"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -403,7 +461,35 @@
 					"response": []
 				},
 				{
-					"name": "create 400",
+					"name": "create 400 processor name null",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"New graphics card name\",\r\n    \"ramCapacity\": \"32 GB\",\r\n    \"driveCapacity\": \"1 TB\",\r\n    \"driveType\": \"HDD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 1999.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pcs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 400 wrong driveType",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -508,7 +594,36 @@
 					"response": []
 				},
 				{
-					"name": "update 400",
+					"name": "update 400 graphics card name null",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"Updated processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"ramCapacity\": \"64 GB\",\r\n    \"driveCapacity\": \"4 TB\",\r\n    \"driveType\": \"SSD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 4999.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pcs/d5977f31-5c2e-4f3b-9c7c-5dad32772fbc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs",
+								"d5977f31-5c2e-4f3b-9c7c-5dad32772fbc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update 400 wrong ramCapacity",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -788,7 +903,35 @@
 					"response": []
 				},
 				{
-					"name": "create 400",
+					"name": "create 400 name null",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"processorBrandDeviceType\": \"PC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/processor-brands",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 400 wrong deviceType",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -845,7 +988,36 @@
 					"response": []
 				},
 				{
-					"name": "update 400",
+					"name": "update 400 name blank",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \" \",\r\n    \"processorBrandDeviceType\": \"PC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/processor-brands/6a6f85ed-501b-4cb1-9e95-590c980afac3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands",
+								"6a6f85ed-501b-4cb1-9e95-590c980afac3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update 400 wrong deviceType",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -926,6 +1098,62 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n    \"orderItems\": [\r\n        {\r\n            \"product\": \"83305d70-4a77-4811-a365-eeda3aa5f5fd\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"product\": \"e4b9acf7-2a81-4acd-8da9-63a110479e34\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"product\": \"7922048b-9b39-4905-b000-f535801b6866\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 400 orderItems null",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 400 quantity negative",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderItems\": [\r\n        {\r\n            \"product\": \"83305d70-4a77-4811-a365-eeda3aa5f5fd\",\r\n            \"quantity\": -1\r\n        },\r\n        {\r\n            \"product\": \"e4b9acf7-2a81-4acd-8da9-63a110479e34\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"product\": \"7922048b-9b39-4905-b000-f535801b6866\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
