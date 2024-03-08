@@ -16,9 +16,10 @@ public class GraphicsCardBrandEntity {
 
     @Id @GeneratedValue private UUID id;
 
+    @Column(nullable = false)
     private String name;
 
-    @Column(name = "graphics_card_brand_device_type")
+    @Column(name = "graphics_card_brand_device_type", nullable = false)
     @Enumerated(value = EnumType.STRING)
     private GraphicsCardBrandDeviceType graphicsCardBrandDeviceType;
 }

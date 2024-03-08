@@ -141,6 +141,9 @@ public class PCServiceImpl implements IPCService {
     }
 
     private void fetchPCOperatingSystem(PCEntity pcEntity, UUID operatingSystemUUID) {
+        if (operatingSystemUUID == null) {
+            return;
+        }
         Optional<PCOperatingSystemEntity> pcOperatingSystemById =
                 pcOperatingSystemRepository.findById(operatingSystemUUID);
         if (pcOperatingSystemById.isPresent()) {
@@ -156,7 +159,10 @@ public class PCServiceImpl implements IPCService {
         String graphicsCardName = pcEntity.getGraphicsCardName();
         String driveCapacity = pcEntity.getDriveCapacity().getValue();
         String driveType = pcEntity.getDriveType().getValue();
-        String operatingSystem = pcEntity.getOperatingSystem().getName();
+        String operatingSystem =
+                pcEntity.getOperatingSystem() != null
+                        ? pcEntity.getOperatingSystem().getName()
+                        : "No Operating System";
 
         String description =
                 processorName

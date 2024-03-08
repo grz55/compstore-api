@@ -61,8 +61,6 @@ databaseChangeLog:
               - column:
                   name: front_camera_mpix_resolution
                   type: int
-                  constraints:
-                    nullable: false
               - column:
                   name: back_camera_mpix_resolution
                   type: int

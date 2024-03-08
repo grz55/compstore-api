@@ -19,25 +19,28 @@ import lombok.*;
 public class PCEntity extends ProductEntity {
 
     @ManyToOne
-    @JoinColumn(name = "processor_brand_uuid")
+    @JoinColumn(name = "processor_brand_uuid", nullable = false)
     private ProcessorBrandEntity processorBrand;
 
+    @Column(nullable = false)
     private String processorName;
 
     @ManyToOne
-    @JoinColumn(name = "graphics_card_brand_uuid")
+    @JoinColumn(name = "graphics_card_brand_uuid", nullable = false)
     private GraphicsCardBrandEntity graphicsCardBrand;
 
+    @Column(nullable = false)
     private String graphicsCardName;
 
-    @Column(name = "ram_capacity")
+    @Column(name = "ram_capacity", nullable = false)
     @Enumerated(value = EnumType.STRING)
     private RAMCapacity ramCapacity;
 
-    @Column(name = "drive_capacity")
+    @Column(name = "drive_capacity", nullable = false)
     @Enumerated(value = EnumType.STRING)
     private DriveCapacity driveCapacity;
 
+    @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     private DriveType driveType;
 

@@ -18,9 +18,10 @@ public class ProcessorBrandEntity {
 
     @Id @GeneratedValue private UUID id;
 
+    @Column(nullable = false)
     private String name;
 
-    @Column(name = "processor_brand_device_type")
+    @Column(name = "processor_brand_device_type", nullable = false)
     @Enumerated(value = EnumType.STRING)
     private ProcessorBrandDeviceType processorBrandDeviceType;
 

@@ -23,22 +23,27 @@ import lombok.NoArgsConstructor;
 public class SmartphoneEntity extends ProductEntity {
 
     @ManyToOne
-    @JoinColumn(name = "brand_uuid")
+    @JoinColumn(name = "brand_uuid", nullable = false)
     private BrandEntity brand;
 
+    @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     private Color color;
 
+    @Column(nullable = false)
     private Double screenSize;
 
+    @Column(nullable = false)
     private Integer resolutionHeight;
 
+    @Column(nullable = false)
     private Integer resolutionWidth;
 
     @ManyToOne
-    @JoinColumn(name = "screen_type_uuid")
+    @JoinColumn(name = "screen_type_uuid", nullable = false)
     private ScreenTypeEntity screenType;
 
     private Integer batteryCapacity;
@@ -47,21 +52,23 @@ public class SmartphoneEntity extends ProductEntity {
     @Enumerated(value = EnumType.STRING)
     private RAMCapacity ramCapacity;
 
-    @Column(name = "storage_capacity")
+    @Column(name = "storage_capacity", nullable = false)
     @Enumerated(value = EnumType.STRING)
     private StorageCapacity storageCapacity;
 
     private Integer frontCameraMpixResolution;
 
+    @Column(nullable = false)
     private Integer backCameraMpixResolution;
 
     @ManyToOne
-    @JoinColumn(name = "operating_system_uuid")
+    @JoinColumn(name = "operating_system_uuid", nullable = false)
     private SmartphoneOperatingSystemEntity operatingSystem;
 
     @ManyToOne
-    @JoinColumn(name = "processor_brand_uuid")
+    @JoinColumn(name = "processor_brand_uuid", nullable = false)
     private ProcessorBrandEntity processorBrand;
 
+    @Column(nullable = false)
     private String processorName;
 }

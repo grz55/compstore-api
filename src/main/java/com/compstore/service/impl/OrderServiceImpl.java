@@ -11,7 +11,6 @@ import com.compstore.mapper.OrderMapper;
 import com.compstore.repository.OrderRepository;
 import com.compstore.repository.ProductRepository;
 import com.compstore.service.IOrderService;
-import com.compstore.validator.OrderValidator;
 import com.compstore.validator.ProductValidator;
 import java.math.BigDecimal;
 import java.util.*;
@@ -31,13 +30,10 @@ public class OrderServiceImpl implements IOrderService {
     private final OrderRepository orderRepository;
     private final ProductRepository<ProductEntity> productRepository;
 
-    private final OrderValidator orderValidator;
     private final ProductValidator productValidator;
 
     @Override
     public OrderCreateResponseDTO createOrder(OrderCreateRequestDTO orderCreateRequest) {
-
-        orderValidator.validateEmptyOrder(orderCreateRequest.getOrderItems());
         Map<UUID, Integer> itemQuantities = mergeOrderItemQuantities(orderCreateRequest);
 
         log.info("Requested creating an order with ids: {}", itemQuantities.keySet());

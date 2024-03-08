@@ -50,5 +50,3 @@ databaseChangeLog:
               - column:
                   name: operating_system_uuid
                   type: uuid
-                  constraints:
-                    nullable: false

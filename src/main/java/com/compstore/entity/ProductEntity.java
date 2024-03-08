@@ -13,7 +13,9 @@ public abstract class ProductEntity {
 
     @Id @GeneratedValue protected UUID id;
 
+    @Column(nullable = false)
     protected String description;
 
+    @Column(nullable = false)
     protected BigDecimal price;
 }
