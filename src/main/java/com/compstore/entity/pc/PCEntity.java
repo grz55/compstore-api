@@ -44,4 +44,8 @@ public class PCEntity extends ProductEntity {
     @ManyToOne
     @JoinColumn(name = "operating_system_uuid")
     private PCOperatingSystemEntity operatingSystem;
+
+    public String getEntityName() {
+        return "PC";
+    }
 }

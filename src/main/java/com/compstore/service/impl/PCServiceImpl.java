@@ -20,6 +20,7 @@ import com.compstore.repository.GraphicsCardBrandRepository;
 import com.compstore.repository.ProcessorBrandRepository;
 import com.compstore.repository.pc.*;
 import com.compstore.service.IPCService;
+import com.compstore.validator.PCValidator;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -48,6 +49,8 @@ public class PCServiceImpl implements IPCService {
     private final ProcessorBrandRepository processorBrandRepository;
     private final GraphicsCardBrandRepository graphicsCardBrandRepository;
     private final PCOperatingSystemRepository pcOperatingSystemRepository;
+
+    private final PCValidator pcValidator;
 
     @Override
     public PCDTO getPCById(UUID pcId) {
@@ -105,6 +108,7 @@ public class PCServiceImpl implements IPCService {
         log.info("Requested deleting a PC with id: {}", pcId);
         Optional<PCEntity> pcById = pcRepository.findById(pcId);
         if (pcById.isPresent()) {
+            pcValidator.validateDelete(pcById.get());
             pcRepository.delete(pcById.get());
         } else {
             throw new NotFoundException(PC_NOT_FOUND_MSG + pcId);
