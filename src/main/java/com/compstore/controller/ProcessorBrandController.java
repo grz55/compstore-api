@@ -10,6 +10,7 @@ import java.util.UUID;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -21,12 +22,14 @@ public class ProcessorBrandController {
     private final IProcessorBrandService processorBrandService;
 
     @GetMapping
+    @PreAuthorize("hasRole('admin')")
     public ResponseEntity<List<ProcessorBrandDTO>> getAllProcessorBrands() {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(processorBrandService.getAllProcessorBrands());
     }
 
     @GetMapping("/{processorBrandId}")
+    @PreAuthorize("hasRole('admin')")
     public ResponseEntity<ProcessorBrandDTO> getProcessorBrandById(
             @PathVariable UUID processorBrandId) {
         return ResponseEntity.status(HttpStatus.OK)
@@ -34,6 +37,7 @@ public class ProcessorBrandController {
     }
 
     @PostMapping
+    @PreAuthorize("hasRole('admin')")
     public ResponseEntity<Void> createProcessorBrand(
             @RequestBody ProcessorBrandCreateRequestDTO processorBrandCreateRequestDTO) {
         processorBrandService.createProcessorBrand(processorBrandCreateRequestDTO);
@@ -41,6 +45,7 @@ public class ProcessorBrandController {
     }
 
     @PutMapping("/{processorBrandId}")
+    @PreAuthorize("hasRole('admin')")
     public ResponseEntity<Void> updateProcessorBrand(
             @PathVariable UUID processorBrandId,
             @RequestBody ProcessorBrandCreateRequestDTO processorBrandUpdateRequest) {
@@ -49,12 +54,14 @@ public class ProcessorBrandController {
     }
 
     @DeleteMapping("/{processorBrandId}")
+    @PreAuthorize("hasRole('admin')")
     public ResponseEntity<Void> deleteProcessorBrandById(@PathVariable UUID processorBrandId) {
         processorBrandService.deleteProcessorBrandById(processorBrandId);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
     @GetMapping("/combo-data")
+    @PreAuthorize("hasRole('admin')")
     public ResponseEntity<ProcessorBrandComboDataDTO> getProcessorBrandComboData() {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(processorBrandService.getProcessorBrandComboData());

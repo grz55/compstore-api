@@ -9,6 +9,7 @@ import java.util.UUID;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,6 +21,7 @@ public class ProductController {
     private final IProductService productService;
 
     @PostMapping
+    @PreAuthorize("hasRole('admin')")
     public ResponseEntity<List<ProductDTO>> getProductsByIds(@RequestBody Set<UUID> productUUIDs) {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(productService.getProductsByIds(productUUIDs));
