@@ -413,7 +413,7 @@
 					"response": []
 				},
 				{
-					"name": "getByUUID 200 Auth Dev",
+					"name": "getByUUID 200 Auth User",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -443,7 +443,7 @@
 					"response": []
 				},
 				{
-					"name": "getByUUID 200 Auth Prod",
+					"name": "getByUUID 200 Auth Admin",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -521,7 +521,7 @@
 					"response": []
 				},
 				{
-					"name": "create 403 Auth Dev",
+					"name": "create 403 Auth User",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -559,7 +559,7 @@
 					"response": []
 				},
 				{
-					"name": "create 201 Auth Prod",
+					"name": "create 201 Auth Admin",
 					"request": {
 						"auth": {
 							"type": "bearer",
