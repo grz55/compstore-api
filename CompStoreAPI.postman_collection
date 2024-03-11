@@ -331,12 +331,130 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "search 400 pagingAndSortingRequest null",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pagingAndSortingRequest\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/pcs/search",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pcs",
+										"search"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search 400 pageNumber negative",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pagingAndSortingRequest\": {\r\n        \"ascendingFlag\": false,\r\n        \"pageNumber\" : -50,\r\n        \"pageSize\" : 100\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/pcs/search",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pcs",
+										"search"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
 				{
 					"name": "getByUUID 200",
 					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pcs/dd76d2ea-2ea6-47a1-a9b2-190fb90027cb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs",
+								"dd76d2ea-2ea6-47a1-a9b2-190fb90027cb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByUUID 200 Auth Dev",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJtMmJKODFRak5pcG84emU4bXUzVG9KamstaUozNmVYdHJVOGJjX0p4TjE0In0.eyJleHAiOjE3MTAxMTY3MTUsImlhdCI6MTcxMDExNjQxNSwianRpIjoiYmQxMGMyZWUtMmFhMy00NGQ2LThmNDYtYjQ1MmFhNzFlMWU0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDkwL3JlYWxtcy9jb21wc3RvcmUiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMGYyY2Q2OTYtN2FlNi00OWU2LTk5MGQtMjE0MDkxN2ZkNmYyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiY29tcHN0b3JlLWFwaSIsInNlc3Npb25fc3RhdGUiOiIwYzc4M2UzYy1kNmQwLTQ1MTgtOGQzYi00OTJhZjUwYjhkOTQiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciIsImRlZmF1bHQtcm9sZXMtY29tcHN0b3JlIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiY29tcHN0b3JlLWFwaSI6eyJyb2xlcyI6WyJ1c2VyIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJzaWQiOiIwYzc4M2UzYy1kNmQwLTQ1MTgtOGQzYi00OTJhZjUwYjhkOTQiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZ3J6NTUiLCJlbWFpbCI6ImdyejU1QHZwLnBsIn0.cqegzVBoZiVw6qCB8vaty_zUU4ijtkZ_MVo9_S-2MZ5PFVxgcbdiV5EHAkWhOzfnhmyzGpNpo6FIfIBxwX6ZHvjFYbmeVzyL20tKiGfZAj-HBxjPYDsPuvzvUpbueZF1r1voUmXcwXBf6jBRDlv9iGZgXjf7Fr7kW-E6RaOdxjUwNkfIcEfzFf9T8lJL7OgfkMuSuyplxFhnWLLf2NANSUHFkKZic_q5mb3iZ1VyPx-n8YQw2cTP3y06UFGj6rH5JeckdKMNSWFh2q6kXqYwwr856oILDCFDZ4ta9mN5xaxJPAEm3YdsHkQPjcTo8VIQkqjXJC71mIoSjGT8cpxQWg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pcs/dd76d2ea-2ea6-47a1-a9b2-190fb90027cb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs",
+								"dd76d2ea-2ea6-47a1-a9b2-190fb90027cb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByUUID 200 Auth Prod",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJtMmJKODFRak5pcG84emU4bXUzVG9KamstaUozNmVYdHJVOGJjX0p4TjE0In0.eyJleHAiOjE3MTAxMTcxNDAsImlhdCI6MTcxMDExNjg0MCwianRpIjoiM2NkMjNlMzctMTJkYi00Mzk1LTg5MDctZTA1YTM4YmYxZmEzIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDkwL3JlYWxtcy9jb21wc3RvcmUiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiYWVkOGRkNDktNjA4ZS00Mzg3LWIxMzItMTJlZWVhZTA5NmI1IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiY29tcHN0b3JlLWFwaSIsInNlc3Npb25fc3RhdGUiOiIwZjA5NjFiNS1jMWJkLTQ1ZjItOGRiMy0yNzNjYmMzMzYzYjYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLWNvbXBzdG9yZSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImNvbXBzdG9yZS1hcGkiOnsicm9sZXMiOlsiYWRtaW4iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjBmMDk2MWI1LWMxYmQtNDVmMi04ZGIzLTI3M2NiYzMzNjNiNiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiJ9.OZPD_RQsGtjb1MdOKC4Xl3lJAecjyNEbqx4rkG8QSqkgTunDB0AZCvxf6H8K13u4WDjcW_D7IUSdxAZkZBw6gP6rsNmpqxK-Bt7xXEuOPVsukKlVgGLtaxHlMcdRROd80dXPFUYUY0bogyylnzc8XZoGnGEDOHr1PLTT48R6cFTomanCPrykqtiT6QsjhZqYWmcz9CK60Ryr3-bh26VUsez0rHKaePVUUyyygPdUH1zuXkKdiYf9jHJ4ckqkm4ofWtzEI_CJCgSXAQ1BRtX9RHhfRu1M3xPOB_2OvMRMusuCCh5OAuCDU7lRowtfpcezEnvlM4bL94yLtYNsOCbLNQ",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -403,7 +521,139 @@
 					"response": []
 				},
 				{
-					"name": "create 400",
+					"name": "create 403 Auth Dev",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJtMmJKODFRak5pcG84emU4bXUzVG9KamstaUozNmVYdHJVOGJjX0p4TjE0In0.eyJleHAiOjE3MTAxMTcxMjYsImlhdCI6MTcxMDExNjgyNiwianRpIjoiNzlmMTk0NTItM2U5ZS00NThiLTlkNjQtZjRhMWVlMTQ1OTM1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDkwL3JlYWxtcy9jb21wc3RvcmUiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMGYyY2Q2OTYtN2FlNi00OWU2LTk5MGQtMjE0MDkxN2ZkNmYyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiY29tcHN0b3JlLWFwaSIsInNlc3Npb25fc3RhdGUiOiIzZDk1MTE0Yi1iMjkxLTQ1YzItYmQyMi1jNGE4NDg3MDFlZjciLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciIsImRlZmF1bHQtcm9sZXMtY29tcHN0b3JlIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiY29tcHN0b3JlLWFwaSI6eyJyb2xlcyI6WyJ1c2VyIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJzaWQiOiIzZDk1MTE0Yi1iMjkxLTQ1YzItYmQyMi1jNGE4NDg3MDFlZjciLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZ3J6NTUiLCJlbWFpbCI6ImdyejU1QHZwLnBsIn0.y5dIzArqmx1M0vw3MffJ9CL9KtmEDPduKZvnqbFY1piu4h3m3YtecyB1IFASAwMHi_ru333ZZj1ZmzRWnVcFtiJJ3S35qfn6LEoEb6B1uYrPZD1QeQv_g9ZpqTRpn4iHvY1lUp-BMerGdxnG47Rm7keE8Ze53r9fioK2h9-PF1E1JyaSr081IbVba6Gm0q61EoeHf9qaXj3ppcvCc9TdzUcSzoaEGuDDN6DJApv8v6Yv-rtVritFJFvoGqgSypKgaiFb_SD8K213BWv2jyFWn0-6Xes2Iyug43-llElkLhf5Kwg8BimaXgaMoiI9CcKRK3KvQ18d8mlA-DgM7_lmoA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"New processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"New graphics card name\",\r\n    \"ramCapacity\": \"32 GB\",\r\n    \"driveCapacity\": \"1 TB\",\r\n    \"driveType\": \"HDD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 1999.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pcs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 201 Auth Prod",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJtMmJKODFRak5pcG84emU4bXUzVG9KamstaUozNmVYdHJVOGJjX0p4TjE0In0.eyJleHAiOjE3MTAxMTY3NDYsImlhdCI6MTcxMDExNjQ0NiwianRpIjoiYjI4MGVkYzYtZWEyOC00ODdhLThhMDgtYWNlMjkwNWJmOWQxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDkwL3JlYWxtcy9jb21wc3RvcmUiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiYWVkOGRkNDktNjA4ZS00Mzg3LWIxMzItMTJlZWVhZTA5NmI1IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiY29tcHN0b3JlLWFwaSIsInNlc3Npb25fc3RhdGUiOiI3MDgzYTJjYS0zNWE3LTQ1YTktODM3MC0yNzRjMGE3MjA0MjQiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLWNvbXBzdG9yZSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImNvbXBzdG9yZS1hcGkiOnsicm9sZXMiOlsiYWRtaW4iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjcwODNhMmNhLTM1YTctNDVhOS04MzcwLTI3NGMwYTcyMDQyNCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiJ9.DhFBMw2-yqYHqS3HzD1XnQ2EgPkNGaX03C7tFOZR6TQDmpYdPWWefHcUEraveMqrnIiSxeQU7A_s9l2Gn1_m6tpDn2kKXECheoQyErVCcnrk0dp4XxINyYvBwTkSqROzRlo-LwhE9V9toHjQEQP5NYvapwpD5hpehK_-yCFZBViNDrgVs08Y-kRMjm_N7PWH6qko0CVTmnrspugIdco2fqhYbMVBayRTxth4sKeoPf7M2VKfiJR-JHBrDVXaovnVX9Jrq-64BL1z7Rn_iiDlhJcydyvv1d2OK0VnXV7cNqRXA3NeoYq8nUV_uPp05tq_tHg96IXkJ78icknwc7DA_w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"New processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"New graphics card name\",\r\n    \"ramCapacity\": \"32 GB\",\r\n    \"driveCapacity\": \"1 TB\",\r\n    \"driveType\": \"HDD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 1999.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pcs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 201 operating system null",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"New processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"New graphics card name\",\r\n    \"ramCapacity\": \"32 GB\",\r\n    \"driveCapacity\": \"1 TB\",\r\n    \"driveType\": \"HDD\",\r\n    \"price\": 2999.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pcs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 400 processor name null",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"graphicsCardName\": \"New graphics card name\",\r\n    \"ramCapacity\": \"32 GB\",\r\n    \"driveCapacity\": \"1 TB\",\r\n    \"driveType\": \"HDD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 1999.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pcs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 400 wrong driveType",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -508,7 +758,36 @@
 					"response": []
 				},
 				{
-					"name": "update 400",
+					"name": "update 400 graphics card name null",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"processorBrand\": \"45e8716b-0720-4d2a-82ca-8c4f155d1e7b\",\r\n    \"processorName\": \"Updated processor name\",\r\n    \"graphicsCardBrand\": \"b6496490-c055-4cac-a1c3-06e4d1a402cb\",\r\n    \"ramCapacity\": \"64 GB\",\r\n    \"driveCapacity\": \"4 TB\",\r\n    \"driveType\": \"SSD\",\r\n    \"operatingSystem\": \"5c96a57f-b8f7-4e66-92e1-85290ce745fe\",\r\n    \"price\": 4999.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pcs/d5977f31-5c2e-4f3b-9c7c-5dad32772fbc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs",
+								"d5977f31-5c2e-4f3b-9c7c-5dad32772fbc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update 400 wrong ramCapacity",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -567,6 +846,26 @@
 				},
 				{
 					"name": "deleteByUUID 204",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pcs/ddbb3a00-a494-41f7-9b4f-49e34adbafbc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pcs",
+								"ddbb3a00-a494-41f7-9b4f-49e34adbafbc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteByUUID 409",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -788,7 +1087,35 @@
 					"response": []
 				},
 				{
-					"name": "create 400",
+					"name": "create 400 name null",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"processorBrandDeviceType\": \"PC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/processor-brands",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 400 wrong deviceType",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -845,7 +1172,36 @@
 					"response": []
 				},
 				{
-					"name": "update 400",
+					"name": "update 400 name blank",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \" \",\r\n    \"processorBrandDeviceType\": \"PC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/processor-brands/6a6f85ed-501b-4cb1-9e95-590c980afac3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"processor-brands",
+								"6a6f85ed-501b-4cb1-9e95-590c980afac3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update 400 wrong deviceType",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -947,13 +1303,13 @@
 					"response": []
 				},
 				{
-					"name": "create 404",
+					"name": "create 400 orderItems null",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"orderItems\": [\r\n        {\r\n            \"product\": \"83305d70-4a77-4811-a365-eeda3aa00000\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"product\": \"e4b9acf7-2a81-4acd-8da9-63a110479e34\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"product\": \"7922048b-9b39-4905-b000-f535801b6866\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -975,13 +1331,69 @@
 					"response": []
 				},
 				{
-					"name": "create 422",
+					"name": "create 400 orderItems empty",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"orderItems\": []\r\n}",
+							"raw": "{\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 400 quantity negative",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderItems\": [\r\n        {\r\n            \"product\": \"83305d70-4a77-4811-a365-eeda3aa5f5fd\",\r\n            \"quantity\": -1\r\n        },\r\n        {\r\n            \"product\": \"e4b9acf7-2a81-4acd-8da9-63a110479e34\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"product\": \"7922048b-9b39-4905-b000-f535801b6866\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 404",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderItems\": [\r\n        {\r\n            \"product\": \"83305d70-4a77-4811-a365-eeda3aa00000\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"product\": \"e4b9acf7-2a81-4acd-8da9-63a110479e34\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"product\": \"7922048b-9b39-4905-b000-f535801b6866\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1098,6 +1510,155 @@
 							"port": "8080",
 							"path": [
 								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Keycloak",
+			"item": [
+				{
+					"name": "Generate Token admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "compstore-api",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8090/realms/compstore/protocol/openid-connect/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"realms",
+								"compstore",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate Token grz55",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "compstore-api",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "grz55",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8090/realms/compstore/protocol/openid-connect/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"realms",
+								"compstore",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate Token pawelNu",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "compstore-api",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "pawelNu",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8090/realms/compstore/protocol/openid-connect/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"realms",
+								"compstore",
+								"protocol",
+								"openid-connect",
+								"token"
 							]
 						}
 					},
