@@ -25,7 +25,7 @@ public class DevSecurityConfig {
                 .csrf(
                         csrf ->
                                 csrf.ignoringRequestMatchers(
-                                        AntPathRequestMatcher.antMatcher("/h2-console/**")));
+                                        AntPathRequestMatcher.antMatcher("/**")));
         return http.build();
     }
 }
