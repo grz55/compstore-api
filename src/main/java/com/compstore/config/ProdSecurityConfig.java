@@ -23,7 +23,7 @@ public class ProdSecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(CsrfConfigurer::disable)
-                .authorizeHttpRequests(customizer -> customizer.anyRequest().authenticated())
+                .authorizeHttpRequests(customizer -> customizer.anyRequest().permitAll())
                 .oauth2ResourceServer(
                         httpSecurityOAuth2ResourceServerConfigurer ->
                                 httpSecurityOAuth2ResourceServerConfigurer.jwt(
