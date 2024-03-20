@@ -24,10 +24,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 @AllArgsConstructor
 public class PCServiceImpl implements IPCService {
 
@@ -49,6 +51,7 @@ public class PCServiceImpl implements IPCService {
 
     @Override
     public PCDTO getPCById(UUID pcId) {
+        log.info("Requested getting a PC with id: {}", pcId);
         return pcRepository
                 .findById(pcId)
                 .map(pcMapper::toDTO)
@@ -57,6 +60,7 @@ public class PCServiceImpl implements IPCService {
 
     @Override
     public PCFilteringResponseDTO searchPC(PCFilteringRequestDTO pcFilteringRequestDTO) {
+        log.info("Requested searching PCs");
         Page<PCEntity> pcsFound =
                 pcRepository.findAll(
                         PCSpecification.filterPC(pcFilteringRequestDTO),
@@ -72,19 +76,23 @@ public class PCServiceImpl implements IPCService {
 
     @Override
     public PCDTO createPC(PCCreateRequestDTO pcCreateRequest) {
+        log.info("Requested creating a PC");
         PCEntity pcEntity = pcMapper.toEntity(pcCreateRequest);
         fetchPCRelatedEntities(pcEntity, pcCreateRequest);
+        preparePCDescription(pcEntity);
         PCEntity savedPc = pcRepository.save(pcEntity);
         return pcMapper.toDTO(savedPc);
     }
 
     @Override
     public PCDTO updatePC(UUID pcId, PCCreateRequestDTO pcUpdateRequest) {
+        log.info("Requested updating a PC with id: {}", pcId);
         Optional<PCEntity> pcById = pcRepository.findById(pcId);
         if (pcById.isPresent()) {
             PCEntity existingPC = pcById.get();
             pcMapper.toEntity(pcUpdateRequest, existingPC);
             fetchPCRelatedEntities(existingPC, pcUpdateRequest);
+            preparePCDescription(existingPC);
             PCEntity updatedPc = pcRepository.save(existingPC);
             return pcMapper.toDTO(updatedPc);
         } else {
@@ -94,6 +102,7 @@ public class PCServiceImpl implements IPCService {
 
     @Override
     public void deletePCById(UUID pcId) {
+        log.info("Requested deleting a PC with id: {}", pcId);
         Optional<PCEntity> pcById = pcRepository.findById(pcId);
         if (pcById.isPresent()) {
             pcRepository.delete(pcById.get());
@@ -141,8 +150,33 @@ public class PCServiceImpl implements IPCService {
         }
     }
 
+    private void preparePCDescription(PCEntity pcEntity) {
+        String processorName = pcEntity.getProcessorName();
+        String ramCapacity = pcEntity.getRamCapacity().getValue();
+        String graphicsCardName = pcEntity.getGraphicsCardName();
+        String driveCapacity = pcEntity.getDriveCapacity().getValue();
+        String driveType = pcEntity.getDriveType().getValue();
+        String operatingSystem = pcEntity.getOperatingSystem().getName();
+
+        String description =
+                processorName
+                        + " - "
+                        + ramCapacity
+                        + " RAM - "
+                        + graphicsCardName
+                        + " - "
+                        + driveCapacity
+                        + " "
+                        + driveType
+                        + " - "
+                        + operatingSystem;
+
+        pcEntity.setDescription(description);
+    }
+
     @Override
     public PCComboDataDTO getPCComboData() {
+        log.info("Requested getting PC's combo data");
         List<ProcessorBrandEntity> allPCProcessorBrands = fetchAllPCProcessorBrands();
         List<GraphicsCardBrandEntity> allPCGraphicsCardBrands = fetchAllPCGraphicsCardBrands();
         List<PCOperatingSystemEntity> allPCOperatingSystems = fetchAllPCOperatingSystems();

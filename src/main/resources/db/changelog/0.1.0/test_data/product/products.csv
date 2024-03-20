@@ -1,0 +1,83 @@
+id,description,price
+d5977f31-5c2e-4f3b-9c7c-5dad32772fbc,AMD Ryzen 5 3600 3.6 - 4.2 GHz - 16 GB RAM - AMD Radeon RX 6600 - 1 TB SSD - Windows,999.99
+dd76d2ea-2ea6-47a1-a9b2-190fb90027cb,AMD Ryzen 5 5600X 3.7 - 4.6 GHz - 16 GB RAM - NVIDIA GeForce RTX 3060 - 512 GB SSD - Windows,949.99
+ddbb3a00-a494-41f7-9b4f-49e34adbafbc,Intel Core i7 13gen 13700KF 3.4 - 5.4 GHz - 32 GB RAM - NVIDIA GeForce RTX 4070 Ti - 1 TB SSD - Windows,2699.99
+83305d70-4a77-4811-a365-eeda3aa5f5fd,Intel Core i7 9gen 9700 2.9 - 4.0 GHz - 64 GB RAM - NVIDIA GeForce RTX 2090 - 256 GB SSD - Windows,1049.99
+19e515ec-e8ff-46a6-b58a-071c00248fd7,AMD Ryzen 7 4700 3.5 - 5.3 GHz - 32 GB RAM - Intel UHD Graphics 770 - 256 GB HDD - Linux,1199.99
+8ef13b61-fdb8-4042-8c47-fd3bafe3472c,Intel Core i9 8gen 8900 2.7 - 4.2 GHz - 64 GB RAM - Intel UHD Graphics 730 - 512 GB SSD - Windows,4849.99
+0dfe845a-b325-42e2-956d-1f175cc1b06b,AMD Ryzen 7 6800 2.6 - 4.7 GHz - 64 GB RAM - Intel UHD Graphics 710 - 2 TB HDD - Linux,5149.99
+6dbdeb43-8188-4d6d-976a-3e0ac7212d30,AMD Ryzen 7 7600 2.4 - 4.1 GHz - 32 GB RAM - Intel UHD Graphics 730 - 512 GB HDD - Windows,4449.99
+82265dd3-df8e-4f26-a4e6-9920a732f916,AMD Ryzen 6 7900 2.8 - 4.4 GHz - 16 GB RAM - NVIDIA GeForce RTX 4080 Super - 512 GB HDD - Linux,2999.99
+5c2428e8-74ca-4240-8e95-75f66b58ff67,AMD Ryzen 7 7800 2.5 - 4.5 GHz - 8 GB RAM - Intel UHD Graphics 730 - 2 TB SSD - Windows,2999.99
+99bb1882-20b6-45d2-b489-fe2da830f677,AMD Ryzen 8 5700 2.5 - 3.7 GHz - 32 GB RAM - AMD Radeon RX 8700 - 512 GB HDD - Linux,1599.99
+7fbd94be-d05b-4640-a03b-ad8022e72e56,AMD Ryzen 9 3800 2.4 - 4.6 GHz - 32 GB RAM - Intel UHD Graphics 710 - 1 TB HDD - Windows,599.99
+12606e91-de3c-4492-baa0-2754e3760a42,Intel Core i9 8gen 8900 2.7 - 4.7 GHz - 64 GB RAM - AMD Radeon RX 8600 - 512 GB HDD - Linux,1049.99
+0252b0b5-b19f-498a-b7eb-60121adcbc28,Intel Core i9 11gen 11900 3.0 - 4.3 GHz - 8 GB RAM - NVIDIA GeForce RTX 3090 Ti - 256 GB HDD - Windows,3249.99
+0b494e07-fa9b-4ee4-a650-8d4a16f7b1f2,Intel Core i5 9gen 9500 2.6 - 3.9 GHz - 16 GB RAM - NVIDIA GeForce RTX 2080 Ti - 1 TB HDD - Linux,5199.99
+66df20db-6f8d-4254-87c3-5d382bdb1ead,Intel Core i9 8gen 8900 2.2 - 3.6 GHz - 8 GB RAM - NVIDIA GeForce RTX 3070 Super - 1 TB HDD - Windows,3449.99
+1945a054-e673-45ab-a9dc-bec9a01aae5f,AMD Ryzen 5 7900 2.1 - 4.2 GHz - 32 GB RAM - NVIDIA GeForce RTX 2070 - 256 GB SSD - Linux,2749.99
+357f01e0-06d5-4d39-a384-199e942f079b,Intel Core i7 11gen 11700 2.1 - 3.3 GHz - 16 GB RAM - NVIDIA GeForce RTX 2070 Ti - 4 TB HDD - Windows,4999.99
+604ea064-ba6d-4cd2-b543-b0a29244fff6,Intel Core i5 9gen 9500 2.3 - 3.4 GHz - 64 GB RAM - NVIDIA GeForce RTX 3080 Super - 256 GB SSD - Linux,2799.99
+9f2a1ba6-7c7f-4aa2-92f5-9e72f25213aa,AMD Ryzen 5 7800 3.4 - 5.2 GHz - 8 GB RAM - NVIDIA GeForce RTX 3090 - 4 TB SSD - Windows,3549.99
+09b58359-2321-4a3a-a22b-0dc36956f88b,Intel Core i5 13gen 13500 2.5 - 4.1 GHz - 8 GB RAM - Intel UHD Graphics 770 - 256 GB HDD - Linux,549.99
+76f529ca-696e-4ac1-864e-a8c59f281c58,AMD Ryzen 8 6800 3.5 - 5.5 GHz - 8 GB RAM - AMD Radeon RX 6800 XT - 512 GB HDD - Windows,3699.99
+e137a4af-cae9-4340-9028-33fa42af4d07,AMD Ryzen 8 6800 2.8 - 4.7 GHz - 32 GB RAM - Intel UHD Graphics 730 - 1 TB HDD - Linux,4849.99
+8a92ac37-d738-4246-bad2-eca75f6490b1,AMD Ryzen 7 4900 3.3 - 5.5 GHz - 8 GB RAM - Intel UHD Graphics 770 - 1 TB HDD - Windows,2199.99
+10f98e12-7aba-4315-b309-c816f4fe82fb,Intel Core i5 10gen 10500 2.7 - 4.4 GHz - 64 GB RAM - AMD Radeon RX 6800 - 2 TB SSD - Linux,1599.99
+9f28d68f-45a9-4eb5-b7d5-1b8482d5e13b,Intel Core i5 8gen 8500 2.4 - 3.5 GHz - 64 GB RAM - AMD Radeon RX 6700 XT - 256 GB HDD - Windows,2399.99
+e614963b-4f7e-4cd8-b459-306d309830a8,Intel Core i7 8gen 8700 2.0 - 3.8 GHz - 32 GB RAM - Intel UHD Graphics 730 - 4 TB HDD - Linux,4899.99
+fb1a59b4-aa3c-45b8-86dd-d863cb3a286f,Intel Core i5 13gen 13500 2.6 - 4.1 GHz - 16 GB RAM - Intel UHD Graphics 770 - 4 TB SSD - Windows,2499.99
+858c907a-b627-454e-b884-ccbefc7233a9,AMD Ryzen 7 3800 2.7 - 4.0 GHz - 32 GB RAM - AMD Radeon RX 5800 XT - 2 TB HDD - Linux,1099.99
+5d0423fc-5a98-42d8-bbb3-b9b898cc9a76,Intel Core i9 11gen 11900 2.6 - 4.2 GHz - 64 GB RAM - NVIDIA GeForce RTX 2080 - 512 GB HDD - Windows,4099.99
+36c234f3-35c3-44fd-97c8-acd4f96efdc9,AMD Ryzen 7 7500 3.0 - 4.5 GHz - 8 GB RAM - Intel UHD Graphics 730 - 2 TB HDD - Linux,3599.99
+ec9ba94d-dc0f-421e-a0a8-d48ca8793b08,AMD Ryzen 8 5800 3.0 - 4.4 GHz - 8 GB RAM - AMD Radeon RX 9900 XT - 4 TB SSD - Windows,1899.99
+db8019e0-1cc9-40ad-9bdc-31e86ea00ac9,Intel Core i9 11gen 11900 2.1 - 3.7 GHz - 8 GB RAM - NVIDIA GeForce RTX 2070 Ti - 512 GB SSD - Linux,1699.99
+e8e03ad4-6893-4ea5-b0e1-bbe9ca093fb4,AMD Ryzen 8 7500 2.8 - 4.4 GHz - 16 GB RAM - NVIDIA GeForce RTX 3070 - 256 GB HDD - Windows,3249.99
+fb95621a-cbd5-483d-8394-9ac23affc980,AMD Ryzen 8 6700 2.3 - 4.3 GHz - 16 GB RAM - Intel UHD Graphics 710 - 256 GB HDD - Linux,1099.99
+6834e468-abcd-4b5f-81bf-4e766572cb92,Intel Core i7 9gen 9700 2.3 - 4.1 GHz - 64 GB RAM - NVIDIA GeForce RTX 2080 - 256 GB HDD - Windows,3549.99
+cf2861ce-4374-457f-b5a0-212dfa3eb61b,Intel Core i7 8gen 8700 2.4 - 4.0 GHz - 32 GB RAM - AMD Radeon RX 9800 XT - 4 TB SSD - Linux,549.99
+1cfa5d2f-6b76-4646-8273-f36ca67959a5,Intel Core i7 8gen 8700 2.0 - 3.6 GHz - 32 GB RAM - AMD Radeon RX 7500 - 256 GB HDD - Windows,749.99
+da314952-c25c-4687-bd35-e803ffdb28f7,AMD Ryzen 8 3500 2.5 - 4.2 GHz - 32 GB RAM - Intel UHD Graphics 770 - 1 TB HDD - Linux,2699.99
+57865e2d-2c2b-44f7-a014-62400f1b7483,AMD Ryzen 5 5900 2.7 - 4.1 GHz - 16 GB RAM - NVIDIA GeForce RTX 4060 Ti - 1 TB HDD - Windows,4099.99
+b24b2b1d-a429-49b1-80eb-a669b4f465cf,Intel Core i5 8gen 8500 2.9 - 4.8 GHz - 8 GB RAM - Intel UHD Graphics 770 - 4 TB HDD - Linux,3699.99
+fd8e3adb-e999-4f56-a96e-fb4e9c25bb0c,Intel Core i7 11gen 11700 2.6 - 4.2 GHz - 64 GB RAM - AMD Radeon RX 7900 XT - 2 TB SSD - Windows,2199.99
+89d0af2a-6ea7-4915-b547-edae8d591e1b,Intel Core i5 11gen 11500 2.1 - 3.8 GHz - 8 GB RAM - NVIDIA GeForce RTX 3060 Super - 4 TB HDD - Linux,3199.99
+9d278510-91b8-4459-b08c-72265de26024,Intel Core i5 12gen 12500 2.6 - 4.2 GHz - 16 GB RAM - Intel UHD Graphics 770 - 1 TB SSD - Windows,4199.99
+a1f98837-3b04-4c5e-81be-01428185dd8e,AMD Ryzen 7 6700 2.3 - 4.1 GHz - 16 GB RAM - Intel UHD Graphics 770 - 1 TB HDD - Linux,4449.99
+a602d2ec-069c-44ec-9bce-432db0ce9300,Intel Core i9 10gen 10900 2.2 - 3.7 GHz - 8 GB RAM - NVIDIA GeForce RTX 4090 - 1 TB HDD - Windows,2699.99
+67e5b846-44c3-4c07-a24a-9dfe733672d2,AMD Ryzen 6 4600 3.1 - 5.3 GHz - 32 GB RAM - Intel UHD Graphics 770 - 1 TB HDD - Linux,4149.99
+712c3be6-94a8-4f58-a5c0-fbf324c32d6a,AMD Ryzen 5 5700 2.3 - 4.7 GHz - 64 GB RAM - AMD Radeon RX 8600 - 1 TB HDD - Windows,5099.99
+df2c99c3-9bf4-42ed-9023-67512cb780f4,AMD Ryzen 6 5900 2.9 - 5.1 GHz - 32 GB RAM - AMD Radeon RX 9800 - 512 GB HDD - Linux,5049.99
+2e4e5afa-25a1-4ea1-a236-92799a72e4ae,AMD Ryzen 9 5600 3.4 - 5.5 GHz - 32 GB RAM - Intel UHD Graphics 710 - 256 GB HDD - Windows,1849.99
+e9fbfd7c-9ddc-4b7f-93bc-09965b61272d,AMD Ryzen 7 6500 2.6 - 4.7 GHz - 64 GB RAM - Intel UHD Graphics 770 - 1 TB HDD - Linux,2049.99
+be3336d5-0d0c-4bff-9c97-fbdae2aee129,Intel Core i5 10gen 10500 2.7 - 4.3 GHz - 32 GB RAM - NVIDIA GeForce RTX 2060 - 4 TB SSD - Windows,3949.99
+0674f01c-03ef-44b8-8bb4-43797b5f1dc6,AMD Ryzen 8 3700 3.2 - 4.8 GHz - 32 GB RAM - AMD Radeon RX 6600 XT - 512 GB HDD - Linux,3749.99
+b06c135a-19ed-45a7-a0b6-07ae2c676871,Intel Core i9 10gen 10900 2.4 - 3.7 GHz - 16 GB RAM - Intel UHD Graphics 710 - 2 TB HDD - Windows,3799.99
+108317a3-6672-4590-8323-487965df0c6d,AMD Ryzen 7 7900 2.5 - 4.2 GHz - 8 GB RAM - Intel UHD Graphics 770 - 256 GB SSD - Linux,3049.99
+f650ea2a-1168-4f96-b6cd-604c2a398bf7,Intel Core i7 10gen 10700 3.0 - 5.0 GHz - 64 GB RAM - Intel UHD Graphics 770 - 512 GB HDD - Windows,2799.99
+ec3ffbef-b948-4262-9a00-3bf6d16df50d,AMD Ryzen 8 4800 3.2 - 5.0 GHz - 64 GB RAM - AMD Radeon RX 8800 - 256 GB SSD - Linux,3099.99
+525a9be1-4cb0-43b1-8ca3-7333af2add97,Intel Core i5 11gen 11500 2.4 - 3.5 GHz - 16 GB RAM - NVIDIA GeForce RTX 2070 Super - 512 GB HDD - Windows,699.99
+c0540748-e096-4327-b992-643d08c439ab,AMD Ryzen 9 5500 3.4 - 4.7 GHz - 64 GB RAM - AMD Radeon RX 5600 - 512 GB HDD - Linux,2449.99
+0b5245be-9154-423d-a49d-479b8703ccb4,AMD Ryzen 9 5800 2.9 - 4.5 GHz - 64 GB RAM - NVIDIA GeForce RTX 2090 Ti - 512 GB SSD - Windows,3599.99
+2b431229-22f4-4817-81d2-e87c0de25450,AMD Ryzen 8 4800 3.4 - 5.7 GHz - 16 GB RAM - NVIDIA GeForce RTX 4070 - 1 TB HDD - Linux,549.99
+3197ed63-db35-4f3a-a709-4fafb538e1c2,Intel Core i7 9gen 9700 2.3 - 3.9 GHz - 64 GB RAM - NVIDIA GeForce RTX 3090 - 256 GB HDD - Windows,2149.99
+ea6d5d47-473f-48da-abc8-2029194b0ac3,AMD Ryzen 8 3500 2.0 - 4.4 GHz - 16 GB RAM - Intel UHD Graphics 710 - 4 TB HDD - Linux,3299.99
+f223b781-a988-4931-97e0-87aa2dab7690,Intel Core i7 13gen 13700 2.6 - 3.9 GHz - 8 GB RAM - Intel UHD Graphics 730 - 512 GB SSD - Windows,3149.99
+7992c5c7-9025-4c7d-adf1-0bab7d75cf69,Intel Core i7 12gen 12700 2.0 - 3.1 GHz - 16 GB RAM - NVIDIA GeForce RTX 4060 - 2 TB SSD - Linux,3499.99
+e3f755df-2d05-4cf5-a281-9918543b06f9,AMD Ryzen 5 4600 2.3 - 4.0 GHz - 64 GB RAM - AMD Radeon RX 8600 XT - 256 GB HDD - Windows,2549.99
+895eefad-5eb2-4d1b-aac2-45d680f5b253,AMD Ryzen 7 5500 2.4 - 4.4 GHz - 32 GB RAM - AMD Radeon RX 7700 XT - 512 GB HDD - Linux,1149.99
+5f382a21-3368-47e8-b3fb-fbc23017393a,AMD Ryzen 7 3900 3.2 - 5.6 GHz - 32 GB RAM - NVIDIA GeForce RTX 4060 Super - 4 TB HDD - Windows,4949.99
+f2d38658-80b7-4a87-806d-7b41f788d9d4,AMD Ryzen 5 5800 2.2 - 4.3 GHz - 64 GB RAM - NVIDIA GeForce RTX 3070 Super - 512 GB HDD - Linux,3949.99
+73dfd5f5-469f-4505-b2b3-2fe4657a1a8a,Intel Core i9 10gen 10900 2.0 - 3.0 GHz - 8 GB RAM - AMD Radeon RX 9900 - 2 TB HDD - Windows,1649.99
+71ea1c2d-6602-4a4a-be44-ceb83cbbfaa8,AMD Ryzen 8 4900 3.2 - 4.9 GHz - 8 GB RAM - Intel UHD Graphics 770 - 2 TB HDD - Linux,2399.99
+9d68518f-4f3b-44cb-97b2-4ce6b97d94d7,Intel Core i7 9gen 9700 2.4 - 4.3 GHz - 8 GB RAM - Intel UHD Graphics 770 - 1 TB SSD - Windows,3249.99
+13656d56-c9e6-48cb-a60d-9761406e2e75,AMD Ryzen 9 4700 2.7 - 4.1 GHz - 8 GB RAM - NVIDIA GeForce RTX 4090 - 512 GB HDD - Linux,2999.99
+db52c880-9d60-4ef3-945d-bbac4417fe91,Intel Core i5 13gen 13500 2.4 - 3.7 GHz - 64 GB RAM - AMD Radeon RX 7700 - 512 GB HDD - Windows,1649.99
+4f92f206-e231-4798-a677-df3a304203b2,Intel Core i7 11gen 11700 2.6 - 4.0 GHz - 32 GB RAM - NVIDIA GeForce RTX 4070 Super - 2 TB HDD - Linux,5449.99
+8c6eabf7-1b94-4658-8069-0d2b8bb3ac6f,AMD Ryzen 8 3800 2.1 - 4.2 GHz - 32 GB RAM - Intel UHD Graphics 770 - 1 TB SSD - Windows,1649.99
+e4b9acf7-2a81-4acd-8da9-63a110479e34,realme 11 Pro+ 5G - 12 GB RAM - 512 GB - 6.7 - 200Mpix - Beige,569.99
+27c4a82c-6c4b-4060-8f15-7503ea056b0e,Samsung Galaxy S23 - 8 GB RAM - 256 GB - 6.1 - 50Mpix - Black,929.99
+567a7747-c34a-4ea0-964f-a4078508bb05,Apple iPhone 14 - 128 GB - 6.1 - 12Mpix - Black,849.99
+a87db198-1325-423f-8f12-35ea8886abea,Samsung QE55Q67BAU - 55 - 60 Hz - QLED - 4K,689.99
+7922048b-9b39-4905-b000-f535801b6866,LG 65QNED813QA - 65 - 100 Hz - LED - 4K,1015.99
+256fd651-ea28-4df0-8169-9ad1be3f5f12,Sony KD-65X75WL - 65 - 60 Hz - LED - 4K,899.99
