@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-insert-data-products
+      author: grz55
+      changes:
+        - loadUpdateData:
+            file: classpath:/db/changelog/0.1.0/test_data/product/products.csv
+            separator: ','
+            tableName: products
+            primaryKey: id

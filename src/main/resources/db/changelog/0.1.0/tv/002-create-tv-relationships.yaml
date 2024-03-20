@@ -5,6 +5,12 @@ databaseChangeLog:
       changes:
         - addForeignKeyConstraint:
             baseTableName: tvs
+            baseColumnNames: tv_uuid
+            referencedTableName: products
+            referencedColumnNames: id
+            constraintName: fk_tvs_products
+        - addForeignKeyConstraint:
+            baseTableName: tvs
             baseColumnNames: brand_uuid
             referencedTableName: brands
             referencedColumnNames: id

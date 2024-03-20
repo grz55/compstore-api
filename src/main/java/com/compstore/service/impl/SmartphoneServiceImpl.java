@@ -7,9 +7,11 @@ import com.compstore.repository.SmartphoneRepository;
 import com.compstore.service.ISmartphoneService;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 @AllArgsConstructor
 public class SmartphoneServiceImpl implements ISmartphoneService {
 
@@ -20,6 +22,7 @@ public class SmartphoneServiceImpl implements ISmartphoneService {
 
     @Override
     public SmartphoneDTO getSmartphoneById(UUID smartphoneId) {
+        log.info("Requested getting a smartphone with id: {}", smartphoneId);
         return smartphoneRepository
                 .findById(smartphoneId)
                 .map(smartphoneMapper::toDTO)

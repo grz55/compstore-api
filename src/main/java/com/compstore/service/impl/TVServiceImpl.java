@@ -7,9 +7,11 @@ import com.compstore.repository.TVRepository;
 import com.compstore.service.ITVService;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 @AllArgsConstructor
 public class TVServiceImpl implements ITVService {
 
@@ -20,6 +22,7 @@ public class TVServiceImpl implements ITVService {
 
     @Override
     public TVDTO getTVById(UUID tvId) {
+        log.info("Requested getting a TV with id: {}", tvId);
         return tvRepository
                 .findById(tvId)
                 .map(tvMapper::toDTO)
