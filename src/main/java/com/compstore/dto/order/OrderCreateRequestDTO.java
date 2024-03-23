@@ -1,10 +1,13 @@
 package com.compstore.dto.order;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import java.util.*;
 import lombok.Data;
 
 @Data
 public class OrderCreateRequestDTO {
 
-    private List<OrderItemDTO> orderItems;
+    @NotEmpty private List<@Valid @NotNull OrderItemDTO> orderItems;
 }

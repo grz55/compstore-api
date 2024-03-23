@@ -5,6 +5,7 @@ import com.compstore.dto.dictionary.ProcessorBrandCreateRequestDTO;
 import com.compstore.dto.dictionary.ProcessorBrandDTO;
 import com.compstore.service.IProcessorBrandService;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import java.util.List;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
@@ -35,7 +36,7 @@ public class ProcessorBrandController {
 
     @PostMapping
     public ResponseEntity<Void> createProcessorBrand(
-            @RequestBody ProcessorBrandCreateRequestDTO processorBrandCreateRequestDTO) {
+            @Valid @RequestBody ProcessorBrandCreateRequestDTO processorBrandCreateRequestDTO) {
         processorBrandService.createProcessorBrand(processorBrandCreateRequestDTO);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
@@ -43,7 +44,7 @@ public class ProcessorBrandController {
     @PutMapping("/{processorBrandId}")
     public ResponseEntity<Void> updateProcessorBrand(
             @PathVariable UUID processorBrandId,
-            @RequestBody ProcessorBrandCreateRequestDTO processorBrandUpdateRequest) {
+            @Valid @RequestBody ProcessorBrandCreateRequestDTO processorBrandUpdateRequest) {
         processorBrandService.updateProcessorBrand(processorBrandId, processorBrandUpdateRequest);
         return ResponseEntity.status(HttpStatus.OK).build();
     }

@@ -1,13 +1,15 @@
 package com.compstore.dto.pagination;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.Data;
 
 @Data
 public class PagingAndSortingRequestDTO {
 
-    private Integer pageNumber = 0;
+    @NotNull @PositiveOrZero private Integer pageNumber = 0;
 
-    private Integer pageSize = 10;
+    @NotNull @PositiveOrZero private Integer pageSize = 10;
 
-    private Boolean ascendingFlag = true;
+    @NotNull private Boolean ascendingFlag = true;
 }

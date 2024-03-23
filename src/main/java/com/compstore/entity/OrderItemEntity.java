@@ -16,13 +16,14 @@ public class OrderItemEntity {
     @Id @GeneratedValue private UUID id;
 
     @ManyToOne
-    @JoinColumn(name = "order_uuid")
+    @JoinColumn(name = "order_uuid", nullable = false)
     private OrderEntity order;
 
     @ManyToOne
-    @JoinColumn(name = "product_uuid")
+    @JoinColumn(name = "product_uuid", nullable = false)
     private ProductEntity product;
 
+    @Column(nullable = false)
     private Integer quantity;
 
     public OrderItemEntity(OrderEntity order, ProductEntity product, Integer quantity) {

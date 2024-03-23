@@ -1,9 +1,6 @@
 package com.compstore.entity.pc;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,5 +15,6 @@ public class PCOperatingSystemEntity {
 
     @Id @GeneratedValue private UUID id;
 
+    @Column(nullable = false)
     private String name;
 }

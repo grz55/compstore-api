@@ -22,40 +22,52 @@ import lombok.NoArgsConstructor;
 public class TVEntity extends ProductEntity {
 
     @ManyToOne
-    @JoinColumn(name = "brand_uuid")
+    @JoinColumn(name = "brand_uuid", nullable = false)
     private BrandEntity brand;
 
+    @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     private Color color;
 
+    @Column(nullable = false)
     private Integer screenSize;
 
+    @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     private ResolutionName resolutionName;
 
+    @Column(nullable = false)
     private Integer resolutionHeight;
 
+    @Column(nullable = false)
     private Integer resolutionWidth;
 
     @ManyToOne
-    @JoinColumn(name = "screen_type_uuid")
+    @JoinColumn(name = "screen_type_uuid", nullable = false)
     private ScreenTypeEntity screenType;
 
+    @Column(nullable = false)
     private boolean hdrFlag;
 
+    @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     private RefreshRate refreshRate;
 
-    @Column(name = "smart_tv_flag")
+    @Column(name = "smart_tv_flag", nullable = false)
     private boolean smartTVFlag;
 
+    @Column(nullable = false)
     private boolean wifiFlag;
 
+    @Column(nullable = false)
     private boolean bluetoothFlag;
 
+    @Column(nullable = false)
     private Integer hdmiCount;
 
+    @Column(nullable = false)
     private Integer usbCount;
 }

@@ -26,15 +26,15 @@ public class TVDTO {
 
     private ScreenTypeDTO screenType;
 
-    private boolean hdrFlag;
+    private Boolean hdrFlag;
 
     private Integer refreshRate;
 
-    private boolean smartTVFlag;
+    private Boolean smartTVFlag;
 
-    private boolean wifiFlag;
+    private Boolean wifiFlag;
 
-    private boolean bluetoothFlag;
+    private Boolean bluetoothFlag;
 
     private Integer hdmiCount;
 

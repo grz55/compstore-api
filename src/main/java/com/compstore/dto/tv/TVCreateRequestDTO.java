@@ -1,37 +1,41 @@
 package com.compstore.dto.tv;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.Data;
 
 @Data
 public class TVCreateRequestDTO {
 
-    private String brand;
+    @NotBlank private String brand;
 
-    private String color;
+    @NotBlank private String color;
 
-    private Integer screenSize;
+    @NotNull @Positive private Integer screenSize;
 
-    private String resolutionName;
+    @NotBlank private String resolutionName;
 
-    private Integer resolutionHeight;
+    @NotNull @Positive private Integer resolutionHeight;
 
-    private Integer resolutionWidth;
+    @NotNull @Positive private Integer resolutionWidth;
 
-    private String screenType;
+    @NotBlank private String screenType;
 
-    private boolean hdrFlag;
+    @NotNull private Boolean hdrFlag;
 
-    private Integer refreshRate;
+    @NotNull @Positive private Integer refreshRate;
 
-    private boolean smartTVFlag;
+    @NotNull private Boolean smartTVFlag;
 
-    private boolean wifiFlag;
+    @NotNull private Boolean wifiFlag;
 
-    private boolean bluetoothFlag;
+    @NotNull private Boolean bluetoothFlag;
 
-    private Integer hdmiCount;
+    @NotNull @PositiveOrZero private Integer hdmiCount;
 
-    private Integer usbCount;
+    @NotNull @PositiveOrZero private Integer usbCount;
 
-    private Double price;
+    @NotNull @Positive private Double price;
 }

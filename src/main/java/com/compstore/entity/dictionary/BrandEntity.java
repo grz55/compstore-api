@@ -16,9 +16,10 @@ public class BrandEntity {
 
     @Id @GeneratedValue private UUID id;
 
+    @Column(nullable = false)
     private String name;
 
-    @Column(name = "brands_device_type")
+    @Column(name = "brands_device_type", nullable = false)
     @Enumerated(value = EnumType.STRING)
     private BrandDeviceType brandDeviceType;
 }

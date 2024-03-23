@@ -1,37 +1,40 @@
 package com.compstore.dto.smartphone;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.Data;
 
 @Data
 public class SmartphoneCreateRequestDTO {
 
-    private String brand;
+    @NotBlank private String brand;
 
-    private String color;
+    @NotBlank private String color;
 
-    private Double screenSize;
+    @NotNull @Positive private Double screenSize;
 
-    private Integer resolutionHeight;
+    @NotNull @Positive private Integer resolutionHeight;
 
-    private Integer resolutionWidth;
+    @NotNull @Positive private Integer resolutionWidth;
 
-    private String screenType;
+    @NotBlank private String screenType;
 
-    private Integer batteryCapacity;
+    @Positive private Integer batteryCapacity;
 
     private String ramCapacity;
 
-    private String storageCapacity;
+    @NotBlank private String storageCapacity;
 
-    private Integer frontCameraMpixResolution;
+    @Positive private Integer frontCameraMpixResolution;
 
-    private Integer backCameraMpixResolution;
+    @NotNull @Positive private Integer backCameraMpixResolution;
 
-    private String operatingSystem;
+    @NotBlank private String operatingSystem;
 
-    private String processorBrand;
+    @NotBlank private String processorBrand;
 
-    private String processorName;
+    @NotBlank private String processorName;
 
-    private Double price;
+    @NotNull @Positive private Double price;
 }

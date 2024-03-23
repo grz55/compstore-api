@@ -1,11 +1,12 @@
 package com.compstore.dto.dictionary;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
 public class ProcessorBrandCreateRequestDTO {
 
-    private String name;
+    @NotBlank private String name;
 
-    private String processorBrandDeviceType;
+    @NotBlank private String processorBrandDeviceType;
 }

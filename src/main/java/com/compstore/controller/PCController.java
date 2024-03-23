@@ -7,6 +7,7 @@ import com.compstore.dto.pc.PCFilteringRequestDTO;
 import com.compstore.dto.pc.PCFilteringResponseDTO;
 import com.compstore.service.IPCService;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -28,18 +29,18 @@ public class PCController {
 
     @PostMapping("/search")
     public ResponseEntity<PCFilteringResponseDTO> searchPC(
-            @RequestBody PCFilteringRequestDTO pcFilteringRequestDTO) {
+            @Valid @RequestBody PCFilteringRequestDTO pcFilteringRequestDTO) {
         return ResponseEntity.status(HttpStatus.OK).body(pcService.searchPC(pcFilteringRequestDTO));
     }
 
     @PostMapping
-    public ResponseEntity<PCDTO> createPC(@RequestBody PCCreateRequestDTO pcCreateRequest) {
+    public ResponseEntity<PCDTO> createPC(@Valid @RequestBody PCCreateRequestDTO pcCreateRequest) {
         return ResponseEntity.status(HttpStatus.CREATED).body(pcService.createPC(pcCreateRequest));
     }
 
     @PutMapping("/{pcId}")
     public ResponseEntity<PCDTO> updatePC(
-            @PathVariable UUID pcId, @RequestBody PCCreateRequestDTO pcUpdateRequest) {
+            @PathVariable UUID pcId, @Valid @RequestBody PCCreateRequestDTO pcUpdateRequest) {
         return ResponseEntity.status(HttpStatus.OK).body(pcService.updatePC(pcId, pcUpdateRequest));
     }
 
