@@ -55,14 +55,26 @@ Frontend: https://github.com/pawelNu/compstore-ui
 
 ### Docker commands
 
-- Build docker image locally (`dev-h2` profile): `docker build -f Dockerfile.dev-h2 -t compstore-api .`
+#### Running Compstore-API locally
+
+- Build docker image locally (`dev-h2` profile): `docker build --build-arg MAVEN_PROFILE=dev-h2 -t compstore-api .`
 - Run docker image locally (`dev-h2` profile): `docker run --name compstore-api -p 8080:8080 compstore-api`
 
+- Build docker image locally (`dev-postgres` profile - default Maven profile): `docker build -t compstore-api .`
+- Run docker image locally (`dev-postgres` profile): `docker run --name compstore-api -p 8080:8080 compstore-api`
 
-- Build docker image locally (`prod` profile): `docker build -f Dockerfile.prod -t compstore-api .`
+- Build docker image locally (`prod` profile): `docker build --build-arg MAVEN_PROFILE=prod -t compstore-api .`
 - Run docker image locally (`prod` profile) - DB and CORS variables must be added additionally: `docker run --name compstore-api -p 8080:8080 -e SPRING_PROFILES_ACTIVE=prod compstore-api`
+
+#### Running Postgres locally
+
+Create postgres db in Docker container (+ creating database): `scripts/postgres/create_run_container.bat`
 
 #### Running Keycloak locally
 
 - Pulling Keycloak image: `docker pull quay.io/keycloak/keycloak:23.0.6`
 - Running Keycloak: `docker run --name compstore-keycloak -p 8090:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:23.0.6 start-dev`
+
+#### Running the entire API locally
+
+- Docker Compose: `docker-compose up`
