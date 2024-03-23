@@ -1,0 +1,39 @@
+version: '2.23'
+
+services:
+
+  database:
+    image: compstore-postgres
+    ports:
+      - '5431:5432'
+
+  keycloak:
+    image: compstore-keycloak
+    secrets:
+      - compstore_secrets
+    ports:
+      - '8090:8080'
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+
+  compstore-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev-postgres
+    ports:
+      - '8080:8080'
+    depends_on:
+      - "database"
+      - "keycloak"
+
+  compstore-frontend:
+    image: compstore-ui
+    ports:
+      - '3000:80'
+    depends_on:
+      - "compstore-backend"
+
+secrets:
+  compstore_secrets:
+    file: secrets.txt
