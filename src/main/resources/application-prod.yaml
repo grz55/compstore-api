@@ -20,6 +20,3 @@ jwt:
     converter:
       resource-id: compstore-api
       principle-attribute: preferred_username
-
-cors:
-  allowed-origins: ${PROD_ALLOWED_FRONTEND}
