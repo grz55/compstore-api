@@ -23,7 +23,7 @@ public class PCCreateRequestDTO {
 
     @NotBlank private String driveType;
 
-    private UUID operatingSystem;
+    @NotNull private UUID operatingSystem;
 
     @NotNull @PositiveOrZero private Double price;
 }

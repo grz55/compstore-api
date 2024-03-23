@@ -45,6 +45,6 @@ public class PCEntity extends ProductEntity {
     private DriveType driveType;
 
     @ManyToOne
-    @JoinColumn(name = "operating_system_uuid")
+    @JoinColumn(name = "operating_system_uuid", nullable = false)
     private PCOperatingSystemEntity operatingSystem;
 }
