@@ -37,5 +37,5 @@ public class TVCreateRequestDTO {
 
     @NotNull @PositiveOrZero private Integer usbCount;
 
-    @NotNull @PositiveOrZero private Double price;
+    @NotNull @Positive private Double price;
 }

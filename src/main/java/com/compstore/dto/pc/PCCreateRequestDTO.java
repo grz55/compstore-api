@@ -2,7 +2,7 @@ package com.compstore.dto.pc;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.Positive;
 import java.util.UUID;
 import lombok.Data;
 
@@ -25,5 +25,5 @@ public class PCCreateRequestDTO {
 
     @NotNull private UUID operatingSystem;
 
-    @NotNull @PositiveOrZero private Double price;
+    @NotNull @Positive private Double price;
 }
