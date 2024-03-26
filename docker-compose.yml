@@ -1,39 +1,81 @@
-version: '2.23'
+version: '3'
 
 services:
 
-  database:
-    image: compstore-postgres
+  postgres:
+    image: postgres:16.2
+    profiles: [dev-postgres]
+    container_name: compstore-postgres-keycloak
+    restart: always
     ports:
       - '5431:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: test
+    networks:
+      - compstore_network
 
   keycloak:
-    image: compstore-keycloak
-    secrets:
-      - compstore_secrets
+    image: keycloak/keycloak:24.0
+    profiles: [dev-postgres]
+    container_name: compstore-keycloak
+    restart: always
     ports:
       - '8090:8080'
     environment:
-      - KEYCLOAK_ADMIN=admin
-      - KEYCLOAK_ADMIN_PASSWORD=admin
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres/postgres
+      KC_DB_USERNAME: postgres
+      KC_DB_PASSWORD: test
+    depends_on:
+      postgres:
+        condition: service_started
+    networks:
+      - compstore_network
+    command:
+      - start-dev
 
-  compstore-backend:
+  backend-dev-postgres:
     build:
       context: .
-      dockerfile: Dockerfile.dev-postgres
+      args:
+        - MAVEN_PROFILE=dev-postgres
+    profiles: [dev-postgres]
+    container_name: compstore-api-postgres
     ports:
       - '8080:8080'
+    environment:
+      SPRING_PROFILES_ACTIVE: dev-postgres
+    restart: unless-stopped
     depends_on:
-      - "database"
-      - "keycloak"
+      postgres:
+        condition: service_started
+      keycloak:
+        condition: service_started
+    networks:
+      - compstore_network
 
-  compstore-frontend:
-    image: compstore-ui
+  backend-dev-h2:
+    build:
+      context: .
+      args:
+        - MAVEN_PROFILE=dev-h2
+    profiles: [dev-h2]
+    container_name: compstore-api-h2
     ports:
-      - '3000:80'
-    depends_on:
-      - "compstore-backend"
+      - '8080:8080'
+    environment:
+      SPRING_PROFILES_ACTIVE: dev-h2
+    restart: unless-stopped
 
-secrets:
-  compstore_secrets:
-    file: secrets.txt
+networks:
+  compstore_network:
+    driver: bridge
+
+volumes:
+  pgdata:

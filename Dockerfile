@@ -1,5 +1,5 @@
 FROM maven:3.9.6-eclipse-temurin-17-alpine AS build
-ARG MAVEN_PROFILE=dev-postgres
+ARG MAVEN_PROFILE
 COPY . .
 RUN mvn clean package -DskipTests -P${MAVEN_PROFILE}
 
