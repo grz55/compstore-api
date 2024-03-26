@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5431/compstore-postgres
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}
     username: postgres
     password: test
     driver-class-name: org.postgresql.Driver
@@ -11,3 +11,14 @@ spring:
     spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect
   hibernate:
     ddl-auto: validate
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://${KEYCLOAK_HOST}:${KEYCLOAK_PORT}/realms/compstore
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+jwt:
+  auth:
+    converter:
+      resource-id: compstore-api
+      principle-attribute: preferred_username

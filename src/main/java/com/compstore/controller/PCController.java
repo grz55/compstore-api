@@ -11,6 +11,7 @@ import java.util.UUID;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -33,17 +34,20 @@ public class PCController {
     }
 
     @PostMapping
+    @PreAuthorize("hasRole('admin')")
     public ResponseEntity<PCDTO> createPC(@RequestBody PCCreateRequestDTO pcCreateRequest) {
         return ResponseEntity.status(HttpStatus.CREATED).body(pcService.createPC(pcCreateRequest));
     }
 
     @PutMapping("/{pcId}")
+    @PreAuthorize("hasRole('admin')")
     public ResponseEntity<PCDTO> updatePC(
             @PathVariable UUID pcId, @RequestBody PCCreateRequestDTO pcUpdateRequest) {
         return ResponseEntity.status(HttpStatus.OK).body(pcService.updatePC(pcId, pcUpdateRequest));
     }
 
     @DeleteMapping("/{pcId}")
+    @PreAuthorize("hasRole('admin')")
     public ResponseEntity<Void> deletePCById(@PathVariable UUID pcId) {
         pcService.deletePCById(pcId);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();

@@ -1,0 +1,99 @@
+version: '3'
+
+services:
+
+  postgres-keycloak:
+    image: postgres:16.2
+    profiles: [dev-postgres]
+    container_name: compstore-keycloak-postgres
+    restart: always
+    ports:
+      - '5430:5432'
+    volumes:
+      - ./scripts/keycloak:/docker-entrypoint-initdb.d/
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: test
+    networks:
+      - compstore_network
+
+  keycloak:
+    image: keycloak/keycloak:24.0
+    profiles: [dev-postgres]
+    container_name: compstore-keycloak-server
+    restart: always
+    ports:
+      - '8090:8080'
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres-keycloak/compstore-keycloak
+      KC_DB_USERNAME: postgres
+      KC_DB_PASSWORD: test
+    depends_on:
+      postgres-keycloak:
+        condition: service_started
+    networks:
+      - compstore_network
+    command:
+      - start-dev
+
+  postgres-compstore:
+    image: postgres:16.2
+    profiles: [ dev-postgres ]
+    container_name: compstore-backend-postgres
+    restart: always
+    ports:
+      - '5431:5432'
+    volumes:
+      - ./scripts/postgres:/docker-entrypoint-initdb.d/
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: test
+    networks:
+      - compstore_network
+
+  backend-dev-postgres:
+    build:
+      context: .
+      args:
+        - MAVEN_PROFILE=dev-postgres
+    profiles: [dev-postgres]
+    container_name: compstore-api-dev-postgres
+    ports:
+      - '8080:8080'
+    environment:
+      SPRING_PROFILES_ACTIVE: dev-postgres
+      DB_HOST: postgres-compstore
+      DB_PORT: 5432
+      DB_NAME: compstore-postgres
+      KEYCLOAK_HOST: keycloak
+      KEYCLOAK_PORT: 8080
+    restart: unless-stopped
+    depends_on:
+      postgres-keycloak:
+        condition: service_started
+      keycloak:
+        condition: service_started
+      postgres-compstore:
+        condition: service_started
+    networks:
+      - compstore_network
+
+  backend-dev-h2:
+    build:
+      context: .
+      args:
+        - MAVEN_PROFILE=dev-h2
+    profiles: [dev-h2]
+    container_name: compstore-api-dev-h2
+    ports:
+      - '8080:8080'
+    environment:
+      SPRING_PROFILES_ACTIVE: dev-h2
+    restart: unless-stopped
+
+networks:
+  compstore_network:
+    driver: bridge

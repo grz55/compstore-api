@@ -8,12 +8,14 @@ import java.util.UUID;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/orders")
 @AllArgsConstructor
 @Tag(name = "OrderController")
+@PreAuthorize("hasRole('user')")
 public class OrderController {
 
     private final IOrderService orderService;
